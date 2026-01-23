@@ -1,0 +1,4 @@
+@echo off
+echo Starting Vite dev server...
+npm run dev
+pause
