@@ -1,7 +1,11 @@
 import { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+
 import Axolotl from './components/Axolotl.tsx'
+import Axolotl3D from './components/Axolotl3D.tsx'
+
 import './App.css'
 
 function App() {
@@ -9,6 +13,21 @@ function App() {
 
   return (
 		<>
+		
+		<Canvas
+			style={{
+			  position: 'fixed',
+			  inset: 0,
+			  pointerEvents: 'none', // allows clicking through
+			  zIndex: 0,
+			}}
+			camera={{ position: [0, 0, 5] }}
+		>
+			<ambientLight intensity={0.5} />
+			<directionalLight position={[2, 2, 2]} />
+			<Axolotl3D />
+		</Canvas>
+			
 		<div className="app-background">
 			<div>
 				<a href="https://vite.dev" target="_blank">

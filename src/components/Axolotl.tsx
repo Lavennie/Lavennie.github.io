@@ -12,7 +12,7 @@ function axolotlPath(scroll: number): Point {
 
 export default function Axolotl() {
   const scrollY = useMotionValue(0);
-
+  
   useEffect(() => {
     const onScroll  = () => scrollY.set(window.scrollY);
     window.addEventListener("scroll", onScroll );
