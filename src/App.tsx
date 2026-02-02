@@ -16,15 +16,16 @@ function App() {
 		
 		<Canvas
 			style={{
-			  position: 'fixed',
-			  inset: 0,
-			  pointerEvents: 'none', // allows clicking through
-			  zIndex: 0,
+				position: 'fixed',
+				inset: 0,
+				transform: "scale(1.3)",
+				transformOrigin: "110% 120%",
+				pointerEvents: 'none', // allows clicking through
+				zIndex: 0,
 			}}
-			camera={{ position: [0, 1, 3] }}
+			camera={{ position: [0, 1, 8] }}
 		>
 			<ambientLight intensity={0.5} />
-			<directionalLight position={[2, 2, 2]} />
 			<Axolotl3D />
 		</Canvas>
 			
