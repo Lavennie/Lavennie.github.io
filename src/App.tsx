@@ -21,7 +21,7 @@ function App() {
 			  pointerEvents: 'none', // allows clicking through
 			  zIndex: 0,
 			}}
-			camera={{ position: [0, 0, 5] }}
+			camera={{ position: [0, 1, 3] }}
 		>
 			<ambientLight intensity={0.5} />
 			<directionalLight position={[2, 2, 2]} />
