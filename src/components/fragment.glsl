@@ -8,6 +8,8 @@ uniform float overlayWeight;   // e.g., 0.858
 varying vec2 vUv;
 varying vec3 vNormal;
 
+#define M_PI 3.1415926535897932384626433832795
+
 vec3 overlay(vec3 base, vec3 blend) {
 	//return vec3(base.x < 0.5 ? 2.0 * base.x * blend.x : 1.0 - 2.0 * (1.0 - base.x) * (1.0 - blend.x),
 	//			base.y < 0.5 ? 2.0 * base.y * blend.y : 1.0 - 2.0 * (1.0 - base.y) * (1.0 - blend.y),
@@ -26,7 +28,9 @@ void main() {
     float diff1 = (dot(N, L) + 1.0) / 2.0;
     
     // Quantize for toon effect
-	vec3 shader1 = mix(texColor * diff1, texColor, 0.0) + (1.0 - diff1) * texColor * vec3(0.5, 0.1, 0.5) * 1.5;
+	float k = sin((1.0 - diff1) * M_PI);
+	float midtones = k * k * k * k;
+	vec3 shader1 = mix(texColor * diff1, texColor, 0.2) + 0.1 * texColor + midtones * texColor * vec3(0.15, -0.1, 0.6);
 
     // --- Second shader: constant color toon ---
     float diff2 = dot(N, L);
@@ -34,7 +38,7 @@ void main() {
     vec3 shader2 = mix(color1, color2, toonStep2);
 
     // --- Overlay ---
-    vec3 finalColor = mix(shader1, overlay(shader1, shader2) , 1.0);
+    vec3 finalColor = mix(shader1, overlay(shader1, shader2), overlayWeight);
 	//finalColor = shader1;
 
     gl_FragColor = vec4(finalColor,1.0);
