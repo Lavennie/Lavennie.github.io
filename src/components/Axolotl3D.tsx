@@ -66,11 +66,6 @@ export default function Axolotl3D() {
 		};
 	}, [actions, names]);
 
-  //useFrame(() => {
-  //  if (!ref.current) return;
-  //  ref.current.rotation.y += 0.01;
-  //});
-
   return <primitive ref={ref} object={scene} scale={1} />;
 }
 

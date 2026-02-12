@@ -1,0 +1,18 @@
+.timelapse-container {
+    height: 300px;
+    aspect-ratio: 16/9;
+    border-radius: 50%;
+    border: 8px solid #C1B4FF;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.timelapse-container img {
+    object-fit: cover;
+    display: block;
+    transition: transform 0.1s ease;
+    pointer-events: none;
+}
+.timelapse-container:hover img {
+    transform: scale(1.1);
+}
