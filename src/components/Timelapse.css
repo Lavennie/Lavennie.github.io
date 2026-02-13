@@ -2,9 +2,10 @@
     height: 300px;
     aspect-ratio: 16/9;
     border-radius: 50%;
-    border: 8px solid #C1B4FF;
+    border: 8px solid #B8BFD6;
     overflow: hidden;
     cursor: pointer;
+    min-width: 200px;
 }
 
 .timelapse-container img {

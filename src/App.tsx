@@ -4,11 +4,13 @@ import {Canvas} from '@react-three/fiber'
 import Axolotl3D from './components/Axolotl3D.tsx'
 import NavBar from './components/NavBar.tsx'
 import Timelapse from './components/Timelapse.tsx'
+import { TimelapseById } from "./assets/TimelapseLibrary.tsx"
 
 import './App.css'
 import MeshFlat from "./components/MeshFlat.tsx";
 import Bubble from "./components/Bubble.tsx";
 import Sprite from "./components/Sprite.tsx";
+import {TimelapseLibrary} from "./assets/TimelapseLibrary.tsx";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -86,7 +88,43 @@ function App() {
                             <Sprite texturePath={"algae2.png"} x={-2} y={-4} z={-3} size={6}/>
                         </Canvas>
                     </div>
-                    <Timelapse videoUrl="https://www.youtube.com/watch?v=O-UlwWTJ2xM" thumbnailUrl="/art/kishiar_la_orr_at_a_party.jpg" />
+                    <div className={"timelapse-list"}>
+                        <TimelapseById id={"forest fire knights"}/>
+                        <TimelapseById id={"forest fire"}/>
+                        <TimelapseById id={"kishiar after awakening"}/>
+                        <TimelapseById id={"kishiar party"}/>
+                        <TimelapseById id={"girl reach out to golden rain"}/>
+                        <TimelapseById id={"man black sea"}/>
+                        <TimelapseById id={"castorice"}/>
+                        <TimelapseById id={"lonely playground in the evening"}/>
+                        <TimelapseById id={"in his final moments beside him"}/>
+                        <TimelapseById id={"overworked woman resting"}/>
+                        <TimelapseById id={"underground with a slime"}/>
+                        <TimelapseById id={"angel under the dazzling sun"}/>
+                        <TimelapseById id={"ice brachoisaurus sculpture"}/>
+                        <TimelapseById id={"paradox cosmic ocean"}/>
+                        <TimelapseById id={"city at night with puddles"}/>
+                        <TimelapseById id={"junhee supernova"}/>
+                        <TimelapseById id={"banner hold that hand"}/>
+                        <TimelapseById id={"flower forest waterfall"}/>
+                        <TimelapseById id={"driting through music"}/>
+                        <TimelapseById id={"huntress eva"}/>
+                        <TimelapseById id={"frozen angel praying"}/>
+                        <TimelapseById id={"villain unsheathing sword"}/>
+                        <TimelapseById id={"universal eyes with galaxies"}/>
+                        <TimelapseById id={"falling into black hole eye"}/>
+                        <TimelapseById id={"ice mage frozen world"}/>
+                        <TimelapseById id={"queen outside looking up"}/>
+                        <TimelapseById id={"horizonbound"}/>
+                        <TimelapseById id={"knight saying goodbye to family"}/>
+                        <TimelapseById id={"aikido lifetime"}/>
+                        <TimelapseById id={"reach under the bed"}/>
+                        <TimelapseById id={"karate woman gojushiho sho"}/>
+                        <TimelapseById id={"new year figure skater"}/>
+                        <TimelapseById id={"portrait purple short hair"}/>
+                        <TimelapseById id={"acrobat talisman mage"}/>
+                        <TimelapseById id={"train station returning home"}/>
+                    </div>
                 </div>
             </div>
         </>
