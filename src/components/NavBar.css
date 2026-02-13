@@ -23,6 +23,7 @@
 }
 
 .nav-links a {
+    font-family: 'Shantell Sans', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
