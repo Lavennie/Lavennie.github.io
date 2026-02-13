@@ -26,6 +26,6 @@
 }
 
 .axolotl-scene{
-    background: linear-gradient(to top, #D6E6FF 70%, #B1DED9);
+    background: linear-gradient(to top, #E0E6D5, #D6E6FF 30%, #D6E6FF 70%, #B1DED9);
     height: calc(100vh - 3rem - 150px);
 }
