@@ -1,0 +1,11 @@
+.footer {
+    background: linear-gradient(to right, #C1B4FF, #E5EBFE 10%, #E5EBFE 90%, #C1B4FF);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.footer img {
+    width: 50px;
+}

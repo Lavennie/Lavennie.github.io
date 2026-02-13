@@ -2,8 +2,6 @@
     position: sticky;
     top: 0px;
     z-index: 1000;
-    background: linear-gradient(to right, #C1B4FF, #E5EBFE 10%, #E5EBFE 90%, #C1B4FF);
-    border-bottom: 1px solid #4525DD33;
 }
 
 .navbar-inner {
@@ -30,16 +28,16 @@
     justify-content: center;
     width: 10rem;
     height: 100%;
+    color: var(--hover-bg-color);
     text-decoration: none;
-    color: #574AEA;
     font-size: 1.4rem;
     border-radius: 25px 5px;
     transition: background-color 0.15s ease, color 0.1s ease;
 }
 
 .nav-links a:hover {
-    background-color: #9360FF;
-    color: #E5EBFE;
+    color: var(--hover-text-color);
+    background-color: var(--hover-bg-color);
 }
 
 .banner {
