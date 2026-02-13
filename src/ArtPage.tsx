@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import './ArtPage.css'
 import {Canvas} from '@react-three/fiber'
 
 import Axolotl3D from './components/Axolotl3D.tsx'
@@ -6,20 +6,16 @@ import NavBar from './components/NavBar.tsx'
 import Footer from './components/Footer.tsx'
 import { CreateTimelapseList, timelapseListHeight } from "./assets/TimelapseLibrary.tsx"
 
-import './App.css'
 import MeshFlat from "./components/MeshFlat.tsx";
 import Bubble from "./components/Bubble.tsx";
 import Sprite from "./components/Sprite.tsx";
 
-function App() {
-    const [count, setCount] = useState(0)
-
+export default function ArtPage() {
     return (
         <>
             <NavBar colorMain={"#E5EBFE"} colorSide={"#C1B4FF"} textColor={"#714FFF"} />
             { /* SITE */ }
             <div className="app-background">
-
                 <div className="site-container" style={{height: `calc(${timelapseListHeight()}px + 100vh + 100px)`}}>
                     { /* axolotl swimming - fixed size image */ }
                     <div className="axolotl-scene">
@@ -95,5 +91,3 @@ function App() {
         </>
     )
 }
-
-export default App

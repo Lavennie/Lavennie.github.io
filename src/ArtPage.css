@@ -1,27 +1,8 @@
-#root {
-    min-width: 100%;
-    padding: 2rem;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.body {
-    margin: 0;
-    overflow: auto;
-}
 .app-background {
     background-image: url('./assets/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 200vh;
-    width: 100%;
 }
 
 .site-container {
-    width: 90%;
-    margin: auto;
     background-color: #E5EBFEF0;
 }
 
