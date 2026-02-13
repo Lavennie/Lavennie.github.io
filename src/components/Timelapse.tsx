@@ -15,7 +15,7 @@ export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
         <>
             <div className="timelapse-container" onClick={() => setIsPlaying(true)}>
                 <a
-                    href={videoUrl}
+                    href={thumbnailUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -26,8 +26,8 @@ export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
                         overflow: "hidden",
                         cursor: "pointer",
                         boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
-                    }}
-                >
+                    }}>
+                    {/* Thumbnail */}
                     <img
                         src={thumbnailUrl}
                         alt="Video thumbnail"
@@ -35,6 +35,16 @@ export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
                     />
                 </a>
             </div>
+            {/* Overlay button */}
+            <a
+                href={videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="timelapse-play"
+                onClick={(e) => e.stopPropagation()} // prevent container click
+            >
+                Time-lapse
+            </a>
         </>
     );
 }

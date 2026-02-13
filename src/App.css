@@ -21,16 +21,15 @@
 
 .site-container {
     width: 90%;
-    min-height: 200vh;
     margin: auto;
     background-color: #E5EBFEF0;
 }
 
-.axolotl-scene{
+.axolotl-scene {
     background: linear-gradient(to top, #E0E6D5, #D6E6FF 30%, #D6E6FF 70%, #B1DED9);
     height: calc(100vh - 3rem - 150px);
 }
-.timelapse-list{
+.timelapse-list {
     width: 100%;
     position: relative;
 }

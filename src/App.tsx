@@ -4,7 +4,7 @@ import {Canvas} from '@react-three/fiber'
 import Axolotl3D from './components/Axolotl3D.tsx'
 import NavBar from './components/NavBar.tsx'
 import Timelapse from './components/Timelapse.tsx'
-import { TimelapseById, CreateTimelapseList } from "./assets/TimelapseLibrary.tsx"
+import { CreateTimelapseList, timelapseListHeight } from "./assets/TimelapseLibrary.tsx"
 
 import './App.css'
 import MeshFlat from "./components/MeshFlat.tsx";
@@ -21,8 +21,7 @@ function App() {
             { /* SITE */ }
             <div className="app-background">
 
-                <div className="site-container">
-
+                <div className="site-container" style={{height: `calc(${timelapseListHeight()}px + 100vh + 100px)`}}>
                     { /* axolotl swimming - fixed size image */ }
                     <div className="axolotl-scene">
                         { /* 3D OBJECTS - axolotl */ }
