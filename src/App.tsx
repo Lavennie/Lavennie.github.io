@@ -35,8 +35,8 @@ function App() {
                         >
                             <ambientLight intensity={0.5}/>
                             <Axolotl3D/>
-                            <MeshFlat meshPath={"coral_left.glb"} side={"left"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={1.82} y={-0.8} z={4} scale={0.65} />
-                            <MeshFlat meshPath={"coral_right.glb"} side={"right"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={0} y={-2.7} z={0} scale={1.2} />
+                            <MeshFlat meshPath={"coral_left.glb"} side={"left"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={3} y={-0.8} z={4} scale={0.65} />
+                            <MeshFlat meshPath={"coral_right.glb"} side={"right"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={-0.4} y={-2.7} z={0} scale={1.2} />
                             <Bubble x={0} y={-0.3}/>
                             <Bubble x={-0.4} y={1}/>
                             <Bubble x={0.7} y={1.3} z={2}/>
@@ -62,8 +62,8 @@ function App() {
                             <Sprite texturePath={"algae1.png"} x={-2.2} y={0} z={1} size={4}/>
                             <Sprite texturePath={"algae1.png"} x={2.5} y={-0.2} z={0} size={3}/>
                             <Sprite texturePath={"algae1.png"} x={-0.5} y={-1.15} z={4} size={2.5}/>
-                            <Sprite texturePath={"algae1.png"} x={0} y={1} z={-5} size={2}/>
-                            <Sprite texturePath={"algae1.png"} x={2} y={0.5} z={-5} size={2}/>
+                            <Sprite texturePath={"algae1.png"} x={0} y={1} z={-5} size={2} alpha={0.5}/>
+                            <Sprite texturePath={"algae1.png"} x={2} y={0.5} z={-5} size={2} alpha={0.5}/>
                             <Sprite texturePath={"algae1.png"} x={4} y={0.5} z={-5} size={2}/>
                             <Sprite texturePath={"algae1.png"} x={-4} y={0.5} z={-5} size={2}/>
                             <Sprite texturePath={"algae1.png"} x={0} y={-2} z={-5} size={4}/>
@@ -71,15 +71,16 @@ function App() {
                             <Sprite texturePath={"algae1.png"} x={1} y={-2.5} z={-3.5} size={6}/>
                             <Sprite texturePath={"algae1.png"} x={-2} y={-2.5} z={-3.6} size={6}/>
                             <Sprite texturePath={"algae1.png"} x={4} y={-2.5} z={-3.6} size={6}/>
-                            <Sprite texturePath={"algae2.png"} x={-1.7} y={0} z={5} size={5}/>
+                            <Sprite texturePath={"algae1.png"} x={7} y={-1.5} z={-6} size={6} alpha={0.7}/>
+                            <Sprite texturePath={"algae2.png"} x={-1.7} y={0} z={5} size={5} alpha={0.8}/>
                             <Sprite texturePath={"algae2.png"} x={1} y={-1} z={5} size={3}/>
-                            <Sprite texturePath={"algae2.png"} x={2} y={0} z={5} size={5}/>
-                            <Sprite texturePath={"algae2.png"} x={-3} y={0} z={-3} size={5}/>
-                            <Sprite texturePath={"algae2.png"} x={-2} y={0} z={-4} size={4}/>
-                            <Sprite texturePath={"algae2.png"} x={1} y={0} z={-4} size={4}/>
+                            <Sprite texturePath={"algae2.png"} x={2} y={0} z={5} size={5} alpha={0.8}/>
+                            <Sprite texturePath={"algae2.png"} x={-3} y={0} z={-3} size={5} alpha={0.5}/>
+                            <Sprite texturePath={"algae2.png"} x={-2} y={0} z={-4} size={4} alpha={0.5}/>
+                            <Sprite texturePath={"algae2.png"} x={1} y={0} z={-4} size={4} alpha={0.5}/>
                             <Sprite texturePath={"algae2.png"} x={3} y={0} z={-3} size={6}/>
-                            <Sprite texturePath={"algae2.png"} x={-1} y={0} z={-5} size={3}/>
-                            <Sprite texturePath={"algae2.png"} x={5} y={0} z={-5} size={3}/>
+                            <Sprite texturePath={"algae2.png"} x={-1} y={0} z={-5} size={3.4} alpha={0.5}/>
+                            <Sprite texturePath={"algae2.png"} x={5} y={0} z={-5} size={5}/>
                             <Sprite texturePath={"algae2.png"} x={0} y={-6} z={-4} size={6}/>
                             <Sprite texturePath={"algae2.png"} x={1} y={-4} z={-3} size={6}/>
                             <Sprite texturePath={"algae2.png"} x={-2} y={-4} z={-3} size={6}/>

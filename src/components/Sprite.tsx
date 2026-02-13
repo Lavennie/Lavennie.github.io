@@ -8,9 +8,10 @@ type SpriteProps = {
     y: number;
     z?: number;
     size?: number;
+    alpha?: number;
 };
 
-export default function Sprite({texturePath, x, y, z=5, size = 1}: SpriteProps) {
+export default function Sprite({texturePath, x, y, z=5, size = 1, alpha = 1}: SpriteProps) {
     const ref = useRef<THREE.Sprite>(null);
     const texture = useTexture(texturePath);
 
@@ -32,7 +33,7 @@ export default function Sprite({texturePath, x, y, z=5, size = 1}: SpriteProps) 
 
     return (
         <sprite ref={ref} position={[x, y, 0]}>
-            <spriteMaterial map={texture} transparent={true} toneMapped={false} />
+            <spriteMaterial map={texture} transparent={true} toneMapped={false} opacity={alpha} />
         </sprite>
     );
 }
