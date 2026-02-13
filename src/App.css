@@ -8,6 +8,7 @@
 
 .body {
     margin: 0;
+    overflow: auto;
 }
 .app-background {
     background-image: url('./assets/background.jpg');
@@ -30,8 +31,6 @@
     height: calc(100vh - 3rem - 150px);
 }
 .timelapse-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    width: 100%;
+    position: relative;
 }
