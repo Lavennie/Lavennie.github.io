@@ -80,11 +80,16 @@ export default function MeshFlat({meshPath, side, colorLight, colorMid, colorSha
     useFrame(() => {
         if (!ref.current) return;
 
-        const baseX =
-            side === "left"
-                ? -viewport.width / 4
-                : viewport.width / 4;
-
+        let baseX;
+        if (side === "left") {
+            baseX = -viewport.width / 4;
+        }
+        else if (side === "right") {
+            baseX = viewport.width / 4;
+        }
+        else {
+            baseX = 0;
+        }
         ref.current.position.x = baseX + x;
         ref.current.position.y = y;
         ref.current.position.z = z;

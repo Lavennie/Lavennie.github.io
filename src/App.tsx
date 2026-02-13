@@ -36,8 +36,8 @@ function App() {
                         >
                             <ambientLight intensity={0.5}/>
                             <Axolotl3D/>
-                            <MeshFlat meshPath={"coral_left.glb"} side={"left"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={3} y={-0.8} z={4} scale={0.65} />
-                            <MeshFlat meshPath={"coral_right.glb"} side={"right"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={-0.4} y={-2.7} z={0} scale={1.2} />
+                            <MeshFlat meshPath={"coral_left.glb"} side={"center"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={-2.5} y={-0.8} z={4} scale={0.65} />
+                            <MeshFlat meshPath={"coral_right.glb"} side={"center"} colorLight={"#FF9494"} colorMid={"#BF3D3D"} colorShade={"#683b59"} x={5} y={-2.7} z={0} scale={1.2} />
                             <Bubble x={0} y={-0.3}/>
                             <Bubble x={-0.4} y={1}/>
                             <Bubble x={0.7} y={1.3} z={2}/>
