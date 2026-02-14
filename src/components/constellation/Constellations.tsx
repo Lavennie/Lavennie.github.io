@@ -1,6 +1,9 @@
 import './Constellations.module.css'
 import React, { useRef, useEffect } from "react";
 
+type Node = { id: number; x: number; y: number };
+type Edge = { from: number; to: number };
+
 function buildAdjacencyList(edges : {from: number, to: number}[]) {
     const graph : Record<number, number[]> = {};
 
@@ -15,11 +18,11 @@ function buildAdjacencyList(edges : {from: number, to: number}[]) {
 
     return graph;
 }
-function bfs(startId : number, edges : {from: number, to: number}[]) {
+function bfs(startId : number, edges : Edge[]) : Edge[][] {
     const visited = new Set();
     const queue = [];
     const nextQueue = [startId];
-    const animatedEdges : { from: number, to: number }[][] = [];
+    const animatedEdges : Edge[][] = [];
     const graph = buildAdjacencyList(edges) ;
 
     while (nextQueue.length > 0) {
@@ -48,6 +51,67 @@ function bfs(startId : number, edges : {from: number, to: number}[]) {
 
     return animatedEdges;
 }
+function dfs(startId: number, edges: Edge[]) : Edge[][] {
+    const visited = new Set<number>();
+    const stack = [startId];
+    const animatedEdges: Edge[][] = [];
+    const graph = buildAdjacencyList(edges);
+
+    while (stack.length > 0) {
+        const current = stack.pop()!;
+        if (visited.has(current)) continue;
+        visited.add(current);
+
+        for (const neighbor of graph[current] ?? []) {
+            if (!visited.has(neighbor)) {
+                // Push neighbor onto stack for DFS
+                stack.push(neighbor);
+
+                // Record edge for animation
+                animatedEdges.push([{
+                    from: current,
+                    to: neighbor
+                }]);
+            }
+        }
+    }
+
+    return animatedEdges;
+}
+function edgesByLength(nodes: Node[], edges: Edge[], reverse : boolean): Edge[][] {
+    // Create a map for fast node lookup
+    const nodeMap = new Map<number, Node>();
+    nodes.forEach(n => nodeMap.set(n.id, n));
+
+    // Compute distance for each edge
+    const edgesWithLength = edges.map(e => {
+        const from = nodeMap.get(e.from);
+        const to = nodeMap.get(e.to);
+
+        if (!from || !to) {
+            throw new Error(`Invalid edge: ${e.from} -> ${e.to}`);
+        }
+
+        const dx = from.x - to.x;
+        const dy = from.y - to.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        return { ...e, length: dist };
+    });
+
+    // Sort edges by distance (shortest first)
+    if (reverse){
+        edgesWithLength.sort((a, b) => b.length - a.length);
+    }
+    else {
+        edgesWithLength.sort((a, b) => a.length - b.length);
+    }
+
+    // Return as animation steps: one edge per step
+    return edgesWithLength.map(e => [{ from: e.from, to: e.to }]);
+}
+
+
 
 export default function Constellations() {
     const canvasRef = useRef(null);
@@ -60,17 +124,17 @@ export default function Constellations() {
     const startTime = performance.now();
     const stretchDuration = 500;
 
-    const nodes = [
+    const nodes : Node[] = [
         { id: 1, x: 100, y: 100 },
         { id: 2, x: 300, y: 200 },
         { id: 3, x: 1300, y: 250 },
     ];
-    const edges = [
+    const edges : Edge[] = [
         { from: 1, to: 2 },
         { from: 2, to: 3 },
         { from: 3, to: 1 },
     ];
-    const animGraph = bfs(1, edges);
+    const animGraph = edgesByLength(nodes, edges, true);
 
     useEffect(() => {
         const canvas = canvasRef.current;
