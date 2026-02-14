@@ -121,8 +121,10 @@ export default function Constellations() {
     const starGlowSprite = new Image();
     starGlowSprite.src = "constellation_star_glow.png";
 
-    const startTime = performance.now();
+    let startTime = performance.now();
     const stretchDuration = 500;
+    const betweenDelay = 1000;
+    const fadeDelay = 500;
 
     const nodes : Node[] = [
         { id: 1, x: 100, y: 100 },
@@ -188,28 +190,19 @@ export default function Constellations() {
                     const to = nodes.find((n) => n.id === e.to);
                     const elapsed = time - startTime - i * stretchDuration;
                     const t = Math.min(Math.max(elapsed / stretchDuration, 0), 1);
+                    const alpha = 1 - Math.max((time - startTime - animGraph.length * stretchDuration - betweenDelay) / fadeDelay, 0);
                     ctx.beginPath();
                     ctx.moveTo(from.x, from.y);
                     ctx.lineTo(lerp(from.x, to.x, t), lerp(from.y, to.y, t));
-                    ctx.strokeStyle = "#7AB7FF";
+                    ctx.strokeStyle = `rgba(122, 183, 255, ${alpha})`; //"#7AB7FF";
                     ctx.lineWidth = 1;
                     ctx.stroke();
                 })
             })
-            /*edges.forEach((e, index) => {
-                const from = nodes.find((n) => n.id === e.from);
-                const to = nodes.find((n) => n.id === e.to);
 
-                const elapsed = time - startTime;
-                const t = Math.min(Math.max(elapsed / stretchDuration, 0), 1);
-                ctx.beginPath();
-                ctx.moveTo(from.x, from.y);
-                ctx.lineTo(lerp(from.x, to.x, t), lerp(from.y, to.y, t));
-                ctx.strokeStyle = "#7AB7FF";
-                ctx.lineWidth = 1;
-                ctx.stroke();
-            });*/
-
+            if (time - startTime - animGraph.length * stretchDuration > betweenDelay + fadeDelay + betweenDelay) {
+                startTime = performance.now();
+            }
             requestAnimationFrame(draw);
         }
 
