@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.2525697"
-     inkscape:cx="344.45937"
-     inkscape:cy="215.78202"
+     inkscape:zoom="0.71437499"
+     inkscape:cx="80.48994"
+     inkscape:cy="924.58444"
      inkscape:window-width="1600"
      inkscape:window-height="1137"
      inkscape:window-x="1592"
@@ -45,7 +45,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#d0ffb4;fill-rule:evenodd;stroke:#7c4e00;stroke-width:1;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1"
+       style="fill:#d0ffb4;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1"
        d="M -21.851852,286.66666 0,210 C 4.3457012,194.75322 9.0599843,179.50082 16.458471,165.47899 23.856958,151.45715 33.7779,138.84982 45.13199,127.78482 56.48608,116.71983 69.183384,107.14207 81.1713,96.767134 93.159215,86.392198 104.61862,74.847183 111.48148,60.555556 120.51806,41.737249 120.51806,18.818307 111.48148,0 H 210 V 210 H 0"
        id="path1"
        inkscape:path-effect="#path-effect1"
