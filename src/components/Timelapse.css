@@ -27,6 +27,7 @@
     color: #E5EBFE;
 }
 .timelapse-play {
+    font-family: 'Shantell Sans', cursive;
     position: absolute;
     top: 178px;
     left: 38px;
