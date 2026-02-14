@@ -1,0 +1,67 @@
+
+.project {
+    position: relative;
+    height: 300px;
+    font-family: 'Shantell Sans', cursive;
+    border-bottom: 3px solid #D0FFB4;
+    margin-bottom: 20px;
+}
+.project img{
+    height: 100%;
+    position: absolute;
+    right: 30%;
+    object-fit: fill;
+}
+
+.projectInfo {
+    color: #6E5806;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: calc(30% + 120px);
+    background-color: #B9E49F;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px 0px 0px 50px;
+}
+.projectInfo.left {
+    left: 0;
+    border-radius: 0px 30px 50px 0px;
+}
+.projectName {
+    text-align: center;
+    font-size: 3rem;
+    width: 100%;
+    right: 0;
+    border-radius: 30px 5px;
+    background-color: #F9FEE5AA;
+    text-decoration: none;
+    color: #6E5806;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+.projectInfo.left .projectName {
+    border-radius: 5px 30px;
+}
+a.projectName:hover {
+    background-color: #69A546;
+    color: #F9FEE5;
+}
+.projectDescription {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 2.8rem;
+}
+
+.project img.left {
+    left: 30%;
+    transform: scaleX(-1);
+}
+
+.projectGithub {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 50px;
+}

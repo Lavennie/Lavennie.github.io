@@ -1,13 +1,13 @@
-import './CodePage.css'
+import styles from './CodePage.module.css'
 import NavBar from './components/NavBar.tsx'
 import Footer from './components/Footer.tsx'
 import Project from './components/code/Project.tsx'
 
 export default function CodePage() {
     return(<>
-        <NavBar colorMain={"#F9FEE5"} colorSide={"#D0FFB4"} textColor={"#7ADF3E"} />
-        <div className="app-background">
-            <div className="site-container" style={{height: "1940px"}}>
+        <NavBar colorMain={"#F9FEE5"} colorSide={"#D0FFB4"} textColor={"#69A546"} />
+        <div className={`app-background ${styles.appBackground}`}>
+            <div className={`site-container ${styles.siteContainer}`} style={{height: "1940px"}}>
                 <Project
                     id="Our Cure"
                     imageUrl="project_our_cure.png"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import './NavBar.css'
 import nameBase from '.././assets/Banner Name Base.png'
 import nameOutline from '.././assets/Banner Name Outline.png'
+import { Link } from "react-router-dom";
 
 export default function NavBar({colorMain, colorSide, textColor} : {colorMain: string, colorSide : string, textColor : string}) {
     const gradientStyle: React.CSSProperties = {
@@ -29,10 +30,10 @@ export default function NavBar({colorMain, colorSide, textColor} : {colorMain: s
             <nav className="navbar" style={gradientStyle}>
                 <div className="navbar-inner">
                     <ul className="nav-links">
-                        <li><a href="#home" style={textStyle}>Home</a></li>
-                        <li><a href="#home" style={textStyle}>Art</a></li>
-                        <li><a href="#home" style={textStyle}>Coding</a></li>
-                        <li><a href="#home" style={textStyle}>Other</a></li>
+                        <li><Link to="/" style={textStyle}>Home</Link></li>
+                        <li><Link to="/art" style={textStyle}>Art</Link></li>
+                        <li><Link to="/projects" style={textStyle}>Coding</Link></li>
+                        <li><Link to="/other" style={textStyle}>Other</Link></li>
                     </ul>
                 </div>
             </nav>

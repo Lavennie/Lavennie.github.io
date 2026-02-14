@@ -1,4 +1,4 @@
-import './ArtPage.css'
+import styles from './ArtPage.module.css'
 import {Canvas} from '@react-three/fiber'
 
 import Axolotl3D from './components/Axolotl3D.tsx'
@@ -15,10 +15,10 @@ export default function ArtPage() {
         <>
             <NavBar colorMain={"#E5EBFE"} colorSide={"#C1B4FF"} textColor={"#714FFF"} />
             { /* SITE */ }
-            <div className="app-background">
-                <div className="site-container" style={{height: `calc(${timelapseListHeight()}px + 100vh + 100px)`}}>
+            <div className={`app-background ${styles.appBackground}`}>
+                <div className={`site-container ${styles.siteContainer}`} style={{height: `calc(${timelapseListHeight()}px + 100vh + 100px)`}}>
                     { /* axolotl swimming - fixed size image */ }
-                    <div className="axolotl-scene">
+                    <div className={styles.axolotlScene}>
                         { /* 3D OBJECTS - axolotl */ }
                         <Canvas
                             style={{
@@ -82,7 +82,7 @@ export default function ArtPage() {
                             <Sprite texturePath={"algae2.png"} x={-2} y={-4} z={-3} size={6}/>
                         </Canvas>
                     </div>
-                    <div className={"timelapse-list"}>
+                    <div className={styles.timelapseList}>
                         <CreateTimelapseList startTop={10}/>
                     </div>
                 </div>
