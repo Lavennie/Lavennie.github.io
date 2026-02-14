@@ -43,7 +43,6 @@
 
 .banner {
     height: 150px;
-    background-image: url('.././assets/banner.jpg');
     background-size: cover;
     background-position: 50% 37%;
     display: flex;

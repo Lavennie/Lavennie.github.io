@@ -36,7 +36,7 @@
     border-radius: 30px 5px;
     background-color: #F9FEE5AA;
     text-decoration: none;
-    color: #6E5806;
+    color: #734e00;
     transition: color 0.15s ease, background-color 0.15s ease;
 }
 .projectInfo.left .projectName {
@@ -61,7 +61,7 @@ a.projectName:hover {
 
 .projectGithub {
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 15px;
+    bottom: 15px;
     height: 50px;
 }

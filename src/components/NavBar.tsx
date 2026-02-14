@@ -4,7 +4,7 @@ import nameBase from '.././assets/Banner Name Base.png'
 import nameOutline from '.././assets/Banner Name Outline.png'
 import { Link } from "react-router-dom";
 
-export default function NavBar({colorMain, colorSide, textColor} : {colorMain: string, colorSide : string, textColor : string}) {
+export default function NavBar({colorMain, colorSide, textColor, bannerUrl} : {colorMain: string, colorSide : string, textColor : string, bannerUrl : string}) {
     const gradientStyle: React.CSSProperties = {
         background: `linear-gradient(
             to right,
@@ -23,7 +23,7 @@ export default function NavBar({colorMain, colorSide, textColor} : {colorMain: s
 
     return (
         <>
-            <div className="banner">
+            <div className="banner" style={{backgroundImage: `url(${bannerUrl})`}}>
                 <img src={nameBase}/>
                 <img src={nameOutline}/>
             </div>
