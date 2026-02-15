@@ -234,6 +234,111 @@ function generateEdgesTrianglesShortest(nodes: Record<number, Node>, triangleCha
 
     return edges;
 }
+function generateEdgesTrianglesCompact(
+    nodes: Record<number, Node>,
+    baseAngleDeg = 60,       // minimal angle for very short edges
+    maxAngleDeg = 100,       // maximal angle for long edges
+    maxTriangleLength = 150  // max distance to consider triangles
+): Edge[] {
+    const edges: Edge[] = [];
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    const angleAt = (a: Node, b: Node, c: Node) => {
+        const ab = [a.x - b.x, a.y - b.y];
+        const cb = [c.x - b.x, c.y - b.y];
+        const dot = ab[0]*cb[0] + ab[1]*cb[1];
+        const mag = Math.hypot(...ab) * Math.hypot(...cb);
+        if (mag === 0) return 0;
+        const cos = dot / mag;
+        return Math.acos(Math.min(Math.max(cos, -1), 1)) * (180/Math.PI);
+    }
+
+    // Connect multiples of 1000 to root
+    const multiplesOf1000 = Object.keys(nodes)
+        .map(Number)
+        .filter(id => id % 1000 === 0 && id > 0);
+    for (const id of multiplesOf1000) {
+        edges.push({ from: 0, to: id });
+    }
+
+    // Nearest-neighbor tree per constellation
+    const constelGroups: Record<string, number[]> = {};
+    Object.entries(nodes).forEach(([key, node]) => {
+        const id = Number(key);
+        if (!node.constel) return;
+        if (!constelGroups[node.constel]) constelGroups[node.constel] = [];
+        constelGroups[node.constel].push(id);
+    });
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        const connected = new Set<number>();
+        connected.add(group[0]);
+        const unconnected = new Set(group.slice(1));
+
+        // Build nearest-neighbor tree
+        while (unconnected.size > 0) {
+            let closestPair: [number, number] | null = null;
+            let minDist = Infinity;
+
+            for (const cId of connected) {
+                const cNode = nodes[cId];
+                for (const uId of unconnected) {
+                    const uNode = nodes[uId];
+                    const d = dist(cNode, uNode);
+                    if (d < minDist) {
+                        minDist = d;
+                        closestPair = [cId, uId];
+                    }
+                }
+            }
+
+            if (!closestPair) break;
+
+            const [from, to] = closestPair;
+            edges.push({ from, to });
+            connected.add(to);
+            unconnected.delete(to);
+        }
+
+        // Add weighted triangles
+        for (let i = 0; i < group.length; i++) {
+            const nId = group[i];
+            const nNode = nodes[nId];
+
+            const neighbors = edges.filter(e => e.from === nId || e.to === nId)
+                .map(e => (e.from === nId ? e.to : e.from));
+
+            for (let j = 0; j < neighbors.length; j++) {
+                for (let k = j + 1; k < neighbors.length; k++) {
+                    const a = nodes[neighbors[j]];
+                    const c = nodes[neighbors[k]];
+                    const d = dist(a, c);
+                    if (d > maxTriangleLength) continue;
+
+                    // Angle threshold grows with distance
+                    const weightedThreshold = baseAngleDeg + (maxAngleDeg - baseAngleDeg) * (d / maxTriangleLength);
+                    const ang = angleAt(a, nNode, c);
+                    if (ang < weightedThreshold) continue;
+
+                    // Avoid duplicate edge
+                    if (!edges.some(e =>
+                        (e.from === neighbors[j] && e.to === neighbors[k]) ||
+                        (e.from === neighbors[k] && e.to === neighbors[j])
+                    )) {
+                        edges.push({ from: neighbors[j], to: neighbors[k] });
+                    }
+                }
+            }
+        }
+    }
+
+    return edges;
+}
+
+
 
 
 function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
@@ -249,7 +354,7 @@ function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edg
         const step = [];
         while (queue.length > 0) {
             const current = queue.shift();
-            if (!current === undefined) continue;
+            if (!current === undefined || visited.has(current)) continue;
             visited.add(current);
 
             for (const neighbor of graph[current]) {
@@ -358,9 +463,9 @@ export default function Constellations() {
 
     const graphFuncs : AnimGraphFunc[] = [
         bfs,
-        dfs,
-        edgesByLengthIncrease,
-        edgesByLengthDecrease,
+        //dfs,
+        //edgesByLengthIncrease,
+        //edgesByLengthDecrease,
     ];
 
     const constellations : Record<string, Constellation> = {
@@ -396,7 +501,7 @@ export default function Constellations() {
         2013 : {constel: "starrail", x: 170, y: 260},
         2014 : {constel: "starrail", x: 260, y: 160},
     };
-    const edges = generateEdgesTrianglesShortest(nodes);
+    const edges = generateEdgesTrianglesCompact(nodes);
     let animGraph = randomGraphFunc()(0, nodes, edges);
 
 
