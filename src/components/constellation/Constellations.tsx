@@ -1,446 +1,10 @@
 import './Constellations.module.css'
+import * as Traversal from "./graphTraversal.tsx";
+import * as Construction from "./graphConstruction.tsx";
+import type {Node, Edge, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types";
 import React, { useRef, useEffect, useState } from "react";
+import {generateEdgesDirectionalPath, generateEdgesSpiral} from "./graphConstruction.tsx";
 
-type Node = {
-    constel?: string;
-    x: number;
-    y: number;
-    popup?: HTMLImageElement;
-};
-type Constellation = {
-    x: number;
-    y: number;
-    size: number;
-    img: HTMLImageElement;
-};
-type Edge = {
-    from: number;
-    to: number
-};
-type AnimGraphFunc = (startId: number, nodes: Record<number, Node>, edges: Edge[]) => Edge[][];
-
-
-function buildAdjacencyList(edges : {from: number, to: number}[]) {
-    const graph : Record<number, number[]> = {};
-
-    edges.forEach(({ from, to }) => {
-        // Ensure nodes exist
-        if (!graph[from]) graph[from] = [];
-        if (!graph[to]) graph[to] = [];
-
-        graph[from].push(to);
-        graph[to].push(from);
-    });
-
-    return graph;
-}
-function generateEdgesComplete(nodes: Record<number, Node>): Edge[] {
-    const edges: Edge[] = [];
-
-    // connect all multiples of 1000 to root 0
-    const multiplesOf1000 = Object.keys(nodes)
-        .map(Number)
-        .filter(id => id % 1000 === 0 && id > 0);
-
-    for (let i = 0; i < multiplesOf1000.length; i++) {
-        edges.push({ from: 0, to: multiplesOf1000[i] });
-    }
-
-    // create complete graphs within each constellation
-    const constelGroups: Record<string, number[]> = {};
-
-    Object.entries(nodes).forEach(([key, node]) => {
-        const id = Number(key);
-        const c = node.constel;
-        if (!c) return;
-        if (!constelGroups[c]) constelGroups[c] = [];
-        constelGroups[c].push(id);
-    });
-
-    for (const group of Object.values(constelGroups)) {
-        for (let i = 0; i < group.length; i++) {
-            for (let j = i + 1; j < group.length; j++) {
-                edges.push({ from: group[i], to: group[j] });
-            }
-        }
-    }
-
-    return edges;
-}
-function generateEdgesTree(nodes: Record<number, Node>): Edge[] {
-    const edges: Edge[] = [];
-
-    // connect all multiples of 1000 to root 0
-    const multiplesOf1000 = Object.keys(nodes)
-        .map(Number)
-        .filter(id => id % 1000 === 0 && id > 0);
-    for (const id of multiplesOf1000) {
-        edges.push({ from: 0, to: id });
-    }
-
-    // tree structure within each constellation
-    const constelGroups: Record<string, number[]> = {};
-
-    Object.entries(nodes).forEach(([key, node]) => {
-        const id = Number(key);
-        const c = node.constel;
-        if (!c) return;
-        if (!constelGroups[c]) constelGroups[c] = [];
-        constelGroups[c].push(id);
-    });
-
-    for (const group of Object.values(constelGroups)) {
-        // Sort or shuffle group if you want specific order
-        for (let i = 1; i < group.length; i++) {
-            // Connect each node to the previous node → creates a simple path/tree
-            edges.push({ from: group[i - 1], to: group[i] });
-        }
-    }
-
-    return edges;
-}
-function generateEdgesTreeShortest(nodes: Record<number, Node>): Edge[] {
-    const edges: Edge[] = [];
-
-    // connect all multiples of 1000 to root 0
-    const multiplesOf1000 = Object.keys(nodes)
-        .map(Number)
-        .filter(id => id % 1000 === 0 && id > 0);
-
-    for (const id of multiplesOf1000) {
-        edges.push({ from: 0, to: id });
-    }
-
-    // nearest-neighbor trees within each constellation
-    const constelGroups: Record<string, number[]> = {};
-
-    Object.entries(nodes).forEach(([key, node]) => {
-        const id = Number(key);
-        const c = node.constel;
-        if (!c) return;
-        if (!constelGroups[c]) constelGroups[c] = [];
-        constelGroups[c].push(id);
-    });
-
-    for (const group of Object.values(constelGroups)) {
-        if (group.length <= 1) continue;
-
-        const connected = new Set<number>();
-        connected.add(group[0]); // start from the first node
-
-        const unconnected = new Set(group.slice(1));
-
-        while (unconnected.size > 0) {
-            let closestPair: [number, number] | null = null;
-            let minDist = Infinity;
-
-            for (const cId of connected) {
-                const cNode = nodes[cId];
-                for (const uId of unconnected) {
-                    const uNode = nodes[uId];
-                    const dx = cNode.x - uNode.x;
-                    const dy = cNode.y - uNode.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closestPair = [cId, uId];
-                    }
-                }
-            }
-
-            if (!closestPair) break; // safety
-
-            const [from, to] = closestPair;
-            edges.push({ from, to });
-            connected.add(to);
-            unconnected.delete(to);
-        }
-    }
-
-    return edges;
-}
-
-function generateEdgesTrianglesShortest(nodes: Record<number, Node>, triangleChance = 0.05): Edge[] {
-    const edges: Edge[] = [];
-
-    // connect all multiples of 1000 to root 0
-    const multiplesOf1000 = Object.keys(nodes)
-        .map(Number)
-        .filter(id => id % 1000 === 0 && id > 0);
-
-    for (const id of multiplesOf1000) {
-        edges.push({from: 0, to: id});
-    }
-
-    // nearest-neighbor tree within each constellation
-    const constelGroups: Record<string, number[]> = {};
-
-    Object.entries(nodes).forEach(([key, node]) => {
-        const id = Number(key);
-        const c = node.constel;
-        if (!c) return;
-        if (!constelGroups[c]) constelGroups[c] = [];
-        constelGroups[c].push(id);
-    });
-
-    for (const group of Object.values(constelGroups)) {
-        if (group.length <= 1) continue;
-
-        const connected = new Set<number>();
-        connected.add(group[0]); // start from the first node
-        const unconnected = new Set(group.slice(1));
-
-        // MST-like connections
-        while (unconnected.size > 0) {
-            let closestPair: [number, number] | null = null;
-            let minDist = Infinity;
-
-            for (const cId of connected) {
-                const cNode = nodes[cId];
-                for (const uId of unconnected) {
-                    const uNode = nodes[uId];
-                    const dx = cNode.x - uNode.x;
-                    const dy = cNode.y - uNode.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closestPair = [cId, uId];
-                    }
-                }
-            }
-
-            if (!closestPair) break;
-
-            const [from, to] = closestPair;
-            edges.push({from, to});
-            connected.add(to);
-            unconnected.delete(to);
-        }
-
-        // add some extra edges to form triangles
-        for (let i = 0; i < group.length; i++) {
-            const n1 = group[i];
-            for (let j = i + 1; j < group.length; j++) {
-                const n2 = group[j];
-                // skip if edge already exists
-                if (edges.some(e => (e.from === n1 && e.to === n2) || (e.from === n2 && e.to === n1))) continue;
-                // randomly add edge based on triangleChance
-                if (Math.random() < triangleChance) {
-                    edges.push({from: n1, to: n2});
-                }
-            }
-        }
-    }
-
-    return edges;
-}
-function generateEdgesTrianglesCompact(
-    nodes: Record<number, Node>,
-    baseAngleDeg = 60,       // minimal angle for very short edges
-    maxAngleDeg = 100,       // maximal angle for long edges
-    maxTriangleLength = 150  // max distance to consider triangles
-): Edge[] {
-    const edges: Edge[] = [];
-
-    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
-
-    const angleAt = (a: Node, b: Node, c: Node) => {
-        const ab = [a.x - b.x, a.y - b.y];
-        const cb = [c.x - b.x, c.y - b.y];
-        const dot = ab[0]*cb[0] + ab[1]*cb[1];
-        const mag = Math.hypot(...ab) * Math.hypot(...cb);
-        if (mag === 0) return 0;
-        const cos = dot / mag;
-        return Math.acos(Math.min(Math.max(cos, -1), 1)) * (180/Math.PI);
-    }
-
-    // Connect multiples of 1000 to root
-    const multiplesOf1000 = Object.keys(nodes)
-        .map(Number)
-        .filter(id => id % 1000 === 0 && id > 0);
-    for (const id of multiplesOf1000) {
-        edges.push({ from: 0, to: id });
-    }
-
-    // Nearest-neighbor tree per constellation
-    const constelGroups: Record<string, number[]> = {};
-    Object.entries(nodes).forEach(([key, node]) => {
-        const id = Number(key);
-        if (!node.constel) return;
-        if (!constelGroups[node.constel]) constelGroups[node.constel] = [];
-        constelGroups[node.constel].push(id);
-    });
-
-    for (const group of Object.values(constelGroups)) {
-        if (group.length <= 1) continue;
-
-        const connected = new Set<number>();
-        connected.add(group[0]);
-        const unconnected = new Set(group.slice(1));
-
-        // Build nearest-neighbor tree
-        while (unconnected.size > 0) {
-            let closestPair: [number, number] | null = null;
-            let minDist = Infinity;
-
-            for (const cId of connected) {
-                const cNode = nodes[cId];
-                for (const uId of unconnected) {
-                    const uNode = nodes[uId];
-                    const d = dist(cNode, uNode);
-                    if (d < minDist) {
-                        minDist = d;
-                        closestPair = [cId, uId];
-                    }
-                }
-            }
-
-            if (!closestPair) break;
-
-            const [from, to] = closestPair;
-            edges.push({ from, to });
-            connected.add(to);
-            unconnected.delete(to);
-        }
-
-        // Add weighted triangles
-        for (let i = 0; i < group.length; i++) {
-            const nId = group[i];
-            const nNode = nodes[nId];
-
-            const neighbors = edges.filter(e => e.from === nId || e.to === nId)
-                .map(e => (e.from === nId ? e.to : e.from));
-
-            for (let j = 0; j < neighbors.length; j++) {
-                for (let k = j + 1; k < neighbors.length; k++) {
-                    const a = nodes[neighbors[j]];
-                    const c = nodes[neighbors[k]];
-                    const d = dist(a, c);
-                    if (d > maxTriangleLength) continue;
-
-                    // Angle threshold grows with distance
-                    const weightedThreshold = baseAngleDeg + (maxAngleDeg - baseAngleDeg) * (d / maxTriangleLength);
-                    const ang = angleAt(a, nNode, c);
-                    if (ang < weightedThreshold) continue;
-
-                    // Avoid duplicate edge
-                    if (!edges.some(e =>
-                        (e.from === neighbors[j] && e.to === neighbors[k]) ||
-                        (e.from === neighbors[k] && e.to === neighbors[j])
-                    )) {
-                        edges.push({ from: neighbors[j], to: neighbors[k] });
-                    }
-                }
-            }
-        }
-    }
-
-    return edges;
-}
-
-
-
-
-function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
-    const visited = new Set();
-    const queue = [];
-    const nextQueue = [startId];
-    const animatedEdges : Edge[][] = [];
-    const graph = buildAdjacencyList(edges) ;
-
-    while (nextQueue.length > 0) {
-        queue.push(...nextQueue);
-        nextQueue.length = 0;
-        const step = [];
-        while (queue.length > 0) {
-            const current = queue.shift();
-            if (!current === undefined || visited.has(current)) continue;
-            visited.add(current);
-
-            for (const neighbor of graph[current]) {
-                if (!visited.has(neighbor)) {
-                    nextQueue.push(neighbor);
-
-                    step.push({
-                        from: current,
-                        to: neighbor
-                    });
-                }
-            }
-        }
-        animatedEdges.push(step);
-        queue.length = 0;
-    }
-
-    return animatedEdges;
-}
-function dfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
-    const visited = new Set<number>();
-    const stack = [startId];
-    const animatedEdges: Edge[][] = [];
-    const graph = buildAdjacencyList(edges);
-
-    while (stack.length > 0) {
-        const current = stack.pop()!;
-        if (visited.has(current)) continue;
-        visited.add(current);
-
-        for (const neighbor of graph[current] ?? []) {
-            if (!visited.has(neighbor)) {
-                // Push neighbor onto stack for DFS
-                stack.push(neighbor);
-
-                // Record edge for animation
-                animatedEdges.push([{
-                    from: current,
-                    to: neighbor
-                }]);
-            }
-        }
-    }
-
-    return animatedEdges;
-}
-function edgesByLengthIncrease(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][]{
-    return edgesByLength(startId, nodes, edges, false);
-}
-function edgesByLengthDecrease(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][]{
-    return edgesByLength(startId, nodes, edges, true);
-}
-function edgesByLength(startId: number, nodes : Record<number, Node>, edges: Edge[], reverse : boolean): Edge[][] {
-    // Create a map for fast node lookup
-    const nodeMap = new Map<number, Node>();
-    for (const [id, n] of Object.entries(nodes)) {
-        nodeMap.set(Number(id), n);
-    }
-
-    // Compute distance for each edge
-    const edgesWithLength = edges.map(e => {
-        const from = nodeMap.get(e.from);
-        const to = nodeMap.get(e.to);
-
-        if (!from || !to) {
-            throw new Error(`Invalid edge: ${e.from} -> ${e.to}`);
-        }
-
-        const dx = from.x - to.x;
-        const dy = from.y - to.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        return { ...e, length: dist };
-    });
-
-    // Sort edges by distance (shortest first)
-    if (reverse){
-        edgesWithLength.sort((a, b) => b.length - a.length);
-    }
-    else {
-        edgesWithLength.sort((a, b) => a.length - b.length);
-    }
-
-    // Return as animation steps: one edge per step
-    return edgesWithLength.map(e => [{ from: e.from, to: e.to }]);
-}
 function randomizeNodePositions(
     nodes: Record<number, Node>,
     constellations: Record<string, Constellation>,
@@ -485,7 +49,6 @@ function randomizeNodePositions(
             }
         }
     }
-    return nodes;
 }
 function createNodesFromList(
     rootPos: [number, number],
@@ -548,13 +111,6 @@ function createNodesFromList(
 }
 
 
-
-
-
-
-
-
-
 export default function Constellations() {
     const canvasRef = useRef(null);
     const hoveredRef = useRef<number | null>(null);
@@ -571,11 +127,18 @@ export default function Constellations() {
     const fadeDelay = 500;
 
     // other algorithms are too slow, since they extend one edge at a time
-    const graphFuncs : AnimGraphFunc[] = [
-        bfs,
-        //dfs,
-        //edgesByLengthIncrease,
-        //edgesByLengthDecrease,
+    const traversalFuncs : TraverseGraphFunc[] = [
+        Traversal.bfs,
+        //Traversal.dfs,
+        //Traversal.edgesByLengthIncrease,
+        //Traversal.edgesByLengthDecrease,
+    ];
+    const constructionFuncs : ConstructGraphFunc[] = [
+        //Construction.generateEdgesComplete,
+        //Construction.generateEdgesTreeShortest,
+        //Construction.generateEdgesTrianglesCompact,
+        //Construction.generateEdgesDirectionalPath,
+        Construction.generateEdgesSpiral,
     ];
 
     const constellations : Record<string, Constellation> = {
@@ -631,12 +194,15 @@ export default function Constellations() {
 
     randomizeNodePositions(nodes, constellations, 80);
 
-    const edges = generateEdgesTrianglesCompact(nodes);
-    let animGraph = randomGraphFunc()(0, nodes, edges);
+    let edges = randomConstructionFunc()(nodes);
+    let animGraph = randomTraversalFunc()(0, nodes, edges);
 
-
-    function randomGraphFunc () {
-        return graphFuncs[Math.floor(Math.random() * graphFuncs.length)];
+    // ---------- HELPER FUNCTIONS ----------
+    function randomTraversalFunc () {
+        return traversalFuncs[Math.floor(Math.random() * traversalFuncs.length)];
+    }
+    function randomConstructionFunc () {
+        return constructionFuncs[Math.floor(Math.random() * constructionFuncs.length)];
     }
     function nodePosX(node : Node) {
         return (node.constel) ? constellations[node.constel].x + constellations[node.constel].size / 2 + node.x : node.x;
@@ -644,7 +210,6 @@ export default function Constellations() {
     function nodePosY(node : Node) {
         return (node.constel) ? constellations[node.constel].y + constellations[node.constel].size / 2 + node.y : node.y;
     }
-
     function getClosestNodeId() {
         let closestId = 1;
         let minDist = Number.MAX_VALUE;
@@ -659,7 +224,6 @@ export default function Constellations() {
 
         return closestId;
     }
-
     function handleMouseMove(e: React.MouseEvent<HTMLCanvasElement>) {
         const canvas = canvasRef.current!;
         const rect = canvas.getBoundingClientRect();
@@ -676,6 +240,8 @@ export default function Constellations() {
             Math.hypot(nodePosX(n) - mouseX, nodePosY(n) - mouseY) <= 20);
         hoveredRef.current = (hitEntry) ? Number(hitEntry[0]) : null;
     }
+    // -------- END HELPER FUNCTIONS --------
+
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -774,7 +340,8 @@ export default function Constellations() {
 
             if (time - startTime - animGraph.length * stretchDuration > betweenDelay + fadeDelay + betweenDelay) {
                 startTime = performance.now();
-                animGraph = randomGraphFunc()(getClosestNodeId(), nodes, edges);
+                edges = randomConstructionFunc()(nodes);
+                animGraph = randomTraversalFunc()(getClosestNodeId(), nodes, edges);
             }
             requestAnimationFrame(draw);
         }
