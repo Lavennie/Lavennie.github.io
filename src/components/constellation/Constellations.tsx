@@ -441,6 +441,114 @@ function edgesByLength(startId: number, nodes : Record<number, Node>, edges: Edg
     // Return as animation steps: one edge per step
     return edgesWithLength.map(e => [{ from: e.from, to: e.to }]);
 }
+function randomizeNodePositions(
+    nodes: Record<number, Node>,
+    constellations: Record<string, Constellation>,
+    minDistance = 50,
+    extraRadius = 0
+) {
+    const dist = (a: { x: number; y: number }, b: { x: number; y: number }) =>
+        Math.hypot(a.x - b.x, a.y - b.y);
+
+    for (const [constelKey, constel] of Object.entries(constellations)) {
+        // get nodes belonging to this constellation
+        const group = Object.entries(nodes)
+            .filter(([_, node]) => node.constel === constelKey)
+            .map(([id]) => Number(id));
+
+        const placed: { x: number; y: number }[] = [];
+
+        for (const id of group) {
+            if (id % 1000 === 0)
+                continue;
+            let attempts = 0;
+
+            while (attempts < 100) {
+                attempts++;
+
+                // Random polar coordinates
+                const angle = Math.random() * Math.PI * 2;
+                const r = Math.sqrt(Math.random()) * (constel.size / 2 + extraRadius);
+
+                const x = r * Math.cos(angle);
+                const y = r * Math.sin(angle);
+
+                const candidate = { x, y };
+
+                // ensure no overlap
+                if (placed.every(p => dist(p, candidate) >= minDistance)) {
+                    nodes[id].x = x;
+                    nodes[id].y = y;
+                    placed.push(candidate);
+                    break;
+                }
+            }
+        }
+    }
+    return nodes;
+}
+function createNodesFromList(
+    entries: [string, string][],                  // [constellation, imagePath]
+    constellationBaseIds: Record<string, [number, number]>  // map constellation → starting id of constellation (multiple of 1000)
+): Record<number, Node> {
+
+    const nodes: Record<number, Node> = {};
+
+    // global root
+    nodes[0] = { x: 1000, y: 600 };
+
+    // keep counters per constellation
+    const counters: Record<string, number> = {};
+
+    for (const [constel, imagePath] of entries) {
+
+        const baseId = constellationBaseIds[constel][0];
+        if (baseId === undefined) {
+            throw new Error(`Missing base id for constellation: ${constel}`);
+        }
+
+        // create root node if not already created
+        if (!nodes[baseId]) {
+            nodes[baseId] = {
+                constel,
+                x: 0,
+                y: 0
+            };
+            counters[constel] = 0;
+        }
+
+        counters[constel]++;
+
+        const nodeId = baseId + counters[constel];
+
+        nodes[nodeId] = {
+            constel,
+            x: 0,
+            y: 0,
+            popup: Object.assign(new Image(), { src: imagePath })
+        };
+    }
+
+    // extra nodes without popup image
+    for (const [constel, [baseId, extraNodes]] of Object.entries(constellationBaseIds)) {
+        for (let i = 0; i < extraNodes; i++) {
+            counters[constel]++;
+            const nodeId = baseId + counters[constel];
+
+            nodes[nodeId] = {
+                constel,
+                x: 0,
+                y: 0
+            };
+        }
+    }
+
+    return nodes;
+}
+
+
+
+
 
 
 
@@ -472,35 +580,55 @@ export default function Constellations() {
         "genshin": {x: 200, y: 100, size: 500, img: Object.assign(new Image(), { src: "constellations/constellation_genshin.png" }) },
         "starrail" : { x: 1100, y: 400, size: 600, img: Object.assign(new Image(), { src: "constellations/constellation_star_rail.png" }) }
     };
-    const nodes : Record<number, Node> = {
-        0 : {x: 1000, y: 600},
-        1000 : {constel: "genshin", x: 0, y: 100},
-        1001 : {constel: "genshin", x: 20, y: -150, popup: Object.assign(new Image(), { src: "constellations/genshin_nodkrai_purple.png" })},
-        1002 : {constel: "genshin", x: -70, y: 30, popup: Object.assign(new Image(), { src: "constellations/genshin_liyue.png" })},
-        1003 : {constel: "genshin", x: 100, y: 250},
-        1004 : {constel: "genshin", x: -160, y: 0},
-        1005 : {constel: "genshin", x: -200, y: 200},
-        1006 : {constel: "genshin", x: -30, y: 170},
-        1007 : {constel: "genshin", x: 150, y: 0},
-        1008 : {constel: "genshin", x: 100, y: -220},
-        1009 : {constel: "genshin", x: -140, y: -170},
-        // star rail
-        2000 : {constel: "starrail", x: 0, y: 0},
-        2001 : {constel: "starrail", x: 100, y: 30, popup: Object.assign(new Image(), { src: "constellations/starrail_evil_dromas.png" })},
-        2002 : {constel: "starrail", x: 250, y: 300},
-        2003 : {constel: "starrail", x: -30, y: 180},
-        2004 : {constel: "starrail", x: -200, y: 10},
-        2005 : {constel: "starrail", x: -90, y: -60},
-        2006 : {constel: "starrail", x: -150, y: -200},
-        2007 : {constel: "starrail", x: 200, y: -170},
-        2008 : {constel: "starrail", x: 160, y: -160},
-        2009 : {constel: "starrail", x: 110, y: -190},
-        2010 : {constel: "starrail", x: -200, y: 230},
-        2011 : {constel: "starrail", x: 200, y: -30},
-        2012 : {constel: "starrail", x: 240, y: 20},
-        2013 : {constel: "starrail", x: 170, y: 260},
-        2014 : {constel: "starrail", x: 260, y: 160},
-    };
+    const stars : [string, string][] = [
+        ["genshin", "constellations/genshin_actopan_underground.png"],
+        ["genshin", "constellations/genshin_ancient_sacred_mountain.png"],
+        ["genshin", "constellations/genshin_ashveil_peak_eye.png"],
+        ["genshin", "constellations/genshin_chasm_nest.png"],
+        ["genshin", "constellations/genshin_chasm_overground.png"],
+        ["genshin", "constellations/genshin_chasm_underground.png"],
+        ["genshin", "constellations/genshin_chenyu_vale.png"],
+        ["genshin", "constellations/genshin_dragonspine.png"],
+        ["genshin", "constellations/genshin_dragonspine_dragon_heart.png"],
+        ["genshin", "constellations/genshin_dragonspine_dragon_ribs.png"],
+        ["genshin", "constellations/genshin_enkanomiya_corals.png"],
+        ["genshin", "constellations/genshin_fontaine_city.png"],
+        ["genshin", "constellations/genshin_fontaine_outside.png"],
+        ["genshin", "constellations/genshin_fontaine_water_cubes.png"],
+        ["genshin", "constellations/genshin_hiisi_island.png"],
+        ["genshin", "constellations/genshin_icewind_suite.png"],
+        ["genshin", "constellations/genshin_inazuma_city.png"],
+        ["genshin", "constellations/genshin_inazuma_snake_bones.png"],
+        ["genshin", "constellations/genshin_inazuma_sunset.png"],
+        ["genshin", "constellations/genshin_liyue.png"],
+        ["genshin", "constellations/genshin_mondstadt.png"],
+        ["genshin", "constellations/genshin_mondstadt_cathedral.png"],
+        ["genshin", "constellations/genshin_mondstadt_city.png"],
+        ["genshin", "constellations/genshin_natlan_city.png"],
+        ["genshin", "constellations/genshin_natlan_sky_crack.png"],
+        ["genshin", "constellations/genshin_nodkrai_purple.png"],
+        ["genshin", "constellations/genshin_ochkanatlan.png"],
+        ["genshin", "constellations/genshin_opera_epiclese_front.png"],
+        ["genshin", "constellations/genshin_opera_epiclese_inside.png"],
+        ["genshin", "constellations/genshin_paha_isle.png"],
+        ["genshin", "constellations/genshin_pillar_of_embla.png"],
+        ["genshin", "constellations/genshin_royal_court_of_the_seelie.png"],
+        ["genshin", "constellations/genshin_sea_of_bygone_eras.png"],
+        ["genshin", "constellations/genshin_seirai_island.png"],
+        ["genshin", "constellations/genshin_sumeru_city.png"],
+        ["genshin", "constellations/genshin_sumeru_tornado.png"],
+        ["genshin", "constellations/genshin_summer_resort.png"],
+        ["genshin", "constellations/genshin_sunset.png"],
+        ["genshin", "constellations/genshin_wolf_web_event.png"],
+        ["starrail", "constellations/starrail_evil_dromas.png"],
+        ["starrail", "constellations/starrail_ipc_stelle.png"],
+        ["starrail", "constellations/starrail_knowing_bug.png"],
+        ["starrail", "constellations/starrail_mydei_stelle_danheng.png"],
+    ];
+    const nodes = createNodesFromList(stars, { "genshin": [1000, 10], "starrail": [2000, 10]});
+
+    randomizeNodePositions(nodes, constellations);
+
     const edges = generateEdgesTrianglesCompact(nodes);
     let animGraph = randomGraphFunc()(0, nodes, edges);
 
