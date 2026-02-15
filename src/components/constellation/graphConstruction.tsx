@@ -1,4 +1,5 @@
 import type { Node, Edge } from "./types";
+import Delaunator from "delaunator";
 
 function connectRoots(nodes: Record<number, Node>, edges: Edge[]) {
     // connect all multiples of 1000 to root 0
@@ -22,7 +23,7 @@ function constellationGroups(nodes: Record<number, Node>) {
     return constelGroups;
 }
 
-export function generateEdgesComplete(nodes: Record<number, Node>): Edge[] {
+export function complete(nodes: Record<number, Node>): Edge[] {
     const edges: Edge[] = [];
 
     connectRoots(nodes, edges);
@@ -38,7 +39,7 @@ export function generateEdgesComplete(nodes: Record<number, Node>): Edge[] {
 
     return edges;
 }
-export function generateEdgesTree(nodes: Record<number, Node>): Edge[] {
+export function tree(nodes: Record<number, Node>): Edge[] {
     const edges: Edge[] = [];
 
     connectRoots(nodes, edges);
@@ -53,7 +54,7 @@ export function generateEdgesTree(nodes: Record<number, Node>): Edge[] {
 
     return edges;
 }
-export function generateEdgesTreeShortest(nodes: Record<number, Node>): Edge[] {
+export function treeShortest(nodes: Record<number, Node>): Edge[] {
     const edges: Edge[] = [];
 
     connectRoots(nodes, edges);
@@ -96,7 +97,7 @@ export function generateEdgesTreeShortest(nodes: Record<number, Node>): Edge[] {
 
     return edges;
 }
-export function generateEdgesTrianglesShortest(nodes: Record<number, Node>, triangleChance = 0.05): Edge[] {
+export function trianglesShortest(nodes: Record<number, Node>, triangleChance = 0.05): Edge[] {
     const edges: Edge[] = [];
 
     connectRoots(nodes, edges);
@@ -153,7 +154,7 @@ export function generateEdgesTrianglesShortest(nodes: Record<number, Node>, tria
 
     return edges;
 }
-export function generateEdgesTrianglesCompact(
+export function trianglesCompact(
     nodes: Record<number, Node>,
     baseAngleDeg = 60,       // minimal angle for very short edges
     maxAngleDeg = 100,       // maximal angle for long edges
@@ -242,7 +243,7 @@ export function generateEdgesTrianglesCompact(
 
     return edges;
 }
-export function generateEdgesDirectionalPath(nodes: Record<number, Node>): Edge[] {
+export function directionalPath(nodes: Record<number, Node>): Edge[] {
     const edges: Edge[] = [];
 
     connectRoots(nodes, edges);
@@ -282,7 +283,7 @@ export function generateEdgesDirectionalPath(nodes: Record<number, Node>): Edge[
 
     return edges;
 }
-export function generateEdgesSpiral(
+export function spiral(
     nodes: Record<number, Node>,
     maxAngleDeg = 80 // maximum angle jump in degrees
 ): Edge[] {
@@ -348,6 +349,477 @@ export function generateEdgesSpiral(
             edges.push({ from: lastId, to: nextId! });
             lastId = nextId!;
             unvisited.delete(lastId);
+        }
+    }
+
+    return edges;
+}
+export function snowflake(
+    nodes: Record<number, Node>,
+    branchFactor = 3 // maximum children per node
+): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        const centerId = group[0];
+        const unvisited = new Set(group);
+        unvisited.delete(centerId);
+
+        const queue: number[] = [centerId];
+
+        while (queue.length > 0 && unvisited.size > 0) {
+            const parentId = queue.shift()!;
+            const parentNode = nodes[parentId];
+
+            // find closest unvisited nodes to parent
+            const candidates = Array.from(unvisited)
+                .map(id => ({ id, d: dist(parentNode, nodes[id]) }))
+                .sort((a, b) => a.d - b.d)
+                .slice(0, branchFactor); // pick top N closest
+
+            for (const c of candidates) {
+                edges.push({ from: parentId, to: c.id });
+                unvisited.delete(c.id);
+                queue.push(c.id);
+            }
+        }
+    }
+
+    return edges;
+}
+export function spiderweb(
+    nodes: Record<number, Node>,
+    maxRingNeighbors = 6, // max connections in the ring
+): Edge[] {
+    const edges: Edge[] = [];
+
+    // Connect constellation roots to global root
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        // Root for this constellation
+        const rootId = group[0];
+        const rootNode = nodes[rootId];
+
+        // Compute distance from constellation root for each node
+        const nodesWithDist = group.map(id => ({
+            id,
+            d: dist(rootNode, nodes[id])
+        }));
+
+        // Sort nodes by distance from root
+        nodesWithDist.sort((a, b) => a.d - b.d);
+
+        const layers: number[][] = [];
+
+        // Assign nodes to rings (layers) by distance from root
+        const layerStep = 100; // radial spacing between rings
+        nodesWithDist.forEach(({ id, d }) => {
+            if (id === rootId) return; // skip root itself
+            const layerIndex = Math.floor(d / layerStep);
+            if (!layers[layerIndex]) layers[layerIndex] = [];
+            layers[layerIndex].push(id);
+        });
+
+        // Connect root to closest nodes in first layer
+        const firstLayer = layers[0] || [];
+        firstLayer.forEach(id => edges.push({ from: rootId, to: id }));
+
+        // Connect nodes outward radially (tree)
+        for (let i = 0; i < layers.length; i++) {
+            const layer = layers[i];
+            if (!layer) continue;
+            for (const id of layer) {
+                if (i === 0) continue;
+                const prevLayer = layers[i - 1];
+                if (!prevLayer) continue;
+
+                // connect to closest node in previous layer
+                let closest = prevLayer[0];
+                let minD = dist(nodes[id], nodes[closest]);
+                for (const pid of prevLayer) {
+                    const d = dist(nodes[id], nodes[pid]);
+                    if (d < minD) {
+                        minD = d;
+                        closest = pid;
+                    }
+                }
+                edges.push({ from: closest, to: id });
+            }
+        }
+
+        // Connect nodes in the same layer to form web rings
+        for (const layer of layers) {
+            if (!layer || layer.length <= 1) continue;
+            const sortedByAngle = layer.sort((a, b) => {
+                const na = nodes[a];
+                const nb = nodes[b];
+                const angleA = Math.atan2(na.y - rootNode.y, na.x - rootNode.x);
+                const angleB = Math.atan2(nb.y - rootNode.y, nb.x - rootNode.x);
+                return angleA - angleB;
+            });
+
+            for (let i = 0; i < sortedByAngle.length; i++) {
+                const from = sortedByAngle[i];
+                const to = sortedByAngle[(i + 1) % sortedByAngle.length];
+                if (!edges.some(e => (e.from === from && e.to === to) || (e.from === to && e.to === from))) {
+                    edges.push({ from, to });
+                }
+            }
+        }
+    }
+
+    return edges;
+}
+export function rings(
+    nodes: Record<number, Node>,
+    baseNodesPerCycle = 8,   // inner-most cycle
+    growthFactor = 2,      // multiplier for each outer cycle
+    minAngleDeg = 60,        // minimal angle between consecutive nodes
+    bridgesPerCircle = 1     // bridges connecting consecutive cycles
+): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+    const angleBetween = (a: Node, b: Node) => Math.atan2(b.y - a.y, b.x - a.x);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        const centerId = group[0];
+        const centerNode = nodes[centerId];
+
+        // sort remaining nodes by distance from center
+        const remaining = group.slice(1)
+            .map(id => ({ id, d: dist(centerNode, nodes[id]) }))
+            .sort((a, b) => a.d - b.d)
+            .map(x => x.id);
+
+        const cycles: number[][] = [];
+        let cycleIndex = 0;
+
+        while (remaining.length > 0) {
+            // number of nodes in this cycle grows with the radius
+            const nodesInCycle = Math.ceil(baseNodesPerCycle * Math.pow(growthFactor, cycleIndex));
+
+            const cycle: number[] = [];
+            for (let i = 0; i < Math.min(nodesInCycle, remaining.length); i++) {
+                cycle.push(remaining.shift()!);
+            }
+
+            // sort by angle around center for circular arrangement
+            cycle.sort((a, b) => angleBetween(centerNode, nodes[a]) - angleBetween(centerNode, nodes[b]));
+
+            // create cycle edges
+            for (let i = 0; i < cycle.length; i++) {
+                const from = cycle[i];
+                const to = cycle[(i + 1) % cycle.length]; // close the cycle
+                edges.push({ from, to });
+            }
+
+            cycles.push(cycle);
+            cycleIndex++;
+        }
+
+        // connect center to first cycle
+        if (cycles.length > 0) {
+            const firstCycle = cycles[0];
+            let closestNode = firstCycle[0];
+            let minDist = dist(centerNode, nodes[closestNode]);
+
+            for (const id of firstCycle) {
+                const d = dist(centerNode, nodes[id]);
+                if (d < minDist) {
+                    minDist = d;
+                    closestNode = id;
+                }
+            }
+
+            edges.push({ from: centerId, to: closestNode });
+        }
+
+        // connect consecutive cycles with bridges
+        for (let i = 1; i < cycles.length; i++) {
+            const outer = cycles[i];
+            const inner = cycles[i - 1];
+
+            for (let b = 0; b < Math.min(bridgesPerCircle, outer.length); b++) {
+                let bestPair: [number, number] | null = null;
+                let minDist = Infinity;
+
+                for (const o of outer) {
+                    for (const inId of inner) {
+                        const d = dist(nodes[o], nodes[inId]);
+                        if (d < minDist) {
+                            minDist = d;
+                            bestPair = [o, inId];
+                        }
+                    }
+                }
+
+                if (bestPair) {
+                    edges.push({ from: bestPair[0], to: bestPair[1] });
+                }
+            }
+        }
+    }
+
+    return edges;
+}
+export function ice(
+    nodes: Record<number, Node>,
+    baseNodesPerCycle = 8,   // inner-most cycle
+    growthFactor = 2,        // multiplier for each outer cycle
+    minAngleDeg = 60          // minimal angle between consecutive nodes
+): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+    const angleBetween = (a: Node, b: Node) => Math.atan2(b.y - a.y, b.x - a.x);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        const centerId = group[0];
+        const centerNode = nodes[centerId];
+
+        // sort remaining nodes by distance from center
+        const remaining = group.slice(1)
+            .map(id => ({ id, d: dist(centerNode, nodes[id]) }))
+            .sort((a, b) => a.d - b.d)
+            .map(x => x.id);
+
+        const cycles: number[][] = [];
+        let cycleIndex = 0;
+
+        while (remaining.length > 0) {
+            const nodesInCycle = Math.ceil(baseNodesPerCycle * Math.pow(growthFactor, cycleIndex));
+
+            const cycle: number[] = [];
+            for (let i = 0; i < Math.min(nodesInCycle, remaining.length); i++) {
+                cycle.push(remaining.shift()!);
+            }
+
+            // sort by angle around center for circular arrangement
+            cycle.sort((a, b) => angleBetween(centerNode, nodes[a]) - angleBetween(centerNode, nodes[b]));
+
+            // create cycle edges
+            for (let i = 0; i < cycle.length; i++) {
+                const from = cycle[i];
+                const to = cycle[(i + 1) % cycle.length]; // close the cycle
+                edges.push({ from, to });
+            }
+
+            cycles.push(cycle);
+            cycleIndex++;
+        }
+
+        // --- radial spokes ---
+        const spokesPerCycle = 3; // you can adjust
+        let prevLayer: number[] = [centerId];
+
+        for (const cycle of cycles) {
+            // pick spokes evenly along the cycle
+            for (let s = 0; s < Math.min(spokesPerCycle, cycle.length); s++) {
+                const spokeNode = cycle[Math.floor(s * cycle.length / spokesPerCycle)];
+
+                // connect to the closest node in previous layer (not always center)
+                let closestPrev = prevLayer[0];
+                let closestDist = dist(nodes[spokeNode], nodes[closestPrev]);
+
+                for (const prev of prevLayer) {
+                    const d = dist(nodes[spokeNode], nodes[prev]);
+                    if (d < closestDist) {
+                        closestDist = d;
+                        closestPrev = prev;
+                    }
+                }
+
+                edges.push({ from: closestPrev, to: spokeNode });
+            }
+
+            prevLayer = [...cycle]; // next cycle connects to this one
+        }
+    }
+
+    return edges;
+}
+export function crystal(nodes: Record<number, Node>, neighbors = 4): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        // Keep track of which nodes are connected
+        const connected = new Set<number>();
+        connected.add(group[0]); // start from center/root
+        const unconnected = new Set(group.slice(1));
+
+        // Connect each node to its closest `neighbors` nodes
+        for (const id of group) {
+            const node = nodes[id];
+
+            // compute distances to all other nodes in the group
+            const distances = group
+                .filter(otherId => otherId !== id)
+                .map(otherId => ({ id: otherId, d: dist(node, nodes[otherId]) }))
+                .sort((a, b) => a.d - b.d);
+
+            for (let i = 0; i < Math.min(neighbors, distances.length); i++) {
+                const neighborId = distances[i].id;
+                // avoid duplicates
+                if (!edges.some(e => (e.from === id && e.to === neighborId) || (e.from === neighborId && e.to === id))) {
+                    edges.push({ from: id, to: neighborId });
+                }
+            }
+        }
+
+        // ensure connectivity: connect any remaining unconnected nodes to the nearest connected one
+        while (unconnected.size > 0) {
+            let bestPair: [number, number] | null = null;
+            let minDist = Infinity;
+
+            for (const uId of unconnected) {
+                const uNode = nodes[uId];
+                for (const cId of connected) {
+                    const cNode = nodes[cId];
+                    const d = dist(uNode, cNode);
+                    if (d < minDist) {
+                        minDist = d;
+                        bestPair = [uId, cId];
+                    }
+                }
+            }
+
+            if (!bestPair) break;
+
+            const [uId, cId] = bestPair;
+            edges.push({ from: uId, to: cId });
+            connected.add(uId);
+            unconnected.delete(uId);
+        }
+    }
+
+    return edges;
+}
+export function delaunay(nodes: Record<number, Node>): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        // prepare coordinates
+        const points: [number, number][] = group.map(id => {
+            const n = nodes[id];
+            return [n.x, n.y];
+        });
+
+        // compute Delaunay triangulation
+        const delaunay = Delaunator.from(points);
+
+        // convert triangles into edges
+        for (let t = 0; t < delaunay.triangles.length; t += 3) {
+            const a = group[delaunay.triangles[t]];
+            const b = group[delaunay.triangles[t + 1]];
+            const c = group[delaunay.triangles[t + 2]];
+
+            const triEdges: [number, number][] = [
+                [a, b],
+                [b, c],
+                [c, a],
+            ];
+
+            for (const [from, to] of triEdges) {
+                if (!edges.some(e => (e.from === from && e.to === to) || (e.from === to && e.to === from))) {
+                    edges.push({ from, to });
+                }
+            }
+        }
+    }
+
+    return edges;
+}
+
+export function denseSparse(
+    nodes: Record<number, Node>,
+    maxRadius = 500
+): Edge[] {
+    const edges: Edge[] = [];
+
+    connectRoots(nodes, edges);
+    const constelGroups = constellationGroups(nodes);
+
+    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    for (const group of Object.values(constelGroups)) {
+        if (group.length <= 1) continue;
+
+        const centerNode = nodes[group[0]];
+
+        // sort nodes by distance from the center
+        const sorted = group.slice(1).map(id => ({
+            id,
+            d: dist(centerNode, nodes[id])
+        })).sort((a, b) => a.d - b.d);
+
+        const connected = new Set<number>();
+        connected.add(group[0]); // center node is connected
+
+        for (const node of sorted) {
+            // find closest connected node
+            let closest: number | null = null;
+            let minDist = Infinity;
+            for (const cId of connected) {
+                const d = dist(nodes[node.id], nodes[cId]);
+                if (d < minDist) {
+                    minDist = d;
+                    closest = cId;
+                }
+            }
+
+            if (closest !== null) {
+                edges.push({ from: node.id, to: closest });
+            }
+
+            connected.add(node.id);
+
+            // optional: add extra connections to nearby connected nodes for density
+            const factor = 1 - Math.min(node.d / maxRadius, 1);
+            const connectionRadius = 50 + factor * 200;
+
+            for (const cId of connected) {
+                if (cId === node.id || cId === closest) continue;
+                const d = dist(nodes[node.id], nodes[cId]);
+                if (d <= connectionRadius && Math.random() < factor) {
+                    edges.push({ from: node.id, to: cId });
+                }
+            }
         }
     }
 

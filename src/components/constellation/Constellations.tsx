@@ -3,7 +3,6 @@ import * as Traversal from "./graphTraversal.tsx";
 import * as Construction from "./graphConstruction.tsx";
 import type {Node, Edge, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types";
 import React, { useRef, useEffect, useState } from "react";
-import {generateEdgesDirectionalPath, generateEdgesSpiral} from "./graphConstruction.tsx";
 
 function randomizeNodePositions(
     nodes: Record<number, Node>,
@@ -134,11 +133,18 @@ export default function Constellations() {
         //Traversal.edgesByLengthDecrease,
     ];
     const constructionFuncs : ConstructGraphFunc[] = [
-        //Construction.generateEdgesComplete,
-        //Construction.generateEdgesTreeShortest,
-        //Construction.generateEdgesTrianglesCompact,
-        //Construction.generateEdgesDirectionalPath,
-        Construction.generateEdgesSpiral,
+        //Construction.complete, // it lags
+        Construction.trianglesShortest,
+        Construction.trianglesCompact,
+        Construction.directionalPath,
+        Construction.spiral,
+        Construction.snowflake,
+        Construction.spiderweb,
+        Construction.rings,
+        Construction.ice,
+        Construction.crystal,
+        Construction.delaunay,
+        Construction.denseSparse,
     ];
 
     const constellations : Record<string, Constellation> = {
