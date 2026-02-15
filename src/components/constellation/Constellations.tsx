@@ -444,8 +444,8 @@ function edgesByLength(startId: number, nodes : Record<number, Node>, edges: Edg
 function randomizeNodePositions(
     nodes: Record<number, Node>,
     constellations: Record<string, Constellation>,
-    minDistance = 50,
-    extraRadius = 0
+    extraRadius = 0,
+    minDistance = 50
 ) {
     const dist = (a: { x: number; y: number }, b: { x: number; y: number }) =>
         Math.hypot(a.x - b.x, a.y - b.y);
@@ -488,6 +488,7 @@ function randomizeNodePositions(
     return nodes;
 }
 function createNodesFromList(
+    rootPos: [number, number],
     entries: [string, string][],                  // [constellation, imagePath]
     constellationBaseIds: Record<string, [number, number]>  // map constellation → starting id of constellation (multiple of 1000)
 ): Record<number, Node> {
@@ -495,7 +496,7 @@ function createNodesFromList(
     const nodes: Record<number, Node> = {};
 
     // global root
-    nodes[0] = { x: 1000, y: 600 };
+    nodes[0] = { x: rootPos[0], y: rootPos[1] };
 
     // keep counters per constellation
     const counters: Record<string, number> = {};
@@ -569,6 +570,7 @@ export default function Constellations() {
     const betweenDelay = 1000;
     const fadeDelay = 500;
 
+    // other algorithms are too slow, since they extend one edge at a time
     const graphFuncs : AnimGraphFunc[] = [
         bfs,
         //dfs,
@@ -577,8 +579,8 @@ export default function Constellations() {
     ];
 
     const constellations : Record<string, Constellation> = {
-        "genshin": {x: 200, y: 100, size: 500, img: Object.assign(new Image(), { src: "constellations/constellation_genshin.png" }) },
-        "starrail" : { x: 1100, y: 400, size: 600, img: Object.assign(new Image(), { src: "constellations/constellation_star_rail.png" }) }
+        "genshin": {x: 300, y: 100, size: 800, img: Object.assign(new Image(), { src: "constellations/constellation_genshin.png" }) },
+        "starrail" : { x: 1000, y: 1000, size: 700, img: Object.assign(new Image(), { src: "constellations/constellation_star_rail.png" }) }
     };
     const stars : [string, string][] = [
         ["genshin", "constellations/genshin_actopan_underground.png"],
@@ -625,9 +627,9 @@ export default function Constellations() {
         ["starrail", "constellations/starrail_knowing_bug.png"],
         ["starrail", "constellations/starrail_mydei_stelle_danheng.png"],
     ];
-    const nodes = createNodesFromList(stars, { "genshin": [1000, 10], "starrail": [2000, 10]});
+    const nodes = createNodesFromList([1000, 1000], stars, { "genshin": [1000, 20], "starrail": [2000, 10]});
 
-    randomizeNodePositions(nodes, constellations);
+    randomizeNodePositions(nodes, constellations, 80);
 
     const edges = generateEdgesTrianglesCompact(nodes);
     let animGraph = randomGraphFunc()(0, nodes, edges);
@@ -760,7 +762,7 @@ export default function Constellations() {
             if (hoveredRef.current){
                 const n = Object.entries(nodes).find(([id, _]) => Number(id) === hoveredRef.current)[1];
                 if (n.popup) {
-                    const height = 200;
+                    const height = 400;
                     const width = height * n.popup.width / n.popup.height;
                     const y = nodePosY(n);
                     ctx.drawImage(n.popup,
