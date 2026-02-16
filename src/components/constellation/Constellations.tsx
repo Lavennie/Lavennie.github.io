@@ -264,13 +264,8 @@ export default function Constellations() {
             const parent = canvas.parentElement;
             if (!parent) return; // exit if no parent
 
-            canvas.width = parent.clientWidth;
-            canvas.height = parent.clientHeight;
-
-            const ctx = canvas.getContext("2d");
-            if (!ctx) return;
-
-            ctx.setTransform(canvas.width / 2000, 0, 0, canvas.height / 2000, 0, 0);
+            canvas.width = 2000;
+            canvas.height = 2000 * parent.clientHeight / parent.clientWidth;
 
             draw(performance.now());
         }
@@ -289,7 +284,7 @@ export default function Constellations() {
         }
         function draw(time: number) {
             if (!ctx || !canvas) return;
-            ctx.clearRect(0, 0, 2000, 2000 * canvas.width / canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // constellation images
             for (const c of Object.values(constellations)) {
