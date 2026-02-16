@@ -3,14 +3,22 @@ import youtubeLogo from '.././assets/logo-youtube.svg'
 import deviantartLogo from '.././assets/logo-deviantart.svg'
 import githubLogo from '.././assets/logo-github.svg'
 
-export default function Footer({colorMain, colorSide, logoHue} : {colorMain: string, colorSide : string, logoHue : number}) {
+type FooterProps = {
+    colorMain: string;
+    colorSide : string;
+    logoHue : number;
+    textColor : string;
+};
+
+export default function Footer({colorMain, colorSide, logoHue, textColor} : FooterProps) {
     const gradientStyle: React.CSSProperties = {
         background: `linear-gradient(
             to right,
             ${colorSide},
             ${colorMain} 10%,
             ${colorMain} 90%,
-            ${colorSide})`
+            ${colorSide})`,
+        borderTop: `1px solid ${textColor}44`,
     };
     const logoStyle: React.CSSProperties = {
         filter: `brightness(0.6) sepia(1) hue-rotate(${logoHue}deg) saturate(5)`,
