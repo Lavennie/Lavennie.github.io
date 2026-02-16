@@ -24,11 +24,23 @@
     flex-direction: column;
     border-radius: 30px 0px 0px 50px;
 }
+.projectInfo > div:first-of-type {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.projectInfo.left > div:first-of-type {
+    transform: scaleX(-1);
+}
 .projectInfo.left {
     left: 0;
     border-radius: 0px 30px 50px 0px;
 }
 .projectName {
+    z-index: 1;
     text-align: center;
     font-size: 3rem;
     width: 100%;
@@ -47,6 +59,7 @@ a.projectName:hover {
     color: #F9FEE5;
 }
 .projectDescription {
+    z-index: 1;
     font-size: 1.3rem;
     text-align: center;
     margin-top: auto;

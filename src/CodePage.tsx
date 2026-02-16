@@ -12,6 +12,7 @@ export default function CodePage() {
                 <Project
                     id="Our Cure"
                     imageUrl="project_our_cure.png"
+                    iconUrl="project_our_cure_icon.png"
                     description="Video game\n2D tactical RPG"
                     link="https://celestide-games.github.io/index.html"
                     imgx={0}
@@ -20,6 +21,7 @@ export default function CodePage() {
                 <Project
                     id="GNN Fish"
                     imageUrl="project_mlg_fish.png"
+                    iconUrl="project_mlg_fish_icon.png"
                     description="Graph neural networks\nFish trajectory prediction"
                     imgx={0}
                     imgy={0}
@@ -29,6 +31,7 @@ export default function CodePage() {
                 <Project
                     id="Pixel Paint"
                     imageUrl="project_pixel_paint.png"
+                    iconUrl="project_pixel_paint_icon.png"
                     description="Unity extension\n2D painting"
                     imgx={-300}
                     imgy={0}
@@ -36,6 +39,7 @@ export default function CodePage() {
                 <Project
                     id="MPA"
                     imageUrl="project_mpa.png"
+                    iconUrl="project_mpa_icon.png"
                     description="3D animated meshes\nLighting\nCollision detection"
                     link="https://lavennie.itch.io/method-process-algorithm"
                     githubLink="https://lavennie.itch.io/method-process-algorithm"
@@ -47,6 +51,7 @@ export default function CodePage() {
                 <Project
                     id="Game Engine"
                     imageUrl="project_game_engine.png"
+                    iconUrl="project_game_engine_icon.png"
                     description="3D animated meshes\nLighting\nCollision detection"
                     imgx={100}
                     imgy={0}
@@ -54,6 +59,7 @@ export default function CodePage() {
                 <Project
                     id="Physics Character"
                     imageUrl="project_physics_character.png"
+                    iconUrl="project_physics_character_icon.png"
                     description="Physics Controlled"
                     imgx={100}
                     imgy={0}
