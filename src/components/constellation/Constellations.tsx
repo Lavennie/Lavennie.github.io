@@ -264,8 +264,13 @@ export default function Constellations() {
             const parent = canvas.parentElement;
             if (!parent) return; // exit if no parent
 
-            canvas.width = 2000;
-            canvas.height = (parent.clientHeight) / window.innerWidth * 2000;
+            canvas.width = parent.clientWidth;
+            canvas.height = parent.clientHeight;
+
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return;
+
+            ctx.setTransform(canvas.width / 2000, 0, 0, canvas.height / 2000, 0, 0);
 
             draw(performance.now());
         }
@@ -284,7 +289,7 @@ export default function Constellations() {
         }
         function draw(time: number) {
             if (!ctx || !canvas) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, 2000, 2000);
 
             // constellation images
             for (const c of Object.values(constellations)) {
@@ -365,6 +370,7 @@ export default function Constellations() {
                 animGraph = randomTraversalFunc()(getClosestNodeId(), nodes, edges);
             }
             requestAnimationFrame(draw);
+
         }
 
         // Start animation once images are loaded
@@ -382,7 +388,7 @@ export default function Constellations() {
 
         window.addEventListener("resize", resizeCanvas);
         resizeCanvas();
+        return () => window.removeEventListener("resize", resizeCanvas);
     }, []);
-
     return <canvas ref={canvasRef} id="canvas" onMouseMove={handleMouseMove}/>;
 };
