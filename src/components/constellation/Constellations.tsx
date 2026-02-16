@@ -289,7 +289,7 @@ export default function Constellations() {
         }
         function draw(time: number) {
             if (!ctx || !canvas) return;
-            ctx.clearRect(0, 0, 2000, 2000);
+            ctx.clearRect(0, 0, 2000, 2000 * canvas.width / canvas.height);
 
             // constellation images
             for (const c of Object.values(constellations)) {
