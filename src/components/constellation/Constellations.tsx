@@ -265,7 +265,7 @@ export default function Constellations() {
             if (!parent) return; // exit if no parent
 
             canvas.width = 2000;
-            canvas.height = 2000 * parent.clientHeight / parent.clientWidth;
+            canvas.height = 2000 * parent.clientHeight / window.innerWidth;
 
             draw(performance.now());
         }
@@ -383,7 +383,6 @@ export default function Constellations() {
 
         window.addEventListener("resize", resizeCanvas);
         resizeCanvas();
-        return () => window.removeEventListener("resize", resizeCanvas);
     }, []);
     return <canvas ref={canvasRef} id="canvas" onMouseMove={handleMouseMove}/>;
 };
