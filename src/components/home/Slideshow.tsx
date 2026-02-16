@@ -1,5 +1,5 @@
 import styles from "./Slideshow.module.css";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Slideshow = {
     title: string;
@@ -27,7 +27,7 @@ export default function Slideshow() {
     const [current, setCurrent] = useState(0);
     const slideCount = slides.length;
     const slideInterval = 5000;
-    const timerRef = useRef<NodeJS.Timeout | null>(null);
+    const timerRef = useRef<number | null>(null);
 
     const resetTimer = () => {
         if (timerRef.current) clearTimeout(timerRef.current);
@@ -40,7 +40,7 @@ export default function Slideshow() {
     useEffect(() => {
         resetTimer();
         return () => {
-            if (timerRef.current) clearTimeout(timerRef.current);
+            if (timerRef.current) window.clearTimeout(timerRef.current);
         };
     }, [current]);
 

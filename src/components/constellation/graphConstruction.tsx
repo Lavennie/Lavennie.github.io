@@ -249,8 +249,6 @@ export function directionalPath(nodes: Record<number, Node>): Edge[] {
     connectRoots(nodes, edges);
     const constelGroups = constellationGroups(nodes);
 
-    const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
-
     for (const group of Object.values(constelGroups)) {
         if (group.length <= 1) continue;
 
@@ -394,10 +392,7 @@ export function snowflake(
 
     return edges;
 }
-export function spiderweb(
-    nodes: Record<number, Node>,
-    maxRingNeighbors = 6, // max connections in the ring
-): Edge[] {
+export function spiderweb(nodes: Record<number, Node>): Edge[] {
     const edges: Edge[] = [];
 
     // Connect constellation roots to global root
@@ -487,7 +482,6 @@ export function rings(
     nodes: Record<number, Node>,
     baseNodesPerCycle = 8,   // inner-most cycle
     growthFactor = 2,      // multiplier for each outer cycle
-    minAngleDeg = 60,        // minimal angle between consecutive nodes
     bridgesPerCircle = 1     // bridges connecting consecutive cycles
 ): Edge[] {
     const edges: Edge[] = [];
@@ -584,8 +578,7 @@ export function rings(
 export function ice(
     nodes: Record<number, Node>,
     baseNodesPerCycle = 8,   // inner-most cycle
-    growthFactor = 2,        // multiplier for each outer cycle
-    minAngleDeg = 60          // minimal angle between consecutive nodes
+    growthFactor = 2        // multiplier for each outer cycle
 ): Edge[] {
     const edges: Edge[] = [];
 

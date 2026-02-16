@@ -1,7 +1,6 @@
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
 import styles from "./HomePage.module.css";
-import {timelapseListHeight} from "./assets/TimelapseLibrary.tsx";
 import Slideshow from "./components/home/Slideshow.tsx";
 
 export default function HomePage() {

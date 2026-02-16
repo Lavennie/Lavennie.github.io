@@ -1,8 +1,8 @@
 import './Constellations.module.css'
 import * as Traversal from "./graphTraversal.tsx";
 import * as Construction from "./graphConstruction.tsx";
-import type {Node, Edge, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types";
-import React, { useRef, useEffect, useState } from "react";
+import type {Node, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types";
+import React, { useRef, useEffect } from "react";
 
 function randomizeNodePositions(
     nodes: Record<number, Node>,
@@ -111,9 +111,8 @@ function createNodesFromList(
 
 
 export default function Constellations() {
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const hoveredRef = useRef<number | null>(null);
-    const [hovered, setHovered] = useState<number | null>(null);
     const mousePos = useRef({ x: 0, y: 0 });
 
     const starSprite = Object.assign(new Image(), { src: "constellation_star.png" });
@@ -242,7 +241,7 @@ export default function Constellations() {
         mousePos.current.x = (e.clientX - rect.left) * scaleX;
         mousePos.current.y = (e.clientY - rect.top) * scaleY;
 
-        const hitEntry = Object.entries(nodes).find(([id, n]) =>
+        const hitEntry = Object.entries(nodes).find(([, n]) =>
             Math.hypot(nodePosX(n) - mouseX, nodePosY(n) - mouseY) <= 20);
         hoveredRef.current = (hitEntry) ? Number(hitEntry[0]) : null;
     }
@@ -251,19 +250,27 @@ export default function Constellations() {
 
     useEffect(() => {
         const canvas = canvasRef.current;
+        if (!canvas) return;
         // Set canvas size to match window
         const ctx = canvas.getContext("2d");
 
-        function lerp(a, b, t) {
+        function lerp(a: number, b: number, t: number) {
             return a + (b - a) * t; // t ∈ [0,1]
         }
         function resizeCanvas() {
-            canvas.width = 2000;
-            canvas.height = document.getElementById("canvas").parentElement.clientHeight / window.innerWidth * 2000;
+            const canvas = canvasRef.current;
+            if (!canvas) return; // exit if not mounted
 
-            draw();
+            const parent = canvas.parentElement;
+            if (!parent) return; // exit if no parent
+
+            canvas.width = 2000;
+            canvas.height = (parent.clientHeight) / window.innerWidth * 2000;
+
+            draw(performance.now());
         }
-        function drawConstellationImage(img, color : string, x : number, y : number, size : number) {
+        function drawConstellationImage(img: HTMLImageElement, color: string, x: number, y: number, size: number) {
+            if (!ctx) return;
             ctx.drawImage(
                 img,
                 0, 0, 512, 512,
@@ -275,7 +282,8 @@ export default function Constellations() {
 
             ctx.globalCompositeOperation = "source-over";
         }
-        function draw(time) {
+        function draw(time: number) {
+            if (!ctx || !canvas) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // constellation images
@@ -288,8 +296,12 @@ export default function Constellations() {
                 // list is a collection of edges that expand in a single step
                 list.forEach((e) => {
                     // a single edge
-                    const from = Object.entries(nodes).find(([id, _]) => Number(id) === e.from)[1];
-                    const to = Object.entries(nodes).find(([id, _]) => Number(id) === e.to)[1];
+                    const fromEntry = Object.entries(nodes).find(([id,]) => Number(id) === e.from);
+                    if (!fromEntry) return;
+                    const from = fromEntry[1];
+                    const toEntry = Object.entries(nodes).find(([id,]) => Number(id) === e.to);
+                    if (!toEntry) return;
+                    const to = toEntry[1];
                     const elapsed = time - startTime - i * stretchDuration;
                     const t = Math.min(Math.max(elapsed / stretchDuration, 0), 1);
                     const alpha = 1 - Math.max((time - startTime - animGraph.length * stretchDuration - betweenDelay) / fadeDelay, 0);
@@ -332,15 +344,18 @@ export default function Constellations() {
             };
             // hovered popup
             if (hoveredRef.current){
-                const n = Object.entries(nodes).find(([id, _]) => Number(id) === hoveredRef.current)[1];
-                if (n.popup) {
-                    const height = 400;
-                    const width = height * n.popup.width / n.popup.height;
-                    const y = nodePosY(n);
-                    ctx.drawImage(n.popup,
-                        Math.min(Math.max(nodePosX(n) - width/2, 0), canvas.width - width),
-                        (y >= height + 20) ? y - height - 20 : y + 20,
-                        width, height);
+                const currentEntry = Object.entries(nodes).find(([id,]) => Number(id) === hoveredRef.current);
+                if (currentEntry) {
+                    const n = currentEntry[1];
+                    if (n.popup) {
+                        const height = 400;
+                        const width = height * n.popup.width / n.popup.height;
+                        const y = nodePosY(n);
+                        ctx.drawImage(n.popup,
+                            Math.min(Math.max(nodePosX(n) - width/2, 0), canvas.width - width),
+                            (y >= height + 20) ? y - height - 20 : y + 20,
+                            width, height);
+                    }
                 }
             }
 
@@ -369,5 +384,5 @@ export default function Constellations() {
         resizeCanvas();
     }, []);
 
-    return <canvas ref={canvasRef} id="canvas" onMouseMove={handleMouseMove} onMouseLeave={() => setHovered(null)}/>;
+    return <canvas ref={canvasRef} id="canvas" onMouseMove={handleMouseMove}/>;
 };

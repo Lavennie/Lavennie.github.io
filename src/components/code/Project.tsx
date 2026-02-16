@@ -11,11 +11,11 @@ type ProjectProps = {
     githubLink? : string
     imgx: number
     imgy: number
-    side : string
-    logoHue : number
+    side? : string
+    logoHue? : number
 };
 
-export default function Project({ id, description, imageUrl, link="", githubLink="", imgx, imgy, side, logoHue } : ProjectProps){
+export default function Project({ id, description, imageUrl, link="", githubLink="", imgx, imgy, side="", logoHue=0 } : ProjectProps){
     return (
       <div className={styles.project} style={{backgroundImage: `url(${imageUrl})`, backgroundPositionX: `${imgx}px`, backgroundPositionY: `${imgy}px`}}>
           <img src={projectMask} className={styles[side]}/>

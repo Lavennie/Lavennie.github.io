@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './Timelapse.css'
 
 type TimelapseProps = {
@@ -7,13 +6,9 @@ type TimelapseProps = {
 };
 
 export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
-    const videoIdMatch = videoUrl.match(/v=([a-zA-Z0-9_-]+)/);
-    const videoId = videoIdMatch ? videoIdMatch[1] : '';
-    const [isPlaying, setIsPlaying] = useState(false);
-
     return (
         <>
-            <div className="timelapse-container" onClick={() => setIsPlaying(true)}>
+            <div className="timelapse-container">
                 <a
                     href={thumbnailUrl}
                     target="_blank"

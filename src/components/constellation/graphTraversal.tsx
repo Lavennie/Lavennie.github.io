@@ -15,7 +15,7 @@ function buildAdjacencyList(edges : {from: number, to: number}[]) {
     return graph;
 }
 
-export function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
+export function bfs(startId: number, _nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
     const visited = new Set();
     const queue = [];
     const nextQueue = [startId];
@@ -28,7 +28,7 @@ export function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]
         const step = [];
         while (queue.length > 0) {
             const current = queue.shift();
-            if (!current === undefined || visited.has(current)) continue;
+            if (current === undefined || visited.has(current)) continue;
             visited.add(current);
 
             for (const neighbor of graph[current]) {
@@ -48,7 +48,7 @@ export function bfs(startId: number, nodes : Record<number, Node>, edges: Edge[]
 
     return animatedEdges;
 }
-export function dfs(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
+export function dfs(startId: number, _nodes : Record<number, Node>, edges: Edge[]) : Edge[][] {
     const visited = new Set<number>();
     const stack = [startId];
     const animatedEdges: Edge[][] = [];
@@ -81,7 +81,7 @@ export function edgesByLengthIncrease(startId: number, nodes : Record<number, No
 export function edgesByLengthDecrease(startId: number, nodes : Record<number, Node>, edges: Edge[]) : Edge[][]{
     return edgesByLength(startId, nodes, edges, true);
 }
-function edgesByLength(startId: number, nodes : Record<number, Node>, edges: Edge[], reverse : boolean): Edge[][] {
+function edgesByLength(_startId: number, nodes : Record<number, Node>, edges: Edge[], reverse : boolean): Edge[][] {
     // Create a map for fast node lookup
     const nodeMap = new Map<number, Node>();
     for (const [id, n] of Object.entries(nodes)) {

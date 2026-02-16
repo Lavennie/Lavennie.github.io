@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './NavBar.css'
 import nameBase from '.././assets/Banner Name Base.png'
 import nameOutline from '.././assets/Banner Name Outline.png'
@@ -24,7 +23,7 @@ export default function NavBar({colorMain, colorSide, textColor, bannerUrl, bann
     };
 
     // css variables
-    const textStyle: React.CSSProperties = {
+    const textStyle: React.CSSProperties & Record<string, string> = {
         "--hover-bg-color": textColor,
         "--hover-text-color": colorMain,
     };

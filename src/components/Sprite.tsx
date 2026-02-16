@@ -17,7 +17,8 @@ export default function Sprite({texturePath, x, y, z=5, size = 1, alpha = 1}: Sp
 
     const aspect = useMemo(() => {
         if (!texture.image) return 1; // fallback
-        return texture.image.width / texture.image.height;
+        const img = texture.image as HTMLImageElement;
+        return img.width / img.height;
     }, [texture]);
 
     useEffect(() => {

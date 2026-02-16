@@ -1,8 +1,7 @@
-import {useEffect, useRef, useMemo} from "react";
+import {useEffect, useRef} from "react";
 import {useFrame, useThree} from "@react-three/fiber";
 import {useGLTF, useAnimations} from "@react-three/drei";
 import * as THREE from "three";
-import * as SkeletonUtils from "three/examples/jsm/utils/SkeletonUtils.js";
 
 import fragmentShader from "./frag_flat.glsl";
 
@@ -94,24 +93,6 @@ export default function MeshFlat({meshPath, side, colorLight, colorMid, colorSha
         ref.current.position.y = y;
         ref.current.position.z = z;
     });
-    const outline = useMemo(() => {
-        const cloned = SkeletonUtils.clone(scene);
-
-        cloned.traverse((obj) => {
-            if ((obj as THREE.Mesh).isMesh) {
-                const mesh = obj as THREE.Mesh;
-
-                mesh.material = new THREE.MeshBasicMaterial({
-                    color: "black",
-                    side: THREE.BackSide,
-                    depthWrite: false
-                });
-            }
-        });
-        cloned.scale.multiplyScalar(1.05);
-
-        return cloned;
-    }, [scene]);
 
     return <primitive ref={ref} object={scene} scale={scale}/>
 }

@@ -1,7 +1,6 @@
 import styles from './OtherPage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import {Canvas} from '@react-three/fiber';
 import Constellations from "./components/constellation/Constellations.tsx";
 
 export default function OtherPage() {
