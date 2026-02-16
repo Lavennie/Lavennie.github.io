@@ -13,4 +13,7 @@ export default defineConfig({
     glsl()
   ],
   base: '/',
+  build: {
+    outDir: 'docs',
+  },
 })
