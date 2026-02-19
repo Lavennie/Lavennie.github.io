@@ -2,15 +2,13 @@ import styles from './CodePage.module.css'
 import NavBar from './components/NavBar.tsx'
 import Footer from './components/Footer.tsx'
 import Project from './components/code/Project.tsx'
-import type { ContentMeta } from "./content/types.ts";
+import type {ProjectMeta} from "./content/types.ts";
 
 export default function CodePage() {
     const modules = import.meta.glob('./content/projects/*.meta.ts', { eager: true });
 
-    //const allProjects: ContentMeta[] = Object.values(modules)
-    //    .map((m: any) => m.default)
-    //    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    const allProjects = sortProjects(Object.values(modules).map((m: any) => m.default));
+    const allProjects = sortProjects(Object.values(modules)
+        .map((m: any) => m.default));
 
     return(<>
         <NavBar colorMain={"#F9FEE5"} colorSide={"#D0FFB4"} textColor={"#69A546"} bannerY={37}
@@ -25,7 +23,7 @@ export default function CodePage() {
                         iconUrl={`${project.image!}_icon.png`}
                         description={project.description}
                         link={project.link ?? ""}
-                        githubLink={project.sourceLink ?? ""}
+                        githubLink={project.githubLink ?? ""}
                         imgx={project.imageX ?? 0}
                         imgy={0}
                         side={index % 2 === 0 ? "right" : "left"}
@@ -62,7 +60,7 @@ function parseProjectDate(date: string): number {
     return isNaN(timestamp) ? 0 : timestamp;
 }
 
-function sortProjects(projects: ContentMeta[]): ContentMeta[] {
+function sortProjects(projects: ProjectMeta[]): ProjectMeta[] {
     return projects.sort((a, b) => {
         // sort by state
         const stateDiff = statePriority[a.state] - statePriority[b.state];

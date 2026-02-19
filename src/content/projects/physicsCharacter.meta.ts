@@ -1,6 +1,8 @@
-import type { ContentMeta } from "../types";
+import type { ProjectMeta } from "../types";
 
-const meta: ContentMeta = {
+const meta: ProjectMeta = {
+    type: "project",
+    id: "physics character",
     title: "Physics Character",
     dateStart: "-2020",
     dateEnd: "-2020",
@@ -8,7 +10,6 @@ const meta: ContentMeta = {
     image: "project_physics_character",
     tags: ["video game"],
     state: "concluded",
-    category: "project"
 };
 
 export default meta;

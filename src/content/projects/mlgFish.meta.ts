@@ -1,6 +1,8 @@
-import type { ContentMeta } from "../types";
+import type { ProjectMeta } from "../types";
 
-const meta: ContentMeta = {
+const meta: ProjectMeta = {
+    type: "project",
+    id: "mlg fish",
     title: "GNN Fish",
     dateStart: "2025/11/01",
     dateEnd: "2025/12/30",
@@ -8,7 +10,6 @@ const meta: ContentMeta = {
     image: "project_mlg_fish",
     tags: ["GNN"],
     state: "concluded",
-    category: "project"
 };
 
 export default meta;

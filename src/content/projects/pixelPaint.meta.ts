@@ -1,6 +1,8 @@
-import type { ContentMeta } from "../types";
+import type { ProjectMeta } from "../types";
 
-const meta: ContentMeta = {
+const meta: ProjectMeta = {
+    type: "project",
+    id: "pixel paint",
     title: "Pixel Paint",
     dateStart: "2023/03/27",
     dateEnd: "now",
@@ -8,7 +10,6 @@ const meta: ContentMeta = {
     image: "project_pixel_paint",
     tags: ["painting tool"],
     state: "on hold",
-    category: "project"
 };
 
 export default meta;
