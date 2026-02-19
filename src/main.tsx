@@ -7,6 +7,7 @@ import HomePage from "./HomePage.tsx";
 import ArtPage from './ArtPage.tsx'
 import CodePage from './CodePage.tsx'
 import OtherPage from "./OtherPage.tsx";
+import TimelinePage from "./TimelinePage.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/" element={<HomePage />} />
               <Route path="/art" element={<ArtPage />} />
               <Route path="/projects" element={<CodePage />} />
+              <Route path="/timeline" element={<TimelinePage />} />
               <Route path="/other" element={<OtherPage />} />
           </Routes>
       </HashRouter>

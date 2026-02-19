@@ -18,7 +18,6 @@ export interface ProjectMeta extends EntryMeta {
 
 export interface ArtMeta extends EntryMeta {
     type: "art"; // type discriminant
-    timelapseLink?: string;
     x: number;
     yGapAfter: number;
 }

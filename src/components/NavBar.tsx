@@ -41,6 +41,7 @@ export default function NavBar({colorMain, colorSide, textColor, bannerUrl, bann
                         <li><Link to="/art" style={textStyle}>Art</Link></li>
                         <li><Link to="/projects" style={textStyle}>Coding</Link></li>
                         <li><Link to="/other" style={textStyle}>Other</Link></li>
+                        <li><Link to="/timeline" style={textStyle}>Timeline</Link></li>
                     </ul>
                 </div>
             </nav>

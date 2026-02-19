@@ -6,7 +6,7 @@ const meta: ArtMeta = {
     title: "A breeze from home",
     dateEnd: "2024/12/18",
     description: "",
-    timelapseLink: "https://www.youtube.com/watch?v=R3spF_-zFV4",
+    link: "https://www.youtube.com/watch?v=R3spF_-zFV4",
     image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dkh8vfm-be65d5ce-b195-476c-a904-ed24f0033e84.jpg/v1/fill/w_1192,h_670,q_70,strp/train_station_by_lavennielil_dkh8vfm-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9ka2g4dmZtLWJlNjVkNWNlLWIxOTUtNDc2Yy1hOTA0LWVkMjRmMDAzM2U4NC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.wKog2CV82nkG8t7KvZlwlMIW23VyRLjkTl-m5ZDCMaQ",
     x: 50,
     yGapAfter: 0

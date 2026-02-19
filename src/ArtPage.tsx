@@ -154,7 +154,7 @@ export default function ArtPage() {
                                     elements.push(
                                         <TimelapseById
                                             thumbnailUrl={art.image}
-                                            videoUrl={art.timelapseLink}
+                                            videoUrl={art.link}
                                             style={{
                                                 position: "absolute",
                                                 top: `${cumulativeY}px`,

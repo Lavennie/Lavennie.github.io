@@ -6,7 +6,7 @@ const meta: ArtMeta = {
     title: "Ice brachiosaurus",
     dateEnd: "2025/10/6",
     description: "",
-    timelapseLink: "https://www.youtube.com/watch?v=xYrkHqKbMRI",
+    link: "https://www.youtube.com/watch?v=xYrkHqKbMRI",
     image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dko9djs-2b5f584a-ca22-4184-851b-f56e6c3d006c.jpg/v1/fill/w_1192,h_670,q_70,strp/ice_brachiosaurus_sculpture_by_lavennielil_dko9djs-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9ka285ZGpzLTJiNWY1ODRhLWNhMjItNDE4NC04NTFiLWY1NmU2YzNkMDA2Yy5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.PyVb9akdsEoFY6cRMtTsmrg_F0c7rctPUdPQkhxixe8",
     x: 50,
     yGapAfter: 190
