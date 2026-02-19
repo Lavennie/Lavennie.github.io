@@ -37,6 +37,7 @@ export default function CodePage() {
 }
 
 
+
 const statePriority: Record<string, number> = {
     "in progress": 0,
     "on hold": 1,
@@ -44,15 +45,14 @@ const statePriority: Record<string, number> = {
     "concluded": 3,
     "abandoned": 4,
 };
-
-// Convert the date string to a comparable number
+// convert the date string to a comparable number
 function parseProjectDate(date: string): number {
     if (date === "now") return Date.now();
 
-    // Negative year → far in the past
+    // Negative year -> far in the past
     if (date.startsWith("-")) return new Date(date.slice(1) + "/01/01").getTime() * -1;
 
-    // Replace missing month/day with 1
+    // replace missing month/day with 1
     const parts = date.split("/").map(p => (p === "?" ? "1" : p));
     const normalized = parts.join("/");
 
