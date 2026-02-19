@@ -6,9 +6,9 @@ const meta: ProjectMeta = {
     title: "Game Engine",
     dateStart: "2018/?/?",
     dateEnd: "2020/?/?",
-    description: "3D animated meshes, Lighting, Collision detection",
+    description: "Object hierarchy, collision detection, 3D animated meshes, render pipeline and lighting with shadows.",
     image: "project_game_engine",
-    tags: ["software"],
+    tags: [{content: "Software", color: "#000000"}],
     state: "abandoned",
 };
 

@@ -6,9 +6,9 @@ const meta: ProjectMeta = {
     title: "Physics Character",
     dateStart: "-2020",
     dateEnd: "-2020",
-    description: "Physics controlled",
+    description: "Prototype of a physics controlled character. Running, jumping, grabbing and somersaulting.",
     image: "project_physics_character",
-    tags: ["video game"],
+    tags: [{content: "Simulation", color: "#eb3b28"},],
     state: "concluded",
 };
 

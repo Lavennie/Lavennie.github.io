@@ -17,15 +17,15 @@ export default function CodePage() {
             <div className={`site-container ${styles.siteContainer}`} style={{height: `${320 * allProjects.length + 20}px`}}>
                 {allProjects.map((project, index) => (
                     <Project
-                        key={project.title}
+                        key={project.id}
                         id={project.title}
+                        description={project.description}
+                        tags={project.tags}
                         imageUrl={`${project.image!}.png`}
                         iconUrl={`${project.image!}_icon.png`}
-                        description={project.description}
                         link={project.link ?? ""}
                         githubLink={project.githubLink ?? ""}
                         imgx={project.imageX ?? 0}
-                        imgy={0}
                         side={index % 2 === 0 ? "right" : "left"}
                         logoHue={40}
                     />

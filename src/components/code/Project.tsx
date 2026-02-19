@@ -2,44 +2,42 @@ import styles from './Project.module.css'
 import React from "react";
 import projectMask from '../.././assets/project-mask.svg'
 import githubLogo from "../../assets/logo-github.svg";
+import type {Tag} from "../../content/types.ts";
+
 
 type ProjectProps = {
     id: string;
     description: string;
+    tags: Tag[]
     imageUrl: string
     iconUrl?: string
     link?: string
     githubLink?: string
     imgx: number
-    imgy: number
     side?: string
     logoHue?: number
 };
 
-export default function Project({
-                                    id,
-                                    description,
-                                    imageUrl,
-                                    iconUrl = "",
-                                    link = "",
-                                    githubLink = "",
-                                    imgx,
-                                    imgy,
-                                    side = "",
-                                    logoHue = 0
-                                }: ProjectProps) {
+export default function Project({ id, description, tags,
+                                    imageUrl, iconUrl = "", link = "", githubLink = "",
+                                    imgx, side = "", logoHue = 0 }: ProjectProps) {
     return (
         <div className={styles.project} style={{
             backgroundImage: `url(${imageUrl})`,
-            backgroundPositionX: `${imgx}px`,
-            backgroundPositionY: `${imgy}px`
+            backgroundPositionX: `${imgx}px`
         }}>
-            <img src={projectMask} className={styles[side]}/>
+            <img src={projectMask} className={`${styles[side]} ${styles.bg}`}/>
             <div className={`${styles.projectInfo} ${styles[side]}`}>
                 {/* first div needs to be empty, it is then populated with the project icon - background image */}
                 <div style={{backgroundImage: `url(${iconUrl})`}}></div>
+
                 {link ? (<a className={styles.projectName} href={link} target="_blank" rel="noopener noreferrer"><div>{id}</div><img src="external_link_project.svg" width="30" height="30"/></a>)
                     : (<div className={styles.projectName}>{id}</div>)}
+                <div className={styles.tags}>
+                    {tags.map(tag => (
+                        <div className={styles.tag} style={{backgroundColor: tag.color}}>{tag.content}</div>
+                    ))}
+                </div>
                 <div className={styles.projectDescription}>
                     {description.split("\\n").map((line, idx) => (
                         <React.Fragment key={idx}>

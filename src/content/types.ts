@@ -1,3 +1,8 @@
+export type Tag = {
+    content: string;
+    color: string;
+};
+
 export interface EntryMeta {
     id: string;
     title: string;
@@ -10,7 +15,7 @@ export interface EntryMeta {
 export interface ProjectMeta extends EntryMeta {
     type: "project"; // type discriminant
     dateStart: string;
-    tags: string[];
+    tags: Tag[];
     state: "planning" | "in progress" | "concluded" | "on hold" | "abandoned";
     githubLink?: string;
     imageX?: number;
