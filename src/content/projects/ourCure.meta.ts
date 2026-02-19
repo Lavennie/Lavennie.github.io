@@ -6,7 +6,7 @@ const meta: ProjectMeta = {
     title: "Our Cure",
     dateStart: "2021/04/13",
     dateEnd: "now",
-    description: "Upcoming 2D tactical RPG with customizable combat and deep engaging story.",
+    description: "An upcoming 2D tactical RPG with customizable combat and a deep, engaging story.",
     link: "https://celestide-games.github.io/",
     image: "project_our_cure",
     tags: [{content: "Video game", color: "#000000"}],
