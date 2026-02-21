@@ -10,6 +10,8 @@
     position: relative;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 3rem - 150px - 150px - 89px);
 }
 
 .piece {

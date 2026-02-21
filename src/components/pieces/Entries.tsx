@@ -17,7 +17,7 @@ function sortedEntries({ type } : { type: PieceType }) {
         .filter((x: any) => x.default.type == type);
 
     const all = sortMetaEntries<PieceMeta>(Object.values(modules).map((m: any) => m.default));
-    return chunkArray(all, 3);
+    return chunkArray(all, 1000);
 }
 
 export default function Entries({ type } : { type: PieceType }) {

@@ -1,11 +1,12 @@
 import styles from './TimelinePage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import type {ProjectMeta, ArtMeta} from "./content/types.ts";
+import type {ProjectMeta, ArtMeta, PieceMeta} from "./content/types.ts";
+import {parseSortDate, parseVisualDate} from "./components/dateUtil.ts";
 
 type TimelineEntry = {
     id: string;
-    type: "project-start" | "project-end" | "art"
+    type: "project-start" | "project-end" | "art" | "crafts"
     date: string;
     sortKey: number;
     title: string;
@@ -26,7 +27,7 @@ export default function TimelinePage() {
         timeline.push({
             id: art.id,
             type: "art",
-            date: parseDate(art.dateEnd),
+            date: parseVisualDate(art.dateEnd),
             sortKey: parseSortDate(art.dateEnd),
             title: art.title,
             linkMain: art.link,
@@ -45,7 +46,7 @@ export default function TimelinePage() {
         timeline.push({
             id: project.id + "-start",
             type: "project-start",
-            date: parseDate(project.dateStart),
+            date: parseVisualDate(project.dateStart),
             sortKey: parseSortDate(project.dateStart),
             title: project.title,
             linkMain: project.link,
@@ -61,7 +62,7 @@ export default function TimelinePage() {
             timeline.push({
                 id: project.id + "-end",
                 type: "project-end",
-                date: parseDate(project.dateEnd),
+                date: parseVisualDate(project.dateEnd),
                 sortKey: parseSortDate(project.dateEnd),
                 title: project.title,
                 linkMain: project.link,
@@ -89,6 +90,22 @@ export default function TimelinePage() {
                 priority: 1,
             });
         }
+    });
+
+    const allPieces: PieceMeta[] = Object.values(import.meta.glob('./content/pieces/*.meta.ts', { eager: true })).map((m: any) => m.default);
+    allPieces.forEach(piece => {
+        timeline.push({
+            id: piece.id,
+            type: "crafts",
+            date: parseVisualDate(piece.dateEnd),
+            sortKey: parseSortDate(piece.dateEnd),
+            title: piece.title,
+            linkMain: piece.image,
+            linkMainText: "image",
+            typeIcon: "icon_crafts.png",
+            workImg: piece.image,
+            priority: 0,
+        });
     });
 
     timeline.sort((a, b) => b.sortKey + b.priority - a.sortKey - a.priority);
@@ -138,34 +155,4 @@ export default function TimelinePage() {
         </div>
         <Footer colorMain={"#4E392F"} colorSide={"#83302B"} logoHue={310} textColor={"#FF7C81"}/>
     </>);
-}
-
-
-function parseDate(date: string): string {
-    if (date.startsWith("-")) return "Before " + date.slice(1);
-    const parts = date.split("/");
-    if (Number(parts[1]))
-        return parts[2] + ". " + parts[1] + ". " + parts[0];
-    else if (parts[1] === "?")
-        return parts[0];
-    else
-        return parts[1].charAt(0).toUpperCase() + parts[1].slice(1) + " " + parts[0];
-}
-
-function parseSortDate(date: string): number {
-    if (date === "now") return Date.now();
-    if (date.startsWith("-")) return new Date(date.slice(1) + "/01/01").getTime() * -1;
-    const parts = date.split("/").map(p => (p === "?" ? "1" : p));
-    if (parts[1] == "winter")
-        parts[1] = "12"
-    else if (parts[1] == "spring")
-        parts[1] = "3"
-    else if (parts[1] == "summer")
-        parts[1] = "6"
-    else if (parts[1] == "autumn")
-        parts[1] = "9"
-    const normalized = parts.join("/");
-    const timestamp = new Date(normalized).getTime();
-
-    return isNaN(timestamp) ? 0 : timestamp;
 }

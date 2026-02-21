@@ -20,7 +20,7 @@ export function parseVisualDate(date: string): string {
         return parts[1].charAt(0).toUpperCase() + parts[1].slice(1) + " " + parts[0];
 }
 
-function parseSortDate(date: string): number {
+export function parseSortDate(date: string): number {
     if (date === "now") return Date.now();
     if (date.startsWith("-")) return new Date(date.slice(1) + "/01/01").getTime();
     const parts = date.split("/").map(p => (p === "?" ? "1" : p));
