@@ -18,7 +18,7 @@
     height: 300px;
     width: 300px;
 
-    border-radius: 20px;
+    border-radius: 23px;
     border: 3px solid #FF74C2;
 }
 .piece div {
@@ -29,8 +29,10 @@
     top: 0;
     border-radius: 20px;
     transition: filter 0.2s ease;
+    background-size: cover;
+    background-position: center;
 }
 
 .piece:hover div {
-    filter: brightness(2);
+    filter: brightness(1.2);
 }

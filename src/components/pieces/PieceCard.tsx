@@ -1,13 +1,14 @@
 import styles from './PiecesSubpage.module.css'
 
 type PieceCardProps = {
-    y: number;
+    x?: number;
+    y?: number;
     img: string;
 };
 
-export default function PieceCard({ y, img } : PieceCardProps) {
+export default function PieceCard({ x = 0, y = 0, img } : PieceCardProps) {
     return (<>
-        <a className={styles.piece} style={{ top: y }} href={`${img}`}>
+        <a className={styles.piece} style={{ left: x, top: y }} href={`${img}`}>
             <div style={{backgroundImage: `url(${img}`}}/>
         </a>
     </>);

@@ -27,12 +27,9 @@ export interface ArtMeta extends EntryMeta {
     yGapAfter: number;
 }
 
+export type PieceType = "textile" | "sculpture" | "3D" | "origami";
 export interface PieceMeta extends EntryMeta {
-    type: "textile" | "sculpture" | "3D" | "origami"; // type discriminant
+    type: PieceType; // type discriminant
     x: number;
     y: number;
-    scale: number;
 }
-
-
-export type ContentMeta = ProjectMeta | ArtMeta;

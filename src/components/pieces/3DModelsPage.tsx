@@ -2,6 +2,7 @@ import styles from './PiecesSubpage.module.css'
 import NavBar from "../../components/NavBar.tsx";
 import Footer from "../../components/Footer.tsx";
 import Categories from "./Categories.tsx";
+import Entries from "./Entries.tsx";
 
 export default function PiecesPage() {
     return (<>
@@ -11,6 +12,7 @@ export default function PiecesPage() {
         <div className={`app-background ${styles.appBackground}`}>
             <div className={`site-container ${styles.siteContainer}`}>
                 <Categories height={150} selected={"3D models"}/>
+                <Entries type="3D"/>
             </div>
         </div>
         <Footer colorMain={"#33232D"} colorSide={"#6C344E"} logoHue={294} textColor={"#FF74C2"}/>
