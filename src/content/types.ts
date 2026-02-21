@@ -28,9 +28,10 @@ export interface ArtMeta extends EntryMeta {
 }
 
 export interface PieceMeta extends EntryMeta {
-    type: "sewing" | "sculptures" | "3D" | "origami"; // type discriminant
+    type: "textile" | "sculpture" | "3D" | "origami"; // type discriminant
     x: number;
-    yGapAfter: number;
+    y: number;
+    scale: number;
 }
 
 
