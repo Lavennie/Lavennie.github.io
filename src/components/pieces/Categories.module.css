@@ -1,0 +1,42 @@
+.categoriesContainer {
+    height: calc(100vh - 3rem - 150px - 89px);
+    display: flex;
+}
+
+.category {
+    flex-grow: 1;
+    align-content: center;
+    text-align: center;
+
+}
+.category {
+    position: relative;
+    color: #FF74C2;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.category span {
+    position: relative;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 30px 8px;
+    background-color: #35252FCC;
+    transition: color 0.1s ease, background-color 0.1s ease;
+}
+.category div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);;
+    transition: filter 0.1s ease;
+}
+
+.category:hover span, .category.selected span {
+    color: #FFBFE1;
+    background-color: #6C344EEE;
+}
+.category:hover div, .category.selected div {
+    filter: grayscale(0);
+}

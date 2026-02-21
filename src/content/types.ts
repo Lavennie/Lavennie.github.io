@@ -27,4 +27,11 @@ export interface ArtMeta extends EntryMeta {
     yGapAfter: number;
 }
 
+export interface PieceMeta extends EntryMeta {
+    type: "sewing" | "sculptures" | "3D" | "origami"; // type discriminant
+    x: number;
+    yGapAfter: number;
+}
+
+
 export type ContentMeta = ProjectMeta | ArtMeta;

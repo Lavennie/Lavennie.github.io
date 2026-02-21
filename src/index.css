@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  overflow-x: hidden
+  overflow-x: hidden;
+  font-family: 'Shantell Sans', cursive;
 }
 
 .app-background {
