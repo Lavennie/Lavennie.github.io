@@ -40,7 +40,8 @@ export default function NavBar({colorMain, colorSide, textColor, bannerUrl, bann
                         <li><Link to="/" style={textStyle}>Home</Link></li>
                         <li><Link to="/art" style={textStyle}>Art</Link></li>
                         <li><Link to="/projects" style={textStyle}>Coding</Link></li>
-                        <li><Link to="/pieces" style={textStyle}>Pieces</Link></li>
+                        <li><Link to="/research" style={textStyle}>Research</Link></li>
+                        <li><Link to="/creations" style={textStyle}>Creations</Link></li>
                         <li><Link to="/qualia" style={textStyle}>Qualia</Link></li>
                         <li><Link to="/timeline" style={textStyle}>Timeline</Link></li>
                     </ul>

@@ -27,9 +27,16 @@ export interface ArtMeta extends EntryMeta {
     yGapAfter: number;
 }
 
-export type PieceType = "textile" | "sculpture" | "3D" | "origami";
-export interface PieceMeta extends EntryMeta {
-    type: PieceType; // type discriminant
+export type CreationType = "textile" | "sculpture" | "3D" | "origami";
+export interface CreationMeta extends EntryMeta {
+    type: CreationType; // type discriminant
     x: number;
     y: number;
+}
+
+export interface ResearchMeta extends EntryMeta {
+    type: "research"; // type discriminant
+    dateStart: string;
+    tags: Tag[];
+    state: "planning" | "in progress" | "concluded" | "on hold" | "abandoned";
 }

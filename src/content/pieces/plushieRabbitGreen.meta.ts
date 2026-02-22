@@ -1,6 +1,6 @@
-import type { PieceMeta } from "../types";
+import type { CreationMeta } from "../types";
 
-const meta: PieceMeta = {
+const meta: CreationMeta = {
     type: "textile",
     id: "plush rabbit green",
     title: "Rabbit",

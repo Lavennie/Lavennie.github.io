@@ -1,7 +1,7 @@
 import styles from './TimelinePage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import type {ProjectMeta, ArtMeta, PieceMeta} from "./content/types.ts";
+import type {ProjectMeta, ArtMeta, CreationMeta} from "./content/types.ts";
 import {parseSortDate, parseVisualDate} from "./components/dateUtil.ts";
 
 type TimelineEntry = {
@@ -92,7 +92,7 @@ export default function TimelinePage() {
         }
     });
 
-    const allPieces: PieceMeta[] = Object.values(import.meta.glob('./content/pieces/*.meta.ts', { eager: true })).map((m: any) => m.default);
+    const allPieces: CreationMeta[] = Object.values(import.meta.glob('./content/pieces/*.meta.ts', { eager: true })).map((m: any) => m.default);
     allPieces.forEach(piece => {
         timeline.push({
             id: piece.id,
