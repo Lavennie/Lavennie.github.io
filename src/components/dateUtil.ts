@@ -12,8 +12,10 @@ export function sortMetaEntries<T extends EntryMeta>(entries: T[]): T[] {
 export function parseVisualDate(date: string): string {
     if (date.startsWith("-")) return "Before " + date.slice(1);
     const parts = date.split("/");
-    if (Number(parts[1]))
+    if (Number(parts[2]))
         return parts[2] + ". " + parts[1] + ". " + parts[0];
+    if (Number(parts[1]))
+        return parts[1] + ". " + parts[0];
     else if (parts[1] === "?")
         return parts[0];
     else
