@@ -1,12 +1,12 @@
 import styles from './TimelinePage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import type {ProjectMeta, ArtMeta, CreationMeta, ResearchMeta} from "./content/types.ts";
+import type {ProjectMeta, ArtMeta, CreationMeta, ResearchMeta, AchievementMeta} from "./content/types.ts";
 import {parseSortDate, parseVisualDate} from "./components/dateUtil.ts";
 
 type TimelineEntry = {
     id: string;
-    type: "project-start" | "project-end" | "art" | "crafts" | "research"
+    type: "project-start" | "project-end" | "art" | "crafts" | "research" | "achievement";
     date: string;
     sortKey: number;
     title: string;
@@ -22,6 +22,7 @@ type TimelineEntry = {
 export default function TimelinePage() {
     const timeline: TimelineEntry[] = [];
     const active: TimelineEntry[] = [];
+
     const allArt: ArtMeta[] = Object.values(import.meta.glob('./content/art/*.meta.ts', { eager: true })).map((m: any) => m.default);
     allArt.forEach(art => {
         timeline.push({
@@ -109,22 +110,39 @@ export default function TimelinePage() {
     });
 
     const allResearch: ResearchMeta[] = Object.values(import.meta.glob('./content/research/*.meta.ts', { eager: true })).map((m: any) => m.default);
-    allResearch.forEach(piece => {
-        if (piece.dateEnd !== "?/?/?"){
+    allResearch.forEach(topic => {
+        if (topic.dateEnd !== "?/?/?"){
             timeline.push({
-                id: piece.id,
+                id: topic.id,
                 type: "research",
-                date: parseVisualDate(piece.dateEnd),
-                sortKey: parseSortDate(piece.dateEnd),
-                title: piece.title,
-                linkMain: piece.link,
+                date: parseVisualDate(topic.dateEnd),
+                sortKey: parseSortDate(topic.dateEnd),
+                title: topic.title,
+                linkMain: topic.link,
                 linkMainText: ".pdf",
                 typeIcon: "icon_research.png",
-                workImg: piece.image,
+                workImg: topic.image,
                 priority: 0,
             });
         }
     });
+
+    const allAchievements: AchievementMeta[] = Object.values(import.meta.glob('./content/achievements/*.meta.ts', { eager: true })).map((m: any) => m.default);
+    allAchievements.forEach(achievement => {
+        if (achievement.dateEnd !== "?/?/?"){
+            timeline.push({
+                id: achievement.id,
+                type: "achievement",
+                date: parseVisualDate(achievement.dateEnd),
+                sortKey: parseSortDate(achievement.dateEnd),
+                title: achievement.title,
+                typeIcon: "icon_achievement.png",
+                workImg: achievement.image,
+                priority: 0,
+            });
+        }
+    });
+
 
     timeline.sort((a, b) => b.sortKey + b.priority - a.sortKey - a.priority);
 

@@ -11,8 +11,19 @@ export default function HomePage() {
             <div className={`app-background ${styles.appBackground}`}>
                 <div className={`site-container ${styles.siteContainer}`} style={{height: "90vh"}}>
                     <Slideshow/>
+
+                    <div className={styles.overview}>
+                        <ul>
+                            <li>I am a master's student in the Computer Science and Mathematics program at the Department of Mathematics, University of Ljubljana.</li>
+                            <li><br/> </li>
+                            <li>When I am not racking my brain over code or equations, I dive into drawing, often capturing the process in a time-lapse video.</li>
+                            <li><br/> </li>
+                            <li>I hold a black belt in karate and also train aikido.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <Footer colorMain={"#E9E1E2"} colorSide={"#FEF7D0"} logoHue={22} textColor={"#3E3C3A"}/>
         </>
     );

@@ -5,3 +5,17 @@
 .siteContainer {
     background-color: #E9E1E2F0;
 }
+.overview {
+    color: #3E3C3A;
+    display: flex;
+    justify-content: center;
+
+}
+.overview ul {
+    width: 70%;
+    list-style: none;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+

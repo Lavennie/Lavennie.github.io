@@ -40,3 +40,6 @@ export interface ResearchMeta extends EntryMeta {
     tags: Tag[];
     state: "planning" | "in progress" | "concluded" | "on hold" | "abandoned";
 }
+export interface AchievementMeta extends EntryMeta {
+    type: "achievement"; // type discriminant
+}
