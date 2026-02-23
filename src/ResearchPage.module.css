@@ -4,4 +4,9 @@
 
 .siteContainer {
     background-color: #FEE5E6F0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }

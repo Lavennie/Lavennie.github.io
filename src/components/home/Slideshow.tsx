@@ -20,6 +20,12 @@ const slides: Slideshow[] = [
         description: "Game Development · Procedural Generation · Simulations · Shaders",
         image: "slideshow/project_physics_character.png",
         link: "/#/projects",
+    },
+    {
+        title: "Creations",
+        description: "Textile · Sculptures · Paper · 3D",
+        image: "slideshow/origami_flower_boquete1.png",
+        link: "/#/projects",
     }
 ];
 

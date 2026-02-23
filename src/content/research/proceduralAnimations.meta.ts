@@ -8,7 +8,7 @@ const meta: ResearchMeta = {
     dateEnd: "?/?/?",
     description: "Move around target positions and align a character to them with IK.",
     image: "research_procedural_animations",
-    tags: [{content: "Animation", color: "#eb3b28"}],
+    tags: [{content: "Graphics", color: "#eb3b28"}],
     state: "concluded",
 };
 

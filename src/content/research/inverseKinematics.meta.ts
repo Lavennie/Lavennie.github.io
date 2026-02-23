@@ -6,9 +6,9 @@ const meta: ResearchMeta = {
     title: "Inverse Kinematics",
     dateStart: "?/?/?",
     dateEnd: "?/?/?",
-    description: "FABRIK, full body IK, Jacobian",
+    description: "Implemented FABRIK and full body IK and checked out the Jacobian method.",
     image: "research_ik",
-    tags: [{content: "Numerics", color: "#0C76C7"}, {content: "Robotics", color: "#eb3b28"}],
+    tags: [{content: "Graphics", color: "#EB3B28"}, {content: "Numerics", color: "#0C76C7"}],
     state: "on hold",
 };
 

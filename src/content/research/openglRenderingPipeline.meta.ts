@@ -6,7 +6,7 @@ const meta: ResearchMeta = {
     title: "OpenGL Rendering Pipeline",
     dateStart: "?/?/?",
     dateEnd: "?/?/?",
-    description: "Vertices, vertex shader, tesselation, geometry shader, vertex post-processing, primitive assembly, rasterization, fragment shader and per-sample operations.",
+    description: "Check out all the stages in the OpenGl render pipeline and implemented some of them. Focusing on vertices, tesselation, geometry and fragments.",
     image: "research_opengl_rendering_pipeline",
     tags: [{content: "Graphics", color: "#eb3b28"}],
     state: "concluded",

@@ -34,4 +34,5 @@
 .row img {
     height: 1rem;
     width: calc(16rem/9);
+    margin: auto;
 }

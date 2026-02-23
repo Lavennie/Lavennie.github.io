@@ -18,15 +18,15 @@ export default function ResearchPage() {
                 bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dkypfph-fa1a7464-e1a3-44b8-863b-01f4a5c53ded.jpg/v1/fill/w_1192,h_670,q_70,strp/resting_behind_the_table_by_lavennielil_dkypfph-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9ka3lwZnBoLWZhMWE3NDY0LWUxYTMtNDRiOC04NjNiLTAxZjRhNWM1M2RlZC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.7fePJV0KKjaBfwyIxAEcgToXHz8dPG69mEXZ_LJ4NW4"} />
 
         <div className={`app-background ${styles.appBackground}`}>
-            <div className={`site-container ${styles.siteContainer}`} style={{height: `${320 * allResearch.length + 20}px`}}>
-                {allResearch.map((project, index) => (
+            <div className={`site-container ${styles.siteContainer}`}>
+                {allResearch.map((topic, index) => (
                     <ResearchCard
-                        key={project.id}
-                        id={project.title}
-                        description={project.description}
-                        tags={project.tags}
-                        imageUrl={`${project.image!}.png`}
-                        link={project.link ?? ""}
+                        key={topic.id}
+                        id={topic.title}
+                        description={topic.description}
+                        tags={topic.tags}
+                        imageUrl={`${topic.image!}.png`}
+                        link={topic.link ?? ""}
                         side={index % 2 === 0 ? "right" : "left"}
                     />
                 ))}

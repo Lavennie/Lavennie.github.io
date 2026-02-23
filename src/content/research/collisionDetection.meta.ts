@@ -6,9 +6,9 @@ const meta: ResearchMeta = {
     title: "Collision Detection",
     dateStart: "?/?/?",
     dateEnd: "?/?/?",
-    description: "Axis-aligned bounding boxes, oriented bounding boxes, bounding spheres and the separating axis theorem.",
+    description: "Create collision detection of axis-aligned bounding boxes, oriented bounding boxes and bounding spheres using the separating axis theorem.",
     image: "research_colliison_detection",
-    tags: [{content: "Physics engine", color: "#eb3b28"}],
+    tags: [{content: "Physics engine", color: "#EB3B28"}],
     state: "concluded",
 };
 

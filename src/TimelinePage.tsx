@@ -1,12 +1,12 @@
 import styles from './TimelinePage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import type {ProjectMeta, ArtMeta, CreationMeta} from "./content/types.ts";
+import type {ProjectMeta, ArtMeta, CreationMeta, ResearchMeta} from "./content/types.ts";
 import {parseSortDate, parseVisualDate} from "./components/dateUtil.ts";
 
 type TimelineEntry = {
     id: string;
-    type: "project-start" | "project-end" | "art" | "crafts"
+    type: "project-start" | "project-end" | "art" | "crafts" | "research"
     date: string;
     sortKey: number;
     title: string;
@@ -106,6 +106,24 @@ export default function TimelinePage() {
             workImg: piece.image,
             priority: 0,
         });
+    });
+
+    const allResearch: ResearchMeta[] = Object.values(import.meta.glob('./content/research/*.meta.ts', { eager: true })).map((m: any) => m.default);
+    allResearch.forEach(piece => {
+        if (piece.dateEnd !== "?/?/?"){
+            timeline.push({
+                id: piece.id,
+                type: "research",
+                date: parseVisualDate(piece.dateEnd),
+                sortKey: parseSortDate(piece.dateEnd),
+                title: piece.title,
+                linkMain: piece.link,
+                linkMainText: ".pdf",
+                typeIcon: "icon_research.png",
+                workImg: piece.image,
+                priority: 0,
+            });
+        }
     });
 
     timeline.sort((a, b) => b.sortKey + b.priority - a.sortKey - a.priority);
