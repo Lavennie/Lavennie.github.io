@@ -8,7 +8,8 @@ const meta: ProjectMeta = {
     dateEnd: "2025/12/30",
     description: "Prediction of fish trajectories using a Graph Neural Network.",
     image: "project_mlg_fish",
-    tags: [{content: "Simulation", color: "#eb3b28"}, {content: "AI", color: "#eb3b28"}],
+    link: "https://medium.com/@anja.laharnar/prediction-fish-swarm-with-graph-neural-network-42da52ce5780",
+    tags: [{content: "Simulation", color: "#EB3B28"}, {content: "AI", color: "#EB3B28"}],
     state: "concluded",
 };
 

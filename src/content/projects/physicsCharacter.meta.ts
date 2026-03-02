@@ -8,7 +8,7 @@ const meta: ProjectMeta = {
     dateEnd: "-2020",
     description: "Prototype of a physics controlled character. Running, jumping, grabbing and somersaulting.",
     image: "project_physics_character",
-    tags: [{content: "Simulation", color: "#eb3b28"},],
+    tags: [{content: "Simulation", color: "#EB3B28"},],
     state: "concluded",
 };
 

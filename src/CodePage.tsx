@@ -11,8 +11,8 @@ export default function CodePage() {
         .map((m: any) => m.default));
 
     return(<>
-        <NavBar colorMain={"#F9FEE5"} colorSide={"#D0FFB4"} textColor={"#69A546"} bannerY={37}
-                bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dlbvhqg-c0e27d2b-b431-45f8-862d-b4b2adef77b6.jpg/v1/fill/w_1192,h_670,q_70,strp/kishiar_la_orr_at_a_party_by_lavennielil_dlbvhqg-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9kbGJ2aHFnLWMwZTI3ZDJiLWI0MzEtNDVmOC04NjJkLWI0YjJhZGVmNzdiNi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.tyBjAvDM0gKt7ChZyKCNYIhz1gw2D9_61ty2WL7F6K0"}/>
+        <NavBar colorMain={"#F9FEE5"} colorSide={"#D0FFB4"} textColor={"#69A546"} bannerY={42}
+                bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dll2vd7-19e630c4-86e3-4c77-92f1-17ebf98a7f42.jpg/v1/fill/w_1192,h_670,q_70,strp/shifting_corridor_by_lavennielil_dll2vd7-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9kbGwydmQ3LTE5ZTYzMGM0LTg2ZTMtNGM3Ny05MmYxLTE3ZWJmOThhN2Y0Mi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.IXBpIS6Pn5tAHEYFNgRFgPTKMN_6uzcdT0laTOi9MU4"}/>
         <div className={`app-background ${styles.appBackground}`}>
             <div className={`site-container ${styles.siteContainer}`} style={{height: `${320 * allProjects.length + 20}px`}}>
                 {allProjects.map((project, index) => (
