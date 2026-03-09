@@ -39,7 +39,7 @@ export default function NavBar({colorMain, colorSide, textColor, bannerUrl, bann
                     <ul className="nav-links">
                         <li><Link to="/" style={textStyle}>Home</Link></li>
                         <li><Link to="/art" style={textStyle}>Art</Link></li>
-                        <li><Link to="/projects" style={textStyle}>Coding</Link></li>
+                        <li><Link to="/projects" style={textStyle}>Projects</Link></li>
                         <li><Link to="/research" style={textStyle}>Research</Link></li>
                         <li><Link to="/creations" style={textStyle}>Creations</Link></li>
                         <li><Link to="/qualia" style={textStyle}>Qualia</Link></li>
