@@ -17,22 +17,21 @@ export default function ArtPage() {
 
     const allArt = sortProjects(Object.values(modules)
         .map((m: any) => m.default));
+    const yOffset = 220;
 
     console.log(allArt);
 
-    let height = 210;
+    let height = yOffset * 2 * allArt.length / 5;
     {
         let lastYear: string | null = null;
         for (const art of allArt) {
             const year = art.dateEnd.split("/")[0];
             if (year != lastYear) {
-                height += 210;
+                height += yOffset + 100;
                 lastYear = year;
             }
-            else {
-                height += art.yGapAfter;
-            }
         }
+        height += -yOffset + 40; // for the first year there is no offset before it
     }
 
     return (
@@ -113,6 +112,7 @@ export default function ArtPage() {
                                 let elements: React.ReactNode[] = [];
                                 let lastYear: string | null = null;
                                 let cumulativeY = 10;
+                                let index = 0;
 
                                 allArt.forEach(art => {
                                     // extract year from dateEnd (assuming "YYYY/MM/DD")
@@ -120,6 +120,10 @@ export default function ArtPage() {
 
                                     // year header
                                     if (year !== lastYear) {
+                                        if (index != 0) {
+                                                cumulativeY += yOffset;
+                                            cumulativeY += 100;
+                                        }
                                         elements.push(
                                             <div style={{
                                                 position: "absolute",
@@ -150,7 +154,18 @@ export default function ArtPage() {
                                         );
                                         cumulativeY += 200; // spacing after header
                                         lastYear = year;
+                                        index = 5;
                                     }
+
+                                    let x = "50%";
+                                    if (index % 5 == 0)
+                                        x = "calc(50% - 250px)";
+                                    else if (index % 5 == 1)
+                                        x = "calc(50% + 250px)";
+                                    else if (index % 5 == 3)
+                                        x = "calc(50% - 450px)";
+                                    else if (index % 5 == 4)
+                                        x = "calc(50% + 450px)";
 
                                     // art entry
                                     elements.push(
@@ -160,11 +175,13 @@ export default function ArtPage() {
                                             style={{
                                                 position: "absolute",
                                                 top: `${cumulativeY}px`,
-                                                left: `${art.x}%`,
+                                                left: x,
                                             }}
                                         />
                                     );
-                                    cumulativeY += art.yGapAfter;
+                                    if (index % 5 == 1 || index % 5 == 4)
+                                        cumulativeY += yOffset;
+                                    index++;
                                 });
 
                                 return elements;
