@@ -108,6 +108,46 @@ function createNodesFromList(
 
     return nodes;
 }
+function pickByGroupCounts(
+    stars: [string, string][],
+    counts: [string, number][]
+): [string, string][] {
+    // Convert counts to a lookup map
+    const countMap = new Map<string, number>(counts);
+
+    // Group values by key
+    const grouped = new Map<string, string[]>();
+    for (const [group, value] of stars) {
+        if (!grouped.has(group)) {
+            grouped.set(group, []);
+        }
+        grouped.get(group)!.push(value);
+    }
+
+    // Helper: random pick without replacement
+    function pickRandom<T>(arr: T[], n: number): T[] {
+        const copy = [...arr];
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy.slice(0, n);
+    }
+
+    // Build result
+    const result: [string, string][] = [];
+
+    for (const [group, values] of grouped.entries()) {
+        const count = countMap.get(group) ?? 0;
+        const picked = pickRandom(values, count);
+
+        for (const value of picked) {
+            result.push([group, value]);
+        }
+    }
+
+    return result;
+}
 
 
 export default function Constellations() {
@@ -150,7 +190,7 @@ export default function Constellations() {
         "genshin": {x: 300, y: 100, size: 800, img: Object.assign(new Image(), { src: "constellations/constellation_genshin.png" }) },
         "starrail" : { x: 1000, y: 1000, size: 700, img: Object.assign(new Image(), { src: "constellations/constellation_star_rail.png" }) }
     };
-    const stars : [string, string][] = [
+    const allStars : [string, string][] = [
         ["genshin", "constellations/genshin_actopan_underground.png"],
         ["genshin", "constellations/genshin_ancient_sacred_mountain.png"],
         ["genshin", "constellations/genshin_ashveil_peak_eye.png"],
@@ -315,7 +355,13 @@ export default function Constellations() {
         ["starrail", "constellations/starrail_vortex_of_genesis.png"],
         ["starrail", "constellations/starrail_xianzhou_luofu_horizon.png"],
     ];
-    const nodes = createNodesFromList([1000, 1000], stars, { "genshin": [1000, 20], "starrail": [2000, 10]});
+    const counts : [string, number][] = [
+        ["genshin", 15],
+        ["starrail", 15],
+    ]
+    const stars = pickByGroupCounts(allStars, counts)
+    // <constellation>: [starting ID, number of image stars, number of extra stars]
+    const nodes = createNodesFromList([1000, 1000], stars, { "genshin": [1000, 10], "starrail": [2000, 10]});
 
     randomizeNodePositions(nodes, constellations, 80);
 
