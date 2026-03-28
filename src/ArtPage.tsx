@@ -11,6 +11,7 @@ import MeshFlat from "./components/MeshFlat.tsx";
 import Bubble from "./components/Bubble.tsx";
 import Sprite from "./components/Sprite.tsx";
 import type {ArtMeta} from "./content/types.ts";
+import PageBgMarkings from "./components/PageBgMarkings.tsx";
 
 export default function ArtPage() {
     const modules = import.meta.glob('./content/art/*.meta.ts', {eager: true});
@@ -33,6 +34,7 @@ export default function ArtPage() {
         }
         height += -yOffset + 40; // for the first year there is no offset before it
     }
+    height += 100 + 200;
 
     return (
         <>
@@ -40,7 +42,8 @@ export default function ArtPage() {
                     bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dlbg3it-b24505b4-db82-40c5-bf79-ea683e144c4b.jpg/v1/fill/w_1192,h_670,q_70,strp/girl_reach_out_to_the_rain_by_lavennielil_dlbg3it-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9kbGJnM2l0LWIyNDUwNWI0LWRiODItNDBjNS1iZjc5LWVhNjgzZTE0NGM0Yi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.93MnTofdI-W-ncsWuy9_A_GztWdpBOYlabSH2Fsd9hI"}/>
             { /* SITE */ }
             <div className={`app-background ${styles.appBackground}`}>
-                <div className={`site-container ${styles.siteContainer}`} style={{height: `calc(${height}px + 100vh + 100px + 200px)`}}>
+                <div className={`site-container ${styles.siteContainer}`} style={{height: `calc(${height}px + 100vh)`}}>
+                    <PageBgMarkings imageUrl={"whale_drawing.png"} targetHeight={height+window.innerHeight} topOffset={"100vh"}/>
                     { /* axolotl swimming - fixed size image */ }
                     <div className={styles.axolotlScene}>
                         { /* 3D OBJECTS - axolotl */ }

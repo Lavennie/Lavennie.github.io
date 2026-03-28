@@ -4,6 +4,8 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
+    z-index: 1000;
+    position: relative;
 }
 
 .footer img {
