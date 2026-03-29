@@ -2,9 +2,6 @@ import * as React from "react";
 
 type PageBgMarkingsProps = {
     imageUrl: string;
-    targetHeight: number; // px
-    imageHeight?: number; // px
-    effectiveImageHeight?: number; // px
     topOffset?: string; // px, %, rem, etc.
     className?: string;
     style?: React.CSSProperties;
@@ -22,11 +19,25 @@ function cssValueToPx(value: string, reference = 0, rootFontSize = 16) {
     return parseFloat(value);
 }
 
+function getImageSize(url: string): Promise<{ width: number; height: number }> {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.onload = () => {
+            resolve({
+                width: img.naturalWidth,
+                height: img.naturalHeight
+            });
+        };
+
+        img.onerror = reject;
+
+        img.src = url;
+    });
+}
+
 export default function PageBgMarkings({
                                            imageUrl,
-                                           targetHeight,
-                                           imageHeight = 1920,
-                                           effectiveImageHeight = 1920,
                                            topOffset = "0px",
                                            className = "",
                                            style = {},
@@ -34,25 +45,29 @@ export default function PageBgMarkings({
     const containerRef = React.useRef<HTMLDivElement>(null);
     const [count, setCount] = React.useState(1);
     const [gap, setGap] = React.useState(0);
+    const [imageSize, setImageSize] = React.useState<{ width: number; height: number }>({width: 0, height: 0});
 
     React.useEffect(() => {
         const el = containerRef.current;
         if (!el) return;
 
         const update = () => {
-            const topOffsetPx = cssValueToPx(topOffset, targetHeight);
-            const availableHeight = targetHeight - topOffsetPx - (imageHeight - effectiveImageHeight);
-
-            // Determine max number of images that fit
-            const maxCount = Math.floor(availableHeight / effectiveImageHeight);
-            const finalCount = Math.max(1, maxCount);
-
-            // Compute dynamic gap so images + gaps fill targetHeight exactly
-            const totalGap = availableHeight - finalCount * effectiveImageHeight;
-            let gapPx = totalGap / (finalCount + 1); // +1 for before first and after last
-
-            setCount(finalCount);
-            setGap(gapPx);
+            getImageSize(imageUrl).then(size => {
+                setImageSize({width: size.width, height: size.height})
+                const bgParent = document.getElementsByClassName("site-container")[0] as HTMLElement;
+                const canvasHeight = bgParent.getBoundingClientRect().height - cssValueToPx(topOffset);
+                const numOfImages = Math.floor(canvasHeight / size.height);
+                if (numOfImages == 0){
+                    const scale = canvasHeight / size.height;
+                    setImageSize({width: size.width * scale, height: size.height * scale})
+                    setCount(1);
+                    setGap(0);
+                }
+                else {
+                    setCount(numOfImages);
+                    setGap((canvasHeight - numOfImages * size.height) / (numOfImages + 1));
+                }
+            });
         };
 
         update();
@@ -60,8 +75,9 @@ export default function PageBgMarkings({
         const observer = new ResizeObserver(update);
         observer.observe(el);
         return () => observer.disconnect();
-    }, [imageHeight, topOffset, targetHeight, effectiveImageHeight]);
+    }, [topOffset]);
 
+    console.log(imageSize);
     return (
         <div
             ref={containerRef}
@@ -69,12 +85,14 @@ export default function PageBgMarkings({
             style={{
                 position: "absolute",
                 pointerEvents: "none",
+                height: `calc(100% - ${topOffset})`,
+                top: topOffset,
                 ...style,
             }}
         >
             {Array.from({ length: count }).map((_, i) => {
                 // position = topOffset + (gap before first + images*gap)
-                const top = `calc(${topOffset} + ${(i + 1) * gap}px + ${i * effectiveImageHeight}px)`;
+                const top = `calc(${(i + 1) * gap}px + ${i * imageSize.height}px)`;
 
                 return (
                     <div
@@ -82,13 +100,13 @@ export default function PageBgMarkings({
                         style={{
                             position: "absolute",
                             top,
-                            height: `${imageHeight}px`,
+                            height: `${imageSize.height}px`,
                             width: "100%",
                             left: "50%",
                             transform: `translateX(-50%) scaleX(${i % 2 === 1 ? -1 : 1})`,
                             backgroundImage: `url(${imageUrl})`,
                             backgroundRepeat: "no-repeat",
-                            backgroundPosition: "right",
+                            backgroundPosition: `${count == 1 ? "center" : "right"}`,
                             backgroundSize: "contain",
                             pointerEvents: "none",
                             zIndex: 0,

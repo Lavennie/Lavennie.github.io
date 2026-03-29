@@ -43,7 +43,7 @@ export default function ArtPage() {
             { /* SITE */ }
             <div className={`app-background ${styles.appBackground}`}>
                 <div className={`site-container ${styles.siteContainer}`} style={{height: `calc(${height}px + 100vh)`}}>
-                    <PageBgMarkings imageUrl={"whale_drawing.png"} targetHeight={height+window.innerHeight} topOffset={"100vh"}/>
+                    <PageBgMarkings imageUrl={"whale_drawing.png"} topOffset={"100vh"}/>
                     { /* axolotl swimming - fixed size image */ }
                     <div className={styles.axolotlScene}>
                         { /* 3D OBJECTS - axolotl */ }
