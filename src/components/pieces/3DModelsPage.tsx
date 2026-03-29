@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar.tsx";
 import Footer from "../../components/Footer.tsx";
 import Categories from "./Categories.tsx";
 import Entries from "./Entries.tsx";
+import PageBgMarkings from "../PageBgMarkings.tsx";
 
 export default function PiecesPage() {
     return (<>
@@ -12,6 +13,7 @@ export default function PiecesPage() {
         <div className={`app-background ${styles.appBackground}`}>
             <div className={`site-container ${styles.siteContainer}`}>
                 <Categories height={150} selected={"3D models"}/>
+                <PageBgMarkings imageUrl={"crow_drawing.png"} imageHeight={1024} targetHeight={2000} topOffset={"600px"}/>
                 <Entries type="3D"/>
             </div>
         </div>
