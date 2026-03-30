@@ -4,6 +4,7 @@ import Footer from "./components/Footer.tsx";
 import {sortMetaEntries} from "./components/dateUtil.ts";
 import type {ResearchMeta} from "./content/types.ts";
 import ResearchCard from "./components/research/ResearchCard.tsx";
+import PageBgMarkings from "./components/PageBgMarkings.tsx";
 
 export default function ResearchPage() {
     const modules = import.meta.glob('./content/research/*.meta.ts', { eager: true });
@@ -19,6 +20,7 @@ export default function ResearchPage() {
 
         <div className={`app-background ${styles.appBackground}`}>
             <div className={`site-container ${styles.siteContainer}`}>
+                <PageBgMarkings imageUrl={"salamander_drawing.png"} topOffset={"150px"}/>
                 {allResearch.map((topic, index) => (
                     <ResearchCard
                         key={topic.id}
