@@ -5,6 +5,7 @@ type PageBgMarkingsProps = {
     topOffset?: string; // px, %, rem, etc.
     className?: string;
     style?: React.CSSProperties;
+    flip?: boolean;
 };
 
 function cssValueToPx(value: string, reference = 0, rootFontSize = 16) {
@@ -41,6 +42,7 @@ export default function PageBgMarkings({
                                            topOffset = "0px",
                                            className = "",
                                            style = {},
+                                           flip = false,
                                        }: PageBgMarkingsProps) {
     const containerRef = React.useRef<HTMLDivElement>(null);
     const [count, setCount] = React.useState(1);
@@ -103,7 +105,7 @@ export default function PageBgMarkings({
                             height: `${imageSize.height}px`,
                             width: "100%",
                             left: "50%",
-                            transform: `translateX(-50%) scaleX(${i % 2 === 1 ? -1 : 1})`,
+                            transform: `translateX(-50%) scaleX(${((i % 2 === 1) != flip) ? -1 : 1})`,
                             backgroundImage: `url(${imageUrl})`,
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: `${count == 1 ? "center" : "right"}`,

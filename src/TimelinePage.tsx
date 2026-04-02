@@ -153,6 +153,7 @@ export default function TimelinePage() {
         <div className={`app-background ${styles.appBackground}`}>
             <div className={`site-container ${styles.siteContainer}`}>
                 <PageBgMarkings imageUrl={"jellyfish_drawing.png"} topOffset={"0px"}/>
+                <PageBgMarkings imageUrl={"phoenix_drawing.png"} topOffset={"0px"} flip={true}/>
                 <div className={styles.list}>
                     {
                         active.map(entry => (
