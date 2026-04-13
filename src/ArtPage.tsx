@@ -38,8 +38,8 @@ export default function ArtPage() {
 
     return (
         <>
-            <NavBar colorMain={"#E5EBFE"} colorSide={"#C1B4FF"} textColor={"#714FFF"} bannerY={30}
-                    bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dlbg3it-b24505b4-db82-40c5-bf79-ea683e144c4b.jpg/v1/fill/w_1192,h_670,q_70,strp/girl_reach_out_to_the_rain_by_lavennielil_dlbg3it-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9kbGJnM2l0LWIyNDUwNWI0LWRiODItNDBjNS1iZjc5LWVhNjgzZTE0NGM0Yi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.93MnTofdI-W-ncsWuy9_A_GztWdpBOYlabSH2Fsd9hI"}/>
+            <NavBar colorMain={"#E5EBFE"} colorSide={"#C1B4FF"} textColor={"#714FFF"} bannerY={55}
+                    bannerUrl={"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/902fc45c-deef-4f0b-b2ac-8e99318e9ac7/dluqy3o-12d11dfb-0099-4f2a-8ca4-9f94e57fd460.jpg/v1/fill/w_1192,h_670,q_70,strp/writing_below_cherry_blossoms_by_lavennielil_dluqy3o-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzkwMmZjNDVjLWRlZWYtNGYwYi1iMmFjLThlOTkzMThlOWFjNy9kbHVxeTNvLTEyZDExZGZiLTAwOTktNGYyYS04Y2E0LTlmOTRlNTdmZDQ2MC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.fCFPShf4vpLVKSM_mVtUtLsXId6HexeSWI9IRGXyrBQ"}/>
             { /* SITE */ }
             <div className={`app-background ${styles.appBackground}`}>
                 <div className={`site-container ${styles.siteContainer}`} style={{height: `calc(${height}px + 100vh)`}}>
