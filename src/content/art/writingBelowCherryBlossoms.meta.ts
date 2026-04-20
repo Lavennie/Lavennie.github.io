@@ -3,7 +3,7 @@ import type { ArtMeta } from "../types";
 const meta: ArtMeta = {
     type: "art",
     id: "writing below cherry blossoms",
-    title: "Shifting corridor",
+    title: "Cherry blossoms",
     dateEnd: "2026/04/13",
     description: "",
     link: "https://www.youtube.com/watch?v=om-Y0yYwMJ8",
