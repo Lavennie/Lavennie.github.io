@@ -6,6 +6,20 @@ type TimelapseProps = {
 };
 
 export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
+    let overlayButton = null;
+    if (videoUrl) {
+        overlayButton = (
+            <a
+                href={videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="timelapse-play"
+                onClick={(e) => e.stopPropagation()} // prevent container click
+            >
+                Time-lapse
+            </a>
+        );
+    }
     return (
         <>
             <div className="timelapse-container">
@@ -30,16 +44,7 @@ export default function Timelapse({ videoUrl, thumbnailUrl } : TimelapseProps) {
                     />
                 </a>
             </div>
-            {/* Overlay button */}
-            <a
-                href={videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="timelapse-play"
-                onClick={(e) => e.stopPropagation()} // prevent container click
-            >
-                Time-lapse
-            </a>
+            { overlayButton }
         </>
     );
 }
