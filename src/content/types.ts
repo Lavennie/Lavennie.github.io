@@ -40,6 +40,15 @@ export interface ResearchMeta extends EntryMeta {
     tags: Tag[];
     state: "planning" | "in progress" | "concluded" | "on hold" | "abandoned";
 }
+
 export interface AchievementMeta extends EntryMeta {
     type: "achievement"; // type discriminant
+}
+
+export interface QuoteMeta extends EntryMeta {
+    type: "quote"; // type discriminant
+    source: string;
+    page: string;
+    speaker: string;
+    sourceType: "novel" | "manga"
 }

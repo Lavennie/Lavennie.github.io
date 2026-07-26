@@ -2,6 +2,7 @@ import styles from './QualiaPage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
 import Constellations from "./components/constellation/Constellations.tsx";
+import Quotes from "./components/qualia/Quotes.tsx";
 
 export default function QualiaPage() {
     return(<>
@@ -11,8 +12,13 @@ export default function QualiaPage() {
         <div className={`app-background ${styles.appBackground}`}>
             {/* the div below is for the bakcground image, it needs to be the first child of appBackground */}
             <div></div>
-            <div className={`site-container ${styles.siteContainer}`}>
+            <div className={`site-container ${styles.constelationsContainer}`}>
                 <Constellations/>
+            </div>
+            <div className={`site-container ${styles.quotesContainer}`}>
+                <div>
+                    <Quotes/>
+                </div>
             </div>
         </div>
         <Footer colorMain={"#212125"} colorSide={"#323245"} logoHue={190} textColor={"#7AB7FF"}/>
