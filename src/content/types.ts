@@ -50,5 +50,6 @@ export interface QuoteMeta extends EntryMeta {
     source: string;
     page: string;
     speaker: string;
+    quotes: boolean;
     sourceType: "novel" | "manga"
 }

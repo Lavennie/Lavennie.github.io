@@ -1,15 +1,17 @@
+import { useMemo } from 'react';
 import QuoteCard from './QuoteCard.tsx';
 import type {QuoteMeta} from "../../content/types.ts";
 
+const modules = import.meta.glob('../../content/quotes/*.meta.ts', { eager: true });
+
 export default function Quotes() {
     //  load & shuffle quotes
-    const modules = import.meta.glob('../../content/quotes/*.meta.ts', { eager: true });
-
-    const allQuotes: QuoteMeta[] = shuffle(
-        Object.values(modules)
+    const allQuotes: QuoteMeta[] = useMemo(() => {
+        const quotes = Object.values(modules)
             .map((m: any) => m.default as QuoteMeta)
-            .filter((q) => q && q.description)
-    );
+            .filter((q) => q && q.description);
+        return shuffle(quotes);
+    }, []); // empty deps = compute once per mount
 
     if (allQuotes.length === 0) return null;
 

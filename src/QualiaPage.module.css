@@ -33,4 +33,7 @@
     padding: 5% 8%;
     background-color: #7AB7FFA0;
     border-radius: 24px;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
