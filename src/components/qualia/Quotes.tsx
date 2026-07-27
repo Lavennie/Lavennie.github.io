@@ -21,7 +21,7 @@ export default function Quotes() {
             {allQuotes.map((quote, idx) => (
                 <QuoteCard
                     key={idx}
-                    text={quote.description}
+                    text={quote.quotes ? `“${quote.description}”` : quote.description}
                     source={quote.source}
                     page={quote.page}
                     speaker={quote.speaker}
