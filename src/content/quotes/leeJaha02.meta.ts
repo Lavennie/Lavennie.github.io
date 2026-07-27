@@ -2,12 +2,12 @@ import type { QuoteMeta } from "../types";
 
 const meta: QuoteMeta = {
     type: "quote",
-    id: "quote lee jaha 1",
-    description: "A man who is welcomed wherever he goes, that's who I am.",
+    id: "quote lee jaha 2",
+    description: "An attention Seeker. That's who I am!",
     quotes: true,
-    image: "quote_images/lee_jaha_serene_hat.jpg",
+    image: "quote_images/lee_jaha_red.jpg",
     source: "Return of the Mad Demon",
-    page: "Manhwa ch205",
+    page: "",
     speaker: "Lee Jaha",
     sourceType: "manga",
     title: "",

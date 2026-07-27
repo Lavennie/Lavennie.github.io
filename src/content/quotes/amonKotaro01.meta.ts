@@ -1,0 +1,17 @@
+import type { QuoteMeta } from "../types";
+
+const meta: QuoteMeta = {
+    type: "quote",
+    id: "amon kotaro 1",
+    description: "Morals...? With that 'morality' you can't crush evil. We are justice, that is our morality.",
+    quotes: true,
+    image: "quote_images/amon_kotaro_manga.jpg",
+    source: "Tokyo Ghoul",
+    page: "Manga ch13",
+    speaker: "Amon Kōtarō",
+    sourceType: "manga",
+    title: "",
+    dateEnd: ""
+};
+
+export default meta;

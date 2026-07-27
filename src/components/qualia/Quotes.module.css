@@ -80,6 +80,10 @@
     justify-content: flex-end;
 }
 
-.overlay:hover {
+.card:hover .text{
+    color: #c5e2ff80;
+    -webkit-text-stroke: 0px #00000080;
+}
+.card:hover .overlay {
     background-color: #0000;
 }
