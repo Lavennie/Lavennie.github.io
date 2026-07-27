@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import QuoteCard from './QuoteCard.tsx';
 import type {QuoteMeta} from "../../content/types.ts";
+import styles from './Quotes.module.css';
 
 const modules = import.meta.glob('../../content/quotes/*.meta.ts', { eager: true });
 
@@ -16,7 +17,7 @@ export default function Quotes() {
     if (allQuotes.length === 0) return null;
 
     return (
-        <>
+        <div className={styles.quotesScroll}>
             {allQuotes.map((quote, idx) => (
                 <QuoteCard
                     key={idx}
@@ -27,7 +28,7 @@ export default function Quotes() {
                     img={quote.image}
                 />
             ))}
-        </>
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 import './Constellations.module.css'
 import * as Traversal from "./graphTraversal.tsx";
 import * as Construction from "./graphConstruction.tsx";
-import type {Node, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types";
+import type {Node, Constellation, TraverseGraphFunc, ConstructGraphFunc } from "./types.tsx";
 import React, { useRef, useEffect } from "react";
 
 function randomizeNodePositions(

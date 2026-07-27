@@ -1,7 +1,7 @@
 import styles from './QualiaPage.module.css'
 import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
-import Constellations from "./components/constellation/Constellations.tsx";
+import Constellations from "./components/qualia/Constellations.tsx";
 import Quotes from "./components/qualia/Quotes.tsx";
 
 export default function QualiaPage() {
@@ -17,6 +17,7 @@ export default function QualiaPage() {
             </div>
             <div className={`site-container ${styles.quotesContainer}`}>
                 <div>
+                    <h1>&ldquo;As they say...&rdquo;</h1>
                     <Quotes/>
                 </div>
             </div>

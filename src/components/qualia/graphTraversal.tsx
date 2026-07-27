@@ -1,4 +1,4 @@
-import type { Node, Edge } from "./types";
+import type { Node, Edge } from "./types.tsx";
 
 function buildAdjacencyList(edges : {from: number, to: number}[]) {
     const graph : Record<number, number[]> = {};
