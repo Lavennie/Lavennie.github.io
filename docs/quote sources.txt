@@ -27,15 +27,19 @@ black haze
 death parade
 mushishi
 one outs
-
+clannad
+baccano
 irregular at magic highschool
+.hack//sign
+91 days
+psycho pass
+
 on the workings of earth
 star rail
 genshin
 persona
 fma
 slime
-.hack//sign
 86
 bleach
 enen
@@ -47,13 +51,11 @@ lain
 sao
 vinland saga
 violet evergarden
-91 days
 acca
 aldnoah.zero
 amagi brilian park
 another
 assassins pride
-baccano
 erased
 my hero academia
 bungou stray dogs
@@ -92,7 +94,6 @@ no guns life
 noragami
 spice and wolf
 prince of stride
-psycho pass
 king' avatar
 re:creators
 reLife
@@ -124,7 +125,6 @@ zankyou no terror
 owari no seraph
 rurouni kenshin
 danganronpa
-clannad
 assassination classrom
 acid town
 assassins pride
