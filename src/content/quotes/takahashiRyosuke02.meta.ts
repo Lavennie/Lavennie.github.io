@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/takahashi_ryosuke_dark.jpg",
     source: "Initial D",
     page: "",
-    speaker: "Takahashi Ryōsuke",
+    speaker: "Takahashi Ryosuke",
     sourceType: "manga",
     title: "",
     dateEnd: ""

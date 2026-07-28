@@ -4,7 +4,7 @@ const meta: QuoteMeta = {
     type: "quote",
     id: "quote jaehwan 1",
     description: "Stab",
-    quotes: true,
+    quotes: false,
     image: "quote_images/jaehwan_sword.jpg",
     source: "The World After The Fall",
     page: "",
