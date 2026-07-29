@@ -33,13 +33,18 @@ irregular at magic highschool
 .hack//sign
 91 days
 psycho pass
+cowboy bebop
+darker than black
+amagi briliant park
+aldnoah.zero
+noragami
 
 on the workings of earth
 star rail
 genshin
 persona
 fma
-slime
+reaincartanted as a slime
 86
 bleach
 enen
@@ -51,17 +56,12 @@ lain
 sao
 vinland saga
 violet evergarden
-acca
-aldnoah.zero
-amagi brilian park
 another
 assassins pride
 erased
 my hero academia
 bungou stray dogs
 charlotte
-cowboy bebop
-darker than black
 darwin's game
 diamond no ace
 dororo
@@ -91,7 +91,6 @@ mirai nikki
 a whisker away
 no game no life
 no guns life
-noragami
 spice and wolf
 prince of stride
 king' avatar
@@ -244,3 +243,4 @@ young gun carnival
 
 
 existence
+acca
