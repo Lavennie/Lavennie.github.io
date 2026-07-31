@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 public/quote sources.txt
+docs/quote sources.txt
