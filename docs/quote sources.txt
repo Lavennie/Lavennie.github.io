@@ -42,8 +42,21 @@ mekakucity actors
 assassins pride
 erased
 durarara
+joker game
+kakegurui
+your name
+mirai nikki
+wolf's rain
+classroom of the elite
+orb: on the movements of the earth
+charlotte
+darwin's game
+bungou stray dogs
+another
+assassination classroom
+great pretender
+owari no seraph
 
-on the workings of earth
 star rail
 genshin
 persona
@@ -60,24 +73,16 @@ lain
 sao
 vinland saga
 violet evergarden
-another
 my hero academia
-bungou stray dogs
-charlotte
-darwin's game
 diamond no ace
 dororo
 gakuen babysitters
-great pretender
 haikyuu
 hataraku maou-sama
 hibike
 id:invaded
 jinrou
-joker game
 kaguya
-kakegurui
-your name
 kekkai sensen
 parasyte
 kuroko
@@ -87,7 +92,6 @@ love live
 magi
 mo dao zu shi
 mob psycho 100
-mirai nikki
 a whisker away
 no game no life
 no guns life
@@ -97,7 +101,6 @@ king' avatar
 re:creators
 reLife
 saiki
-satsuriki no tenshi
 spirited away
 senyuu
 shigatsu wa kimi no uso
@@ -116,15 +119,11 @@ tonaki no seki-kun
 uramichi oniisan
 toradora
 vampire knight
-wolf's rain
 wonder egg priority
-classroom of the elite
 yugioh
 zankyou no terror
-owari no seraph
 rurouni kenshin
 danganronpa
-assassination classrom
 acid town
 assassins pride
 black joke
@@ -244,3 +243,4 @@ young gun carnival
 
 existence
 acca
+satsuriki no tenshi
