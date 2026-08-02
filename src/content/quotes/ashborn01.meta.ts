@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/ashborn.jpg",
     source: "Solo Leveling",
     page: "",
-    speaker: "Sung Jinwoo",
+    firstname: "Ashborn",
     sourceType: "manga",
     title: "",
     dateEnd: ""

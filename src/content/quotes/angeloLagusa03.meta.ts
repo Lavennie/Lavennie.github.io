@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/angelo_lagusa_front.jpg",
     source: "91 Days",
     page: "",
-    speaker: "Angelo Lagusa",
+    firstname: "Angelo",
+    lastname: "Lagusa",
     sourceType: "anime",
     title: "",
     dateEnd: ""

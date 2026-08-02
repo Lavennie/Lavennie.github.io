@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/nowak_old_side.jpg",
     source: "Orb: On the Movements of the Earth",
     page: "",
-    speaker: "Nowak",
+    firstname: "Nowak",
     sourceType: "anime",
     title: "",
     dateEnd: ""

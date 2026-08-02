@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/karino_shuka_raven.jpg",
     source: "Darwin's game",
     page: "",
-    speaker: "Karino Shuka",
+    firstname: "Shuka",
+    lastname: "Karino",
     sourceType: "manga",
     title: "",
     dateEnd: ""

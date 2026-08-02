@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yomo_renji_mask.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch130",
-    speaker: "Yomo Renji",
+    firstname: "Renji",
+    lastname: "Yomo",
     sourceType: "manga",
     title: "",
     dateEnd: ""

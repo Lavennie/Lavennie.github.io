@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/fueguchi_hinami_ghoul.jpg",
     source: "Tokyo Ghoul:Void",
     page: "Manga ch4",
-    speaker: "Fueguchi Hinami",
+    firstname: "Hinami",
+    lastname: "Fueguchi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

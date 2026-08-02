@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tokuchi_toa_lighted.jpg",
     source: "One Outs",
     page: "",
-    speaker: "Tokuchi Toa",
+    firstname: "Toa",
+    lastname: "Tokuchi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

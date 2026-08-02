@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/laurent_thierry_laugh.jpg",
     source: "Great Pretender",
     page: "",
-    speaker: "Laurent Thierry",
+    firstname: "Laurent",
+    lastname: "Thierry",
     sourceType: "anime",
     title: "",
     dateEnd: ""

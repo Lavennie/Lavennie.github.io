@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kirishima_arata_manga.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch70",
-    speaker: "Kirishima Arata",
+    firstname: "Arata",
+    lastname: "Kirishima",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/johan_liebert_cup.jpg",
     source: "Monster",
     page: "",
-    speaker: "Johan Liebert",
+    firstname: "Johan",
+    lastname: "Liebert",
     sourceType: "manga",
     title: "",
     dateEnd: ""

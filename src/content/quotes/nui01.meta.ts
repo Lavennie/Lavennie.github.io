@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/nui_profile.jpg",
     source: "Mushishi",
     page: "",
-    speaker: "Nui",
+    firstname: "Nui",
     sourceType: "anime",
     title: "",
     dateEnd: ""

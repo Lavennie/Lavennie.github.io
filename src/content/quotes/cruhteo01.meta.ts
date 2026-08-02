@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/cruhteo_stick.jpg",
     source: "Aldnoah.Zero",
     page: "",
-    speaker: "Count Cruhteo",
+    firstname: "Count",
+    lastname: "Cruhteo",
     sourceType: "anime",
     title: "",
     dateEnd: ""

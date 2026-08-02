@@ -8,7 +8,9 @@ const meta: QuoteMeta = {
     image: "quote_images/lelouch_vi_britannia_sunset.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "Lelouch vi Britannia",
+    firstname: "Lelouch",
+    middlename: "vi",
+    lastname: "Britannia",
     sourceType: "manga",
     title: "",
     dateEnd: ""

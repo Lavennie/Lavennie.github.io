@@ -8,7 +8,9 @@ const meta: QuoteMeta = {
     image: "quote_images/cadis_etrama_di_raizel_wings.jpg",
     source: "Noblesse",
     page: "",
-    speaker: "Raizel",
+    firstname: "Raizel",
+    middlename: "Di",
+    lastname: "Cadis Etrama",
     sourceType: "manga",
     title: "",
     dateEnd: ""

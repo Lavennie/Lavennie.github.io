@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/fujinuma_satoru_point.jpg",
     source: "Erased",
     page: "",
-    speaker: "Fujinuma Satoru",
+    firstname: "Satoru",
+    lastname: "Fujinuma",
     sourceType: "anime",
     title: "",
     dateEnd: ""

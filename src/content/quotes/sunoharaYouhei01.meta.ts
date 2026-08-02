@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sunohara_youhei_uwu.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Sunohara Youhei",
+    firstname: "Youhei",
+    lastname: "Sunohara",
     sourceType: "manga",
     title: "",
     dateEnd: ""

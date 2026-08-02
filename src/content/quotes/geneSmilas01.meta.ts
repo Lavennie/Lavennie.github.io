@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/gene_smilas_profile.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "Gene Smilas",
+    firstname: "Smilas",
+    lastname: "Gene",
     sourceType: "manga",
     title: "",
     dateEnd: ""

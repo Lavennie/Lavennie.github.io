@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/claire_stanfield_profile.jpg",
     source: "Baccano",
     page: "",
-    speaker: "Claire Stanfield",
+    firstname: "Stanfield",
+    lastname: "Claire",
     sourceType: "anime",
     title: "",
     dateEnd: ""

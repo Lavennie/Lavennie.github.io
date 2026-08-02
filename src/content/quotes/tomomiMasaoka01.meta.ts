@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tomomi_masaoka_think.jpg",
     source: "Psycho-Pass",
     page: "",
-    speaker: "Tomomi Masaoka",
+    firstname: "Masaoka",
+    lastname: "Tomomi",
     sourceType: "anime",
     title: "",
     dateEnd: ""

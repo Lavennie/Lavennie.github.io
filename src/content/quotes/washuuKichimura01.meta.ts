@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/washuu_kichimaru_manga.jpg",
     source: "Tokyo Ghoul:re",
     page: "Manga ch176",
-    speaker: "Washuu Kichimura",
+    firstname: "Kichimura",
+    lastname: "Washuu",
     sourceType: "manga",
     title: "",
     dateEnd: ""

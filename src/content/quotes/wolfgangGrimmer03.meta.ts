@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/wolfgang_grimmer_bloody.jpg",
     source: "Monster",
     page: "",
-    speaker: "Wolfgang Grimmer",
+    firstname: "Wolfgang",
+    lastname: "Grimmer",
     sourceType: "manga",
     title: "",
     dateEnd: ""

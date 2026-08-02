@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nikolia_gogol_clap.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Nikolai Gogol",
+    firstname: "Nikolai",
+    lastname: "Gogol",
     sourceType: "manga",
     title: "",
     dateEnd: ""

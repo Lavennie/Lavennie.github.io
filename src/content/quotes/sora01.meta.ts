@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/sora_window.jpg",
     source: "No Game No Life",
     page: "",
-    speaker: "Sora",
+    firstname: "Sora",
     sourceType: "anime",
     title: "",
     dateEnd: ""

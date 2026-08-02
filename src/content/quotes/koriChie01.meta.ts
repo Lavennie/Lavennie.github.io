@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hori_chie_smile.jpg",
     source: "Tokyo Ghoul:re",
     page: "Manga ch34",
-    speaker: "Hori Chie",
+    firstname: "Chie",
+    lastname: "Hori",
     sourceType: "manga",
     title: "",
     dateEnd: ""

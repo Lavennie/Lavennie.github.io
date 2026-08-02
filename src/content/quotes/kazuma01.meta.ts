@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/kazuma_glasses.jpg",
     source: "Noragami",
     page: "",
-    speaker: "Kazuma",
+    firstname: "Kazuma",
     sourceType: "manga",
     title: "",
     dateEnd: ""

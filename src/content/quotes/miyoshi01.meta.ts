@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/miyoshi_profile.jpg",
     source: "Joker Game",
     page: "",
-    speaker: "Miyoshi",
+    firstname: "Miyoshi",
     sourceType: "anime",
     title: "",
     dateEnd: ""

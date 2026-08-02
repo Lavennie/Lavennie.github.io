@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/sl_architect_tablet.jpg",
     source: "Solo Leveling",
     page: "",
-    speaker: "Architect",
+    firstname: "Architect",
     sourceType: "manga",
     title: "",
     dateEnd: ""

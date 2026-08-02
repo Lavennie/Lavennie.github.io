@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yashiro_gaku_profile.jpg",
     source: "Erased",
     page: "",
-    speaker: "Yashiro Gaku",
+    firstname: "Gaku",
+    lastname: "Yashiro",
     sourceType: "anime",
     title: "",
     dateEnd: ""

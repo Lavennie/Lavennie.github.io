@@ -24,7 +24,9 @@ export default function Quotes() {
                     text={quote.quotes ? `“${quote.description}”` : quote.description}
                     source={quote.source}
                     page={quote.page}
-                    speaker={quote.speaker}
+                    firstname={quote.firstname}
+                    middlename={quote.middlename ?? ""}
+                    lastname={quote.lastname ?? ""}
                     img={quote.image}
                 />
             ))}

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kurisu_takaya_profile.jpg",
     source: "Amagi Brilliant Park",
     page: "",
-    speaker: "Kurisu Takaya",
+    firstname: "Takaya",
+    lastname: "Kurisu",
     sourceType: "anime",
     title: "",
     dateEnd: ""

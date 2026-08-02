@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/gasai_yuno_obsession.jpg",
     source: "Mirai NIkki",
     page: "",
-    speaker: "Gasai Yuno",
+    firstname: "Yuno",
+    lastname: "Gasai",
     sourceType: "anime",
     title: "",
     dateEnd: ""

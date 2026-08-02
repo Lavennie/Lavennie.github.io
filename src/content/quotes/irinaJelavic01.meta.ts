@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/irina_jelavic_sweater.jpg",
     source: "Assassination Classroom",
     page: "",
-    speaker: "Irina Jelavić",
+    firstname: "Irina",
+    lastname: "Jelavić",
     sourceType: "anime",
     title: "",
     dateEnd: ""

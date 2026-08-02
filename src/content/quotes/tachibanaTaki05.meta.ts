@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/your_name_poster.jpg",
     source: "Your Name",
     page: "",
-    speaker: "Tachibana Taki",
+    firstname: "Taki",
+    lastname: "Tachibana",
     sourceType: "anime",
     title: "",
     dateEnd: ""

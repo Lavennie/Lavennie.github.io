@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/shiota_nagisa_smile.jpg",
     source: "Assassination Classroom",
     page: "",
-    speaker: "Shiota Nagisa",
+    firstname: "Nagisa",
+    lastname: "Shiota",
     sourceType: "anime",
     title: "",
     dateEnd: ""

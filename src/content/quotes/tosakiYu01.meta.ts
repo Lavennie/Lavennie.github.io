@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tosaki_yu_face.jpg",
     source: "Ajin: Demi-Human",
     page: "",
-    speaker: "Tosaki Yu",
+    firstname: "Yu",
+    lastname: "Tosaki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

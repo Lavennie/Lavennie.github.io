@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/himura_kenshin_assassin_art.jpg",
     source: "Rurouni Kenshin",
     page: "",
-    speaker: "Himura Kenshin",
+    firstname: "Kenshin",
+    lastname: "Himura",
     sourceType: "manga",
     title: "",
     dateEnd: ""

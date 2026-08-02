@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/misaki_mei_poster.jpg",
     source: "Another",
     page: "",
-    speaker: "Misaki Mei",
+    firstname: "Mei",
+    lastname: "Misaki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

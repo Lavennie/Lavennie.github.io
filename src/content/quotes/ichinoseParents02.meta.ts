@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ichinose_parents_visit.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Ichinose Koutarou",
+    firstname: "Koutarou",
+    lastname: "Ichinose",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/otonashi_saya_face.jpg",
     source: "Blood+",
     page: "",
-    speaker: "Otonashi Saya",
+    firstname: "Saya",
+    lastname: "Otonashi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ferid_bathory_up.jpg",
     source: "Owari no Seraph",
     page: "",
-    speaker: "Ferid Bathory",
+    firstname: "Ferid",
+    lastname: "Bathory",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -56,6 +56,12 @@ another
 assassination classroom
 great pretender
 owari no seraph
+monster
+no game no life
+reLife
+shiki
+zankyou no terror
+rurouni kenshin
 
 star rail
 genshin
@@ -93,19 +99,16 @@ magi
 mo dao zu shi
 mob psycho 100
 a whisker away
-no game no life
 no guns life
 spice and wolf
 prince of stride
 king' avatar
 re:creators
-reLife
 saiki
 spirited away
 senyuu
 shigatsu wa kimi no uso
 shiguang dailren
-shiki
 attack on titan
 Shuumatsu Nani Shitemasu ka
 soul eater
@@ -121,8 +124,6 @@ toradora
 vampire knight
 wonder egg priority
 yugioh
-zankyou no terror
-rurouni kenshin
 danganronpa
 acid town
 assassins pride
@@ -211,7 +212,6 @@ life
 little 13
 luck stealer
 manhole
-monster
 nanatsu no taizai
 ori no naka no soloist
 ouroboros

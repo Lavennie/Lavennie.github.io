@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/arthur_leywin_scary.jpg",
     source: "The Beginning After The End",
     page: "",
-    speaker: "Arthur Leywin",
+    firstname: "Arthur",
+    lastname: "Leywin",
     sourceType: "manga",
     title: "",
     dateEnd: ""

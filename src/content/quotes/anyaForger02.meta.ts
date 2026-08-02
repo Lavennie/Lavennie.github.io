@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/anya_forger_heh.jpg",
     source: "Spy x Family",
     page: "",
-    speaker: "Anya Forger",
+    firstname: "Anya",
+    lastname: "Forger",
     sourceType: "manga",
     title: "",
     dateEnd: ""

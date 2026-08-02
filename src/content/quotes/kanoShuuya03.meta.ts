@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kano_shuuya_open.jpg",
     source: "Mekakucity Actors",
     page: "",
-    speaker: "Kano Shuuya",
+    firstname: "Shuuya",
+    lastname: "Kano",
     sourceType: "anime",
     title: "",
     dateEnd: ""

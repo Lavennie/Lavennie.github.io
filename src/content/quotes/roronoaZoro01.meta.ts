@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/roronoa_zoro_crossed_arms.jpg",
     source: "One Piece",
     page: "",
-    speaker: "Roronoa Zoro",
+    firstname: "Zoro",
+    lastname: "Roronoa",
     sourceType: "anime",
     title: "",
     dateEnd: ""

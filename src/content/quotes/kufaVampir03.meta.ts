@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kufa_vampir_vampire.jpg",
     source: "Assassins Pride",
     page: "",
-    speaker: "Kufa Vampir",
+    firstname: "Kufa",
+    lastname: "Vampir",
     sourceType: "manga",
     title: "",
     dateEnd: ""

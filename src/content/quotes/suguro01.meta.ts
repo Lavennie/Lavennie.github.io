@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/suguro_profile.jpg",
     source: "Mushishi",
     page: "",
-    speaker: "Suguro",
+    firstname: "Suguro",
     sourceType: "anime",
     title: "",
     dateEnd: ""

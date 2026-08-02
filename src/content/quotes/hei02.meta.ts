@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/hei_red_eyes.jpg",
     source: "Darker than Black",
     page: "",
-    speaker: "Hei",
+    firstname: "Hei",
     sourceType: "anime",
     title: "",
     dateEnd: ""

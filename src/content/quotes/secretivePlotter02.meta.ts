@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/secretive_plotter_lean.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch181",
-    speaker: "Secretive Plotter",
+    firstname: "Secretive Plotter",
     sourceType: "novel",
     title: "",
     dateEnd: ""

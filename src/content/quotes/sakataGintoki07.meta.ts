@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sakata_gintoki_rebel_sad.jpg",
     source: "Gintama",
     page: "Anime ep2",
-    speaker: "Sakata Gintoki",
+    firstname: "Gintoki",
+    lastname: "Sakata",
     sourceType: "anime",
     title: "",
     dateEnd: ""

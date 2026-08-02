@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/han_sooyoung_laying.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch98",
-    speaker: "Han Sooyoung",
+    firstname: "Sooyoung",
+    lastname: "Han",
     sourceType: "novel",
     title: "",
     dateEnd: ""

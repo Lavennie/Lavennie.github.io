@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nagai_kei_walk.jpg",
     source: "Ajin: Demi-Human",
     page: "",
-    speaker: "Nagai Kei",
+    firstname: "Kei",
+    lastname: "Nagai",
     sourceType: "manga",
     title: "",
     dateEnd: ""

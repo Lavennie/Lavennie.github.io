@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kokonose_konoha_face.jpg",
     source: "Mekakucity Actors",
     page: "",
-    speaker: "Kokonose Konoha",
+    firstname: "Konoha",
+    lastname: "Kokonose",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ryuugamine_mikado_profile.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Ryuugamine Mikado",
+    firstname: "Mikado",
+    lastname: "Ryuugamine",
     sourceType: "anime",
     title: "",
     dateEnd: ""

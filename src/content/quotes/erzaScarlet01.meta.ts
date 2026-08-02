@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/erza_scarlet_knight.jpg",
     source: "Fairy Tail",
     page: "",
-    speaker: "Erza Scarlet",
+    firstname: "Erza",
+    lastname: "Scarlet",
     sourceType: "anime",
     title: "",
     dateEnd: ""

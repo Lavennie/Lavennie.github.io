@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kim_dokja_leave.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch516",
-    speaker: "Kim Dokja",
+    firstname: "Dokja",
+    lastname: "Kim",
     sourceType: "novel",
     title: "",
     dateEnd: ""

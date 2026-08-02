@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hyakuya_mikaela_profile.jpg",
     source: "Owari no Seraph",
     page: "",
-    speaker: "Hyakuya Mikaela",
+    firstname: "Mikaela",
+    lastname: "Hyakuya",
     sourceType: "manga",
     title: "",
     dateEnd: ""

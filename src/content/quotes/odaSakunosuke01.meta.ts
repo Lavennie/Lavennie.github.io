@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/oda_sakunosuke_face.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Oda Sakunosuke",
+    firstname: "Sakunosuke",
+    lastname: "Oda",
     sourceType: "manga",
     title: "",
     dateEnd: ""

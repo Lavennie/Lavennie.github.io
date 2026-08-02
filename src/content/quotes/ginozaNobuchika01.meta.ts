@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ginoza_nobuchika_lines.jpg",
     source: "Psycho-Pass",
     page: "",
-    speaker: "Ginoza Nobuchika",
+    firstname: "Nobuchika",
+    lastname: "Ginoza",
     sourceType: "anime",
     title: "",
     dateEnd: ""

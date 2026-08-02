@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kamiya_kaoru_sad.jpg",
     source: "Rurouni Kenshin",
     page: "",
-    speaker: "Kamiya Kaoru",
+    firstname: "Kaoru",
+    lastname: "Kamiya",
     sourceType: "manga",
     title: "",
     dateEnd: ""

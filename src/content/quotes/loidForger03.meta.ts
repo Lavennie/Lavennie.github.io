@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/loid_forger_report_cards.jpg",
     source: "Spy x Family",
     page: "",
-    speaker: "Loid Forger",
+    firstname: "Loid",
+    lastname: "Forger",
     sourceType: "manga",
     title: "",
     dateEnd: ""

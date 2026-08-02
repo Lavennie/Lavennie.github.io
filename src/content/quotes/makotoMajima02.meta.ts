@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/makoto_majima_serious.jpg",
     source: "Ikebukuro West Gate Park",
     page: "",
-    speaker: "Makoto Majima",
+    firstname: "Majima",
+    lastname: "Makoto",
     sourceType: "anime",
     title: "",
     dateEnd: ""

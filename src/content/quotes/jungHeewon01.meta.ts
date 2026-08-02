@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/jung_heewon_chaos.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch409",
-    speaker: "Jung Heewon",
+    firstname: "Heewon",
+    lastname: "Jung",
     sourceType: "novel",
     title: "",
     dateEnd: ""

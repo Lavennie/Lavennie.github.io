@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/mutou_tohru_shiki.jpg",
     source: "Shiki",
     page: "",
-    speaker: "Mutou Tohru",
+    firstname: "Tohru",
+    lastname: "Mutou",
     sourceType: "anime",
     title: "",
     dateEnd: ""

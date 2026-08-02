@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/otosaka_yuu_hood_dango.jpg",
     source: "Charlotte",
     page: "",
-    speaker: "Otosaka Yuu",
+    firstname: "Yuu",
+    lastname: "Otosaka",
     sourceType: "anime",
     title: "",
     dateEnd: ""

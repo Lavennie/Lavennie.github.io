@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hinazuki_kayo_hand.jpg",
     source: "Erased",
     page: "",
-    speaker: "Hinazuki Kayo",
+    firstname: "Kayo",
+    lastname: "Hinazuki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

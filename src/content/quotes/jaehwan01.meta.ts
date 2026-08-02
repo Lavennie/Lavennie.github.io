@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/jaehwan_sword.jpg",
     source: "The World After The Fall",
     page: "",
-    speaker: "Jaehwan",
+    firstname: "Jaehwan",
     sourceType: "manga",
     title: "",
     dateEnd: ""

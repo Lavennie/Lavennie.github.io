@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/tsukasa.jpg",
     source: ".hack//Sign",
     page: "",
-    speaker: "Tsukasa",
+    firstname: "Tsukasa",
     sourceType: "novel",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/marito_koichiro_black.jpg",
     source: "Aldnoah.Zero",
     page: "",
-    speaker: "Marito Koichiro",
+    firstname: "Koichiro",
+    lastname: "Marito",
     sourceType: "anime",
     title: "",
     dateEnd: ""

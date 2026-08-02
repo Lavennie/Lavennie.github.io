@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/manyuda_kaede_dark.jpg",
     source: "Kakegurui",
     page: "",
-    speaker: "Manyuda Kaede",
+    firstname: "Kaede",
+    lastname: "Manyuda",
     sourceType: "anime",
     title: "",
     dateEnd: ""

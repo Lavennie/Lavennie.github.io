@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/korosensei_book.jpg",
     source: "Assassination Classroom",
     page: "",
-    speaker: "Korosensei",
+    firstname: "Korosensei",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/athena_plan.jpg",
     source: "Zankyou no Terror",
     page: "",
-    speaker: "The Athena Plan",
+    firstname: "The Athena Plan",
     sourceType: "anime",
     title: "",
     dateEnd: ""

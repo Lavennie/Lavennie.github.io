@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ouma_shu_crystals.jpg",
     source: "Guilty Crown",
     page: "",
-    speaker: "Ouma Shu",
+    firstname: "Shu",
+    lastname: "Ouma",
     sourceType: "manga",
     title: "",
     dateEnd: ""

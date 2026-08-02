@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yuzuriha_inori_glad.jpg",
     source: "Guilty Crown",
     page: "",
-    speaker: "Yuzuriha Inori",
+    firstname: "Inori",
+    lastname: "Yuzuriha",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/dazai_osamu_cute.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Dazai Osamu",
+    firstname: "Osamu",
+    lastname: "Dazai",
     sourceType: "manga",
     title: "",
     dateEnd: ""

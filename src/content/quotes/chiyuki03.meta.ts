@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/chiyuki_smile.jpg",
     source: "Death Parade",
     page: "",
-    speaker: "Chiyuki",
+    firstname: "Chiyuki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

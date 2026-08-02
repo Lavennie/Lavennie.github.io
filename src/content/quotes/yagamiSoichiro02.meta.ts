@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yagami_soichiro_profile.jpg",
     source: "Death Note",
     page: "",
-    speaker: "Yagami Soichiro",
+    firstname: "Soichiro",
+    lastname: "Yagami",
     sourceType: "manga",
     title: "",
     dateEnd: ""

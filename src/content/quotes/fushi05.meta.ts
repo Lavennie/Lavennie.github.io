@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/fushi_night.jpg",
     source: "To Your Eternity",
     page: "",
-    speaker: "Fushi",
+    firstname: "Fushi",
     sourceType: "anime",
     title: "",
     dateEnd: ""

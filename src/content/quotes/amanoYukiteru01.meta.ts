@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/amano_yukiteru_down.jpg",
     source: "Mirai NIkki",
     page: "",
-    speaker: "Amano Yukiteru",
+    firstname: "Yukiteru",
+    lastname: "Amano",
     sourceType: "anime",
     title: "",
     dateEnd: ""

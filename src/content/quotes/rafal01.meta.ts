@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/rafal_sky.jpg",
     source: "Orb: On the Movements of the Earth",
     page: "",
-    speaker: "Rafal",
+    firstname: "Rafal",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/akabane_karma_pose.jpg",
     source: "Assassination Classroom",
     page: "",
-    speaker: "Akabane Karma",
+    firstname: "Karma",
+    lastname: "Akabane",
     sourceType: "anime",
     title: "",
     dateEnd: ""

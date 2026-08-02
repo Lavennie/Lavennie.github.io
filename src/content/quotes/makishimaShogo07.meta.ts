@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/makishima_shogo_light.jpg",
     source: "Psycho-Pass",
     page: "",
-    speaker: "Makishima Shogo",
+    firstname: "Shogo",
+    lastname: "Makishima",
     sourceType: "anime",
     title: "",
     dateEnd: ""

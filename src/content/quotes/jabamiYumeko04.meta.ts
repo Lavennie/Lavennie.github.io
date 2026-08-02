@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/jabami_yumeki_cross.jpg",
     source: "Kakegurui",
     page: "",
-    speaker: "Jabami Yumeko",
+    firstname: "Yumeko",
+    lastname: "Jabami",
     sourceType: "anime",
     title: "",
     dateEnd: ""

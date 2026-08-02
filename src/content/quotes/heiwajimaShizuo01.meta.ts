@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/heiwajima_shizuo_tilt.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Heiwajima Shizuo",
+    firstname: "Shizuo",
+    lastname: "Heiwajima",
     sourceType: "anime",
     title: "",
     dateEnd: ""

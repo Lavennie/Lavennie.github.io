@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/saito_chain_head.jpg",
     source: "Owari no Seraph",
     page: "",
-    speaker: "Saito",
+    firstname: "Saito",
     sourceType: "manga",
     title: "",
     dateEnd: ""

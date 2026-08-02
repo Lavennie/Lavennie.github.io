@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/kagura_umbrella.jpg",
     source: "Gintama",
     page: "Anime ep142",
-    speaker: "Kagura",
+    firstname: "Kagura",
     sourceType: "anime",
     title: "",
     dateEnd: ""

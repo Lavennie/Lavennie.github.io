@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yomozuki_runa_wink.jpg",
     source: "Kakegurui",
     page: "",
-    speaker: "Yomozuki Runa",
+    firstname: "Runa",
+    lastname: "Yomozuki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

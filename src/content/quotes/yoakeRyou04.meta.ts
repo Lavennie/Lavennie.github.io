@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yoake_ryou_smile.jpg",
     source: "reLIFE",
     page: "",
-    speaker: "Yoake Ryou",
+    firstname: "Ryou",
+    lastname: "Yoake",
     sourceType: "anime",
     title: "",
     dateEnd: ""

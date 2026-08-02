@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/cid_kagenou_shadow.jpg",
     source: "The Eminence in Shadow",
     page: "",
-    speaker: "Shadow",
+    firstname: "Cid",
+    lastname: "Kagenou",
     sourceType: "manga",
     title: "",
     dateEnd: ""

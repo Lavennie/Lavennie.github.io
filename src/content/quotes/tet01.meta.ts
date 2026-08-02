@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/tet_chess.jpg",
     source: "No Game No Life",
     page: "",
-    speaker: "Tet",
+    firstname: "Tet",
     sourceType: "anime",
     title: "",
     dateEnd: ""

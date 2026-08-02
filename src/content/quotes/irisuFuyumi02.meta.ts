@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/irisu_fuyumi_finger.jpg",
     source: "Hyouka",
     page: "",
-    speaker: "Irisu Fuyumi",
+    firstname: "Fuyumi",
+    lastname: "Irisu",
     sourceType: "anime",
     title: "",
     dateEnd: ""

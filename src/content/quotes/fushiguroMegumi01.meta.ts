@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/fushiguro_megumi_profile.jpg",
     source: "Jujutsu Kaisen",
     page: "",
-    speaker: "Fushiguro Megumi",
+    firstname: "Megumi",
+    lastname: "Fushiguro",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/spike_spiegel_smile.jpg",
     source: "Cowboy Bebop",
     page: "Anime ep26",
-    speaker: "Spike Spiegel",
+    firstname: "Spike",
+    lastname: "Spiegel",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/takashi_ando_face.jpg",
     source: "Ikebukuro West Gate Park",
     page: "",
-    speaker: "Takashi Ando",
+    firstname: "Ando",
+    lastname: "Takashi",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/saitou_hajime_lean.jpg",
     source: "Rurouni Kenshin",
     page: "",
-    speaker: "Saitou Hajime",
+    firstname: "Hajime",
+    lastname: "Saitou",
     sourceType: "manga",
     title: "",
     dateEnd: ""

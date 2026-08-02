@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/tazaki_face.jpg",
     source: "Joker Game",
     page: "",
-    speaker: "Tazaju",
+    firstname: "Tazaki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

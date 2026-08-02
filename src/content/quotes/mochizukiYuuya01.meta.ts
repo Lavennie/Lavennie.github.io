@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/mochizuki_yuuya_card.jpg",
     source: "Another",
     page: "",
-    speaker: "Mochizuki Yuuya",
+    firstname: "Yuuya",
+    lastname: "Mochizuki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

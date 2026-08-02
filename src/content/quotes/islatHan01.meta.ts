@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/islat_han_intense.jpg",
     source: "Pick Me Up!",
     page: "",
-    speaker: "Islat Han",
+    firstname: "Han",
+    lastname: "Islat",
     sourceType: "manga",
     title: "",
     dateEnd: ""

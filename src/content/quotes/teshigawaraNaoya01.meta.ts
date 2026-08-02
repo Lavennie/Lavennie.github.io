@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/teshigawara_naoya_annoyed.jpg",
     source: "Another",
     page: "",
-    speaker: "Teshigawara Naoya",
+    firstname: "Naoya",
+    lastname: "Teshigawara",
     sourceType: "manga",
     title: "",
     dateEnd: ""

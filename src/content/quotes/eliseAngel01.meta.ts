@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/elise_angel_turn.jpg",
     source: "Assassins Pride",
     page: "",
-    speaker: "Elise Angel",
+    firstname: "Elise",
+    lastname: "Angel",
     sourceType: "manga",
     title: "",
     dateEnd: ""

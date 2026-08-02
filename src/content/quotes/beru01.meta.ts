@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/beru_cute_crying.jpg",
     source: "Solo Leveling",
     page: "Manhwa ch120",
-    speaker: "Beru",
+    firstname: "Beru",
     sourceType: "manga",
     title: "",
     dateEnd: ""

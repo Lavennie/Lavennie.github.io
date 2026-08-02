@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/furukawa_nagisa_bun.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Furukawa Nagisa",
+    firstname: "Nagisa",
+    lastname: "Furukawa",
     sourceType: "manga",
     title: "",
     dateEnd: ""

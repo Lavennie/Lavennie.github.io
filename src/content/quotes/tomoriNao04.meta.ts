@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tomori_nao_finger.jpg",
     source: "Charlotte",
     page: "",
-    speaker: "Tomori Nao",
+    firstname: "Nao",
+    lastname: "Tomori",
     sourceType: "anime",
     title: "",
     dateEnd: ""

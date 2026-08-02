@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/lisa_mishima_face.jpg",
     source: "Zankyou no Terror",
     page: "",
-    speaker: "Lisa Mishima",
+    firstname: "Lisa",
+    lastname: "Mishima",
     sourceType: "anime",
     title: "",
     dateEnd: ""

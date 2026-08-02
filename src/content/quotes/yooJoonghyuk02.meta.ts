@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kim_dokja_yoo_joonghyuk_hands.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch102",
-    speaker: "Yoo Joonghyuk",
+    firstname: "Joonghyuk",
+    lastname: "Yoo",
     sourceType: "novel",
     title: "",
     dateEnd: ""

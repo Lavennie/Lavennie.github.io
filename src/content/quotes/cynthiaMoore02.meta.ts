@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/cynthia_moore_drunk.jpg",
     source: "Great Pretender",
     page: "",
-    speaker: "Cynthia Moore",
+    firstname: "Moore",
+    lastname: "Cynthia",
     sourceType: "anime",
     title: "",
     dateEnd: ""

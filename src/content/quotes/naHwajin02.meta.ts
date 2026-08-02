@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/na_hwajin_rain.jpg",
     source: "Get Schooled",
     page: "",
-    speaker: "Na Hwajin",
+    firstname: "Hwajin",
+    lastname: "Na",
     sourceType: "manga",
     title: "",
     dateEnd: ""

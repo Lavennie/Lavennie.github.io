@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/igris_throne.jpg",
     source: "Solo Leveling",
     page: "Manhwa ch164",
-    speaker: "Igris",
+    firstname: "Igris",
     sourceType: "manga",
     title: "",
     dateEnd: ""

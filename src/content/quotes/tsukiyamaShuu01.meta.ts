@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tsukiyama_shuu_manga.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch43",
-    speaker: "Tsukiyama Shuu",
+    firstname: "Shuu",
+    lastname: "Tsukiyama",
     sourceType: "manga",
     title: "",
     dateEnd: ""

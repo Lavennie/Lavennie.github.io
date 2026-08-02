@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tateyama_ayano_scribble.jpg",
     source: "Mekakucity Actors",
     page: "",
-    speaker: "Tateyama Ayano",
+    firstname: "Ayano",
+    lastname: "Tateyama",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/abigail_jones_jacket.jpg",
     source: "Great Pretender",
     page: "",
-    speaker: "Abigail Jones",
+    firstname: "Abigail",
+    lastname: "Jones",
     sourceType: "anime",
     title: "",
     dateEnd: ""

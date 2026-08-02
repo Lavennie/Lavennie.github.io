@@ -8,7 +8,9 @@ const meta: QuoteMeta = {
     image: "quote_images/kishiar_la_orr_smile.jpg",
     source: "Turning",
     page: "Novel ch200",
-    speaker: "Kishiar La Orr",
+    firstname: "Kishiar",
+    middlename: "La",
+    lastname: "Orr",
     sourceType: "novel",
     title: "",
     dateEnd: ""

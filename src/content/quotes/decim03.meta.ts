@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/decim_glass.jpg",
     source: "Death Parade",
     page: "",
-    speaker: "Decim",
+    firstname: "Decim",
     sourceType: "anime",
     title: "",
     dateEnd: ""

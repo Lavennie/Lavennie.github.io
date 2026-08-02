@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nathan_mahler.jpg",
     source: "Blood+",
     page: "",
-    speaker: "Nathan Mahler",
+    firstname: "Nathan",
+    lastname: "Mahler",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/utsuro.jpg",
     source: "Gintama",
     page: "Anime ep314",
-    speaker: "Utsuro",
+    firstname: "Utsuro",
     sourceType: "manga",
     title: "",
     dateEnd: ""

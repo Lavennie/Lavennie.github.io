@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/miyamizu_mitsuha_reach.jpg",
     source: "Your Name",
     page: "",
-    speaker: "Miyamizu Mitsuha",
+    firstname: "Mitsuha",
+    lastname: "Miyamizu",
     sourceType: "anime",
     title: "",
     dateEnd: ""

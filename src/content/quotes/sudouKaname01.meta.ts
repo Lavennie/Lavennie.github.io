@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sudou_kaname_reach.jpg",
     source: "Darwin's game",
     page: "",
-    speaker: "Sudou Kaname",
+    firstname: "Kaname",
+    lastname: "Sudou",
     sourceType: "manga",
     title: "",
     dateEnd: ""

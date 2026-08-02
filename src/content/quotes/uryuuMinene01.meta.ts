@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/uryuu_minene_profile.jpg",
     source: "Mirai NIkki",
     page: "",
-    speaker: "Uryuu Minene",
+    firstname: "Minene",
+    lastname: "Uryuu",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sung_jinwoo_scary.jpg",
     source: "Solo Leveling",
     page: "Manhwa ch148",
-    speaker: "Sung Jinwoo",
+    firstname: "Jinwoo",
+    lastname: "Sung",
     sourceType: "manga",
     title: "",
     dateEnd: ""

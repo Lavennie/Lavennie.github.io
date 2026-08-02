@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/karasuma_tadaomi_face.jpg",
     source: "Assassination Classroom",
     page: "",
-    speaker: "Karasuma Tadaomi",
+    firstname: "Tadaomi",
+    lastname: "Karasuma",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/takajo_jojiro_bloody.jpg",
     source: "Charlotte",
     page: "",
-    speaker: "Takajo Jojiro",
+    firstname: "Jojiro",
+    lastname: "Takajo",
     sourceType: "anime",
     title: "",
     dateEnd: ""

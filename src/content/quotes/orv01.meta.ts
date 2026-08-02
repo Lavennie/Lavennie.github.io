@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/shin_yoosung_both.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch108",
-    speaker: "",
+    firstname: "",
     sourceType: "novel",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kurosaki_ichigo_old_side.jpg",
     source: "Bleach",
     page: "",
-    speaker: "Kurosaki Ichigo",
+    firstname: "Ichigo",
+    lastname: "Kurosaki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/shicmuon_evil.jpg",
     source: "Black Haze",
     page: "",
-    speaker: "Shicmuon",
+    firstname: "Shicmuon",
     sourceType: "manga",
     title: "",
     dateEnd: ""

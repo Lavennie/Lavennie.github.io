@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hiko_seijuro_red_pose.jpg",
     source: "Rurouni Kenshin",
     page: "",
-    speaker: "Hiko Seijuro",
+    firstname: "Seijuro",
+    lastname: "Hiko",
     sourceType: "manga",
     title: "",
     dateEnd: ""

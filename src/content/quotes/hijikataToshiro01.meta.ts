@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hijikata_toshiro.jpg",
     source: "Gintama",
     page: "Thorny arc",
-    speaker: "Hijikata Toshiro",
+    firstname: "Toshiro",
+    lastname: "Hijikata",
     sourceType: "manga",
     title: "",
     dateEnd: ""

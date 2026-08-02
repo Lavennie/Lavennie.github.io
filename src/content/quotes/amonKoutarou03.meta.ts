@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/amon_koutarou_rail.jpg",
     source: "Tokyo Ghoul:re",
     page: "Manga ch96",
-    speaker: "Amon Koutarou",
+    firstname: "Koutarou",
+    lastname: "Amon",
     sourceType: "manga",
     title: "",
     dateEnd: ""

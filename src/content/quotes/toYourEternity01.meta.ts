@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/to_your_eternity_25.jpg",
     source: "To Your Eternity",
     page: "",
-    speaker: "",
+    firstname: "",
     sourceType: "anime",
     title: "",
     dateEnd: ""

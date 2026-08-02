@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/fukube_satoshi_tongue.jpg",
     source: "Hyouka",
     page: "",
-    speaker: "Fukube Satoshi",
+    firstname: "Satoshi",
+    lastname: "Fukube",
     sourceType: "anime",
     title: "",
     dateEnd: ""

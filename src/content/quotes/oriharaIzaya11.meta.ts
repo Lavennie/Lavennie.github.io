@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/orihara_izaya_profile.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Orihara Izaya",
+    firstname: "Izaya",
+    lastname: "Orihara",
     sourceType: "anime",
     title: "",
     dateEnd: ""

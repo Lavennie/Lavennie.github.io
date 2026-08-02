@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/arthur_leywin_formal.jpg",
     source: "The Beginning After The End",
     page: "Manhwa ch84",
-    speaker: "Arthur Leywin",
+    firstname: "Arthur",
+    lastname: "Leywin",
     sourceType: "manga",
     title: "",
     dateEnd: ""

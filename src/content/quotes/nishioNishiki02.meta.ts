@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nishio_nishiki_kimi.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch43",
-    speaker: "Nishio Nishiki",
+    firstname: "Nishiki",
+    lastname: "Nishio",
     sourceType: "manga",
     title: "",
     dateEnd: ""

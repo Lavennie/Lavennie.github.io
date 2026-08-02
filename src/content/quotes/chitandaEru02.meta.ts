@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/chitanda_eru_worried.jpg",
     source: "Hyouka",
     page: "",
-    speaker: "Chitanda Eru",
+    firstname: "Eru",
+    lastname: "Chitanda",
     sourceType: "anime",
     title: "",
     dateEnd: ""

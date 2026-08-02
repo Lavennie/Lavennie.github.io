@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/guts_prepared.jpg",
     source: "Berserk",
     page: "",
-    speaker: "Guts",
+    firstname: "Guts",
     sourceType: "manga",
     title: "",
     dateEnd: ""

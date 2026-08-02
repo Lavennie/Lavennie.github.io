@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/jolenta_profile.jpg",
     source: "Orb: On the Movements of the Earth",
     page: "",
-    speaker: "Jolenta",
+    firstname: "Jolenta",
     sourceType: "anime",
     title: "",
     dateEnd: ""

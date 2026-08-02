@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/oreki_houtarou_pass.jpg",
     source: "Hyouka",
     page: "",
-    speaker: "Oreki Houtarou",
+    firstname: "Houtarou",
+    lastname: "Oreki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

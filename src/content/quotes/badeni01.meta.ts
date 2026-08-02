@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/badeni_profile.jpg",
     source: "Orb: On the Movements of the Earth",
     page: "",
-    speaker: "Badeni",
+    firstname: "Badeni",
     sourceType: "anime",
     title: "",
     dateEnd: ""

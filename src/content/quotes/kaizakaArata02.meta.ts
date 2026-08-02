@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kaizaka_arata_serious.jpg",
     source: "reLIFE",
     page: "",
-    speaker: "Kaizaka Arata",
+    firstname: "Arata",
+    lastname: "Kaizaka",
     sourceType: "anime",
     title: "",
     dateEnd: ""

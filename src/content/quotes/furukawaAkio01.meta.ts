@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/furukawa_akio.apron.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Furukawa Akio",
+    firstname: "Akio",
+    lastname: "Furukawa",
     sourceType: "manga",
     title: "",
     dateEnd: ""

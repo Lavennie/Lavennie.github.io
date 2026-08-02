@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/edamura_makoto_glasses.jpg",
     source: "Great Pretender",
     page: "",
-    speaker: "Edamura Makoto",
+    firstname: "Makoto",
+    lastname: "Edamura",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/orb_on_the_movements_of_the_earth_fisheye.jpg",
     source: "Orb: On the Movements of the Earth",
     page: "",
-    speaker: "",
+    firstname: "",
     sourceType: "anime",
     title: "",
     dateEnd: ""

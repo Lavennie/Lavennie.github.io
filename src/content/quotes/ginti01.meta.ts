@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/ginti_talk.jpg",
     source: "Death Parade",
     page: "",
-    speaker: "Ginti",
+    firstname: "Ginti",
     sourceType: "anime",
     title: "",
     dateEnd: ""

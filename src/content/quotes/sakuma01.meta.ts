@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/sakuma_hat.jpg",
     source: "Joker Game",
     page: "",
-    speaker: "Sakuma",
+    firstname: "Sakuma",
     sourceType: "anime",
     title: "",
     dateEnd: ""

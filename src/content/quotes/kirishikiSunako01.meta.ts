@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kirishiki_sunako_sofa.jpg",
     source: "Shiki",
     page: "",
-    speaker: "Kirishiki Sunako",
+    firstname: "Sunako",
+    lastname: "Kirishiki",
     sourceType: "anime",
     title: "",
     dateEnd: ""

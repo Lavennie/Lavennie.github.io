@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/celty_sturluson_bike_stand.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Celty Sturluson",
+    firstname: "Sturluson",
+    lastname: "Celty",
     sourceType: "anime",
     title: "",
     dateEnd: ""

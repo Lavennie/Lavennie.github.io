@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yoshino_yusuke_point.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Yoshino Yusuke",
+    firstname: "Yusuke",
+    lastname: "Yoshino",
     sourceType: "manga",
     title: "",
     dateEnd: ""

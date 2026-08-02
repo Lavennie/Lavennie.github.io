@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/lee_jaha_disgusted.jpg",
     source: "Return of the Mad Demon",
     page: "",
-    speaker: "Lee Jaha",
+    firstname: "Jaha",
+    lastname: "Lee",
     sourceType: "manga",
     title: "",
     dateEnd: ""

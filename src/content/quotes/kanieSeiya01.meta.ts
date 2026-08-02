@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kanie_seiya_smug.jpg",
     source: "Amagi Brilliant Park",
     page: "",
-    speaker: "Kanie Seiya",
+    firstname: "Seiya",
+    lastname: "Kanie",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/cc_fancy.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "C.C.",
+    firstname: "C.C.",
     sourceType: "manga",
     title: "",
     dateEnd: ""

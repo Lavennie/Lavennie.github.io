@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kishitani_shinra_lean.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Kishitani Shinra",
+    firstname: "Shinra",
+    lastname: "Kishitani",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/uta_manga.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch7",
-    speaker: "Uta",
+    firstname: "Uta",
     sourceType: "manga",
     title: "",
     dateEnd: ""

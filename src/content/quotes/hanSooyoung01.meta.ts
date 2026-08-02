@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/orv_trio_hands.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch551",
-    speaker: "Han Sooyoung",
+    firstname: "Sooyoung",
+    lastname: "Han",
     sourceType: "novel",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/nine_block_ears.jpg",
     source: "Zankyou no Terror",
     page: "",
-    speaker: "Nine",
+    firstname: "Nine",
     sourceType: "anime",
     title: "",
     dateEnd: ""

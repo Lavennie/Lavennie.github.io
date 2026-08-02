@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/shiba_tatsuya_battle_ready.jpg",
     source: "Irregular at Magic High School",
     page: "",
-    speaker: "Shiba Tatsuya",
+    firstname: "Tatsuya",
+    lastname: "Shiba",
     sourceType: "novel",
     title: "",
     dateEnd: ""

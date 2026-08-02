@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/akise_aru_watch.jpg",
     source: "Mirai NIkki",
     page: "",
-    speaker: "Akise Aru",
+    firstname: "Aru",
+    lastname: "Akise",
     sourceType: "anime",
     title: "",
     dateEnd: ""

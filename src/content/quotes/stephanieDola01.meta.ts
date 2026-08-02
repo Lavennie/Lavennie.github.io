@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/stephanie_dola_casual.jpg",
     source: "No Game No Life",
     page: "",
-    speaker: "Stephanie Dola",
+    firstname: "Stephanie",
+    lastname: "Dola",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ghislain_perdium_mercenary.jpg",
     source: "The Regressed Mercenary's Machinations",
     page: "",
-    speaker: "Ghislain Perdium",
+    firstname: "Ghislain",
+    lastname: "Perdium",
     sourceType: "manga",
     title: "",
     dateEnd: ""

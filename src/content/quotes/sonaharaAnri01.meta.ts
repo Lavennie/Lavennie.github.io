@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sonahari_anru_black.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Sonahara Anri",
+    firstname: "Anri",
+    lastname: "Sonahara",
     sourceType: "anime",
     title: "",
     dateEnd: ""

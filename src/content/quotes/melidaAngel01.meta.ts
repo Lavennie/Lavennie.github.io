@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/melida_angel_serious.jpg.jpg",
     source: "Assassins Pride",
     page: "",
-    speaker: "Melida Angel",
+    firstname: "Melida",
+    lastname: "Angel",
     sourceType: "manga",
     title: "",
     dateEnd: ""

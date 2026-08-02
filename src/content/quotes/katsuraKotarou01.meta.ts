@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/katsura_kotarou_rebel.jpg",
     source: "Gintama",
     page: "",
-    speaker: "Katsura Kotarou",
+    firstname: "Kotarou",
+    lastname: "Katsura",
     sourceType: "manga",
     title: "",
     dateEnd: ""

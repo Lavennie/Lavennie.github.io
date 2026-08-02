@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sung_jinwoo_shadow_armor.jpg",
     source: "Solo Leveling",
     page: "",
-    speaker: "Sung Jinwoo",
+    firstname: "Jinwoo",
+    lastname: "Sung",
     sourceType: "manga",
     title: "",
     dateEnd: ""

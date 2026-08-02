@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/mikami_reiko_excited.jpg",
     source: "Another",
     page: "",
-    speaker: "Mikami Reiko",
+    firstname: "Reiko",
+    lastname: "Mikami",
     sourceType: "manga",
     title: "",
     dateEnd: ""

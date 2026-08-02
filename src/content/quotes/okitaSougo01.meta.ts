@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/okita_sougo_salute.jpg",
     source: "Gintama",
     page: "Anime ep187",
-    speaker: "Okita Sougo",
+    firstname: "Sougo",
+    lastname: "Okita",
     sourceType: "anime",
     title: "",
     dateEnd: ""

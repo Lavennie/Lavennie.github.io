@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ayanokoji_kiyotaka_umbrella.jpg",
     source: "Classroom of the Elite",
     page: "",
-    speaker: "Ayanokoji Kiyotaka",
+    firstname: "Kiyotaka",
+    lastname: "Ayanokoji",
     sourceType: "anime",
     title: "",
     dateEnd: ""

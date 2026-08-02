@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kida_masaomi_profile.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Kida Masaomi",
+    firstname: "Masaomi",
+    lastname: "Kida",
     sourceType: "anime",
     title: "",
     dateEnd: ""

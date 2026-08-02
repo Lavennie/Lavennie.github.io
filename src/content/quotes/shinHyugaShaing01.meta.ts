@@ -8,7 +8,9 @@ const meta: QuoteMeta = {
     image: "quote_images/shin_hyuga_shaing.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "Shin Hyuga Shaing",
+    firstname: "Shin",
+    middlename: "Hyuga",
+    lastname: "Shaing",
     sourceType: "manga",
     title: "",
     dateEnd: ""

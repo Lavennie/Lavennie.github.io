@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/shimura_shinpachi.jpg",
     source: "Gintama",
     page: "",
-    speaker: "Shimura Shinpachi",
+    firstname: "Shinpachi",
+    lastname: "Shimura",
     sourceType: "manga",
     title: "",
     dateEnd: ""

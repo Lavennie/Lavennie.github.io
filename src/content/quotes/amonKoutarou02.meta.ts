@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/amon_koutarou_scream.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch25",
-    speaker: "Amon Koutarou",
+    firstname: "Koutarou",
+    lastname: "Amon",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/kiba_climb.jpg",
     source: "Wolf's rain",
     page: "",
-    speaker: "Kiba",
+    firstname: "Kiba",
     sourceType: "anime",
     title: "",
     dateEnd: ""

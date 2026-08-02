@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kisaragi_shintaro_profile.jpg",
     source: "Mekakucity Actors",
     page: "",
-    speaker: "Kisaragi Shintaro",
+    firstname: "Shintaro",
+    lastname: "Kisaragi",
     sourceType: "anime",
     title: "",
     dateEnd: ""

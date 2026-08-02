@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/yato_cat.jpg",
     source: "Noragami",
     page: "",
-    speaker: "Yato",
+    firstname: "Yato",
     sourceType: "manga",
     title: "",
     dateEnd: ""

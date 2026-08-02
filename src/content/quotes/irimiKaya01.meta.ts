@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/irimi_kaya_manga.jpg",
     source: "Tokyo Ghoul:re",
     page: "Manga ch107",
-    speaker: "Irimi Kaya",
+    firstname: "Kaya",
+    lastname: "Irimi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/lee_jaha_serene_hat.jpg",
     source: "Return of the Mad Demon",
     page: "Manhwa ch205",
-    speaker: "Lee Jaha",
+    firstname: "Jaha",
+    lastname: "Lee",
     sourceType: "manga",
     title: "",
     dateEnd: ""

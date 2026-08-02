@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kashiwagi_rein_profile.jpg",
     source: "Darwin's game",
     page: "",
-    speaker: "Kashiwagi Rein",
+    firstname: "Rein",
+    lastname: "Kashiwagi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

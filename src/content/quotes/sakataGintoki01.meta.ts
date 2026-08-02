@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sakata_gintoki_tsukuyo.jpg",
     source: "Gintama",
     page: "Red Spider arc",
-    speaker: "Sakata Gintoki",
+    firstname: "Gintoki",
+    lastname: "Sakata",
     sourceType: "manga",
     title: "",
     dateEnd: ""

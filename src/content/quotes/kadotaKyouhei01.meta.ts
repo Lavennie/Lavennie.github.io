@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kadota_kyouhei_angry.jpg",
     source: "Durarara!!",
     page: "",
-    speaker: "Kadota Kyouhei",
+    firstname: "Kyouhei",
+    lastname: "Kadota",
     sourceType: "anime",
     title: "",
     dateEnd: ""

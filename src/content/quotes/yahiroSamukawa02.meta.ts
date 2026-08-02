@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yahiro_samukawa_stand.jpg",
     source: "Guilty Crown",
     page: "",
-    speaker: "Yahiro Samukawa",
+    firstname: "Samukawa",
+    lastname: "Yahiro",
     sourceType: "manga",
     title: "",
     dateEnd: ""

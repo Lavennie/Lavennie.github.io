@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/miyagusuku_kai_watch.jpg",
     source: "Blood+",
     page: "",
-    speaker: "Miyagusuku Kai",
+    firstname: "Kai",
+    lastname: "Miyagusuku",
     sourceType: "manga",
     title: "",
     dateEnd: ""

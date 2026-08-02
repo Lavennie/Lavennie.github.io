@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kogami_shinya_fight.jpg",
     source: "Psycho-Pass",
     page: "",
-    speaker: "Kogami Shinya",
+    firstname: "Shinya",
+    lastname: "Kogami",
     sourceType: "anime",
     title: "",
     dateEnd: ""

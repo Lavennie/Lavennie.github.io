@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/francis_scott_key_fitzgerald_carry.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Francis Scott Key Fitzgerald",
+    firstname: "Francis Scott",
+    lastname: "Key Fitzgerald",
     sourceType: "manga",
     title: "",
     dateEnd: ""

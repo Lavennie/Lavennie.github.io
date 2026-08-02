@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kunikida_doppo_side.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Kunikida Doppo",
+    firstname: "Doppo",
+    lastname: "Kunikida",
     sourceType: "manga",
     title: "",
     dateEnd: ""

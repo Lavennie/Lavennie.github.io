@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/yagami_light_watch.jpg",
     source: "Death Note",
     page: "",
-    speaker: "Yagami Light",
+    firstname: "Light",
+    lastname: "Yagami",
     sourceType: "manga",
     title: "",
     dateEnd: ""

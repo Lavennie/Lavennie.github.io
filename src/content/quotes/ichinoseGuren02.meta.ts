@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ichinose_guren_disdain.jpg",
     source: "Owari no Seraph",
     page: "",
-    speaker: "Ichinose Guren",
+    firstname: "Guren",
+    lastname: "Ichinose",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/tsunemori_akane_orange.jpg",
     source: "Psycho-Pass",
     page: "",
-    speaker: "Tsunemori Akane",
+    firstname: "Akane",
+    lastname: "Tsunemori",
     sourceType: "anime",
     title: "",
     dateEnd: ""

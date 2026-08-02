@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/han_sooyoung_ponytail.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch538",
-    speaker: "Han Sooyoung",
+    firstname: "Sooyoung",
+    lastname: "Han",
     sourceType: "novel",
     title: "",
     dateEnd: ""

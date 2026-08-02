@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kururugi_suzaku_cat.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "Kururugi Suzaku",
+    firstname: "Suzaku",
+    lastname: "Kururugi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

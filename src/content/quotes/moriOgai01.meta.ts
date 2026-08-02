@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/mori_ogai_knife.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Mori Ogai",
+    firstname: "Ogai",
+    lastname: "Mori",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/nona_smile.jpg",
     source: "Death Parade",
     page: "",
-    speaker: "Nona",
+    firstname: "Nona",
     sourceType: "anime",
     title: "",
     dateEnd: ""

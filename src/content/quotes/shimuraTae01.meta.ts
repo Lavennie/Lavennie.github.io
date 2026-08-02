@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/shimura_tae_smile.jpg",
     source: "Gintama",
     page: "",
-    speaker: "Shimura Tae",
+    firstname: "Tae",
+    lastname: "Shimura",
     sourceType: "manga",
     title: "",
     dateEnd: ""

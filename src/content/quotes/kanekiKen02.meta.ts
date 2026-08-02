@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kaneki_ken_distant.jpg",
     source: "Tokyo Ghoul",
     page: "Manga ch138",
-    speaker: "Kaneki Ken",
+    firstname: "Ken",
+    lastname: "Kaneki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

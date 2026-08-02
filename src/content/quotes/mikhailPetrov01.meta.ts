@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/mikhail_petrov_profile.jpg",
     source: "Monster",
     page: "",
-    speaker: "Mikhail Petrov",
+    firstname: "Mikhail",
+    lastname: "Petrov",
     sourceType: "manga",
     title: "",
     dateEnd: ""

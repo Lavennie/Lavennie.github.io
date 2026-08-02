@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/okazaki_tomoya_graduation.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Okazaki Tomoya",
+    firstname: "Tomoya",
+    lastname: "Okazaki",
     sourceType: "manga",
     title: "",
     dateEnd: ""

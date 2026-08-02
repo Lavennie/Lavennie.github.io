@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/hishiro_chizuri_turn.jpg",
     source: "reLIFE",
     page: "",
-    speaker: "Hishiro Chizuri",
+    firstname: "Chizuri",
+    lastname: "Hishiro",
     sourceType: "anime",
     title: "",
     dateEnd: ""

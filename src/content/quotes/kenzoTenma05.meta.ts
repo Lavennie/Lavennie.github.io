@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kenzo_tenma_gun.jpg",
     source: "Monster",
     page: "",
-    speaker: "Kenzo Tenma",
+    firstname: "Tenma",
+    lastname: "Kenzo",
     sourceType: "manga",
     title: "",
     dateEnd: ""

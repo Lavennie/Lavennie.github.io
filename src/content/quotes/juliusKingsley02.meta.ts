@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/julius_kingsley_profile.jpg",
     source: "Code Geass: Lelouch of the Rebellion",
     page: "",
-    speaker: "Julius Kingsley",
+    firstname: "Julius",
+    lastname: "Kingsley",
     sourceType: "manga",
     title: "",
     dateEnd: ""

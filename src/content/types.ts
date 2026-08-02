@@ -49,7 +49,9 @@ export interface QuoteMeta extends EntryMeta {
     type: "quote"; // type discriminant
     source: string;
     page: string;
-    speaker: string;
+    firstname: string;
+    middlename?: string;
+    lastname?: string
     quotes: boolean;
     sourceType: "novel" | "manga" | "anime"
     imageSource?: string;

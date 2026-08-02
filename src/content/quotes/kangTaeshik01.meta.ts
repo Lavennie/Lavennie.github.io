@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kang_taeshik_battle.jpg",
     source: "Solo Leveling",
     page: "Manhwa ch34",
-    speaker: "Kang Taeshik",
+    firstname: "Taeshik",
+    lastname: "Kang",
     sourceType: "manga",
     title: "",
     dateEnd: ""

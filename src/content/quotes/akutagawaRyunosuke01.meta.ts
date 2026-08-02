@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/aktugawa_ryunosuke_phone.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Aktugawa Ryunosuke",
+    firstname: "Ryunosuke",
+    lastname: "Aktugawa",
     sourceType: "manga",
     title: "",
     dateEnd: ""

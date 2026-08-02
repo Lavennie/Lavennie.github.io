@@ -4,12 +4,14 @@ import { useEffect, useRef } from 'react';
 export interface QuoteCardProps {
     text: string;
     source: string;
-    speaker: string;
+    firstname: string;
+    middlename: string;
+    lastname: string;
     page: string;
     img: string;
 }
 
-export default function QuoteCard({ text, source, speaker, page, img }: QuoteCardProps) {
+export default function QuoteCard({ text, source, firstname, middlename, lastname, page, img }: QuoteCardProps) {
     const parts = text.split('||');
     const textRef = useRef<HTMLParagraphElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -82,7 +84,7 @@ export default function QuoteCard({ text, source, speaker, page, img }: QuoteCar
                     ))}
                 </p>
                 <div className={styles.meta}>
-                    <span className={styles.speaker}>{speaker}</span>
+                    <span className={styles.speaker}>{firstname} {middlename} {lastname}</span>
                     <span className={styles.source}>{source}</span>
                     <span className={styles.page}>{page}</span>
                 </div>

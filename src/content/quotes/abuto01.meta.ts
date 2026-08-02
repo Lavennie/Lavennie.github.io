@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/abuto_younger.jpg",
     source: "Gintama",
     page: "Anime ep142",
-    speaker: "Abuto",
+    firstname: "Abuto",
     sourceType: "anime",
     title: "",
     dateEnd: ""

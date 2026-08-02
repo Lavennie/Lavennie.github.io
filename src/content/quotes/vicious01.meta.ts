@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/vicious_grayscale.jpg",
     source: "Cowboy Bebop",
     page: "Anime ep5",
-    speaker: "Vicious",
+    firstname: "Vicious",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/sakagami_tomoyo_roof.jpg",
     source: "Clannad",
     page: "",
-    speaker: "Sakagami Tomoyo",
+    firstname: "Tomoyo",
+    lastname: "Sakagami",
     sourceType: "manga",
     title: "",
     dateEnd: ""

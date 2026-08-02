@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/eva_meinmemann_brown.jpg",
     source: "Monster",
     page: "",
-    speaker: "Eva Heinmemann",
+    firstname: "Eva",
+    lastname: "Heinmemann",
     sourceType: "manga",
     title: "",
     dateEnd: ""

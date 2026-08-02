@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kaizuka_inaho_eyepatch.jpg",
     source: "Aldnoah.Zero",
     page: "",
-    speaker: "Kaizuka Inaho",
+    firstname: "Inaho",
+    lastname: "Kaizuka",
     sourceType: "anime",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/kamishiro_rize_manga.jpg",
     source: "Tokyo Ghoul",
     page: "",
-    speaker: "Kamishiro Rize",
+    firstname: "Rize",
+    lastname: "Kamishiro",
     sourceType: "manga",
     title: "",
     dateEnd: ""

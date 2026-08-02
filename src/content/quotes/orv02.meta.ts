@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/orv_trio.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "Novel ch273",
-    speaker: "",
+    firstname: "",
     sourceType: "novel",
     title: "",
     dateEnd: ""

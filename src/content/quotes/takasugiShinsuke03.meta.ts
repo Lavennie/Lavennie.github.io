@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/takasugi_shinsuke_complicated.jpg",
     source: "Gintama",
     page: "",
-    speaker: "Takasugi Shinsuke",
+    firstname: "Shinsuke",
+    lastname: "Takasugi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/fyodor_dostoevsky_church.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Fyodor Dostoevsky",
+    firstname: "Fyodor",
+    lastname: "Dostoevsky",
     sourceType: "manga",
     title: "",
     dateEnd: ""

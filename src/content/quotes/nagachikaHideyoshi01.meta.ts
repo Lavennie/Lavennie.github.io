@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nagachika_hideyoshi_mutilated.jpg",
     source: "Tokyo Ghoul",
     page: "",
-    speaker: "Nagachika Hideyoshi",
+    firstname: "Hideyoshi",
+    lastname: "Nagachika",
     sourceType: "manga",
     title: "",
     dateEnd: ""

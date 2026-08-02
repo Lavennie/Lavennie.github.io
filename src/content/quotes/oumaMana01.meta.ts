@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/ouma_mana_red_eyes.jpg",
     source: "Guilty Crown",
     page: "",
-    speaker: "Ouma Mana",
+    firstname: "Mana",
+    lastname: "Ouma",
     sourceType: "manga",
     title: "",
     dateEnd: ""

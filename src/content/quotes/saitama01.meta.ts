@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/saitama_casual.jpg",
     source: "One Punch Man",
     page: "",
-    speaker: "Saitama",
+    firstname: "Saitama",
     sourceType: "manga",
     title: "",
     dateEnd: ""

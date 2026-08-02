@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/daryl_yan_gun.jpg",
     source: "Guilty Crown",
     page: "",
-    speaker: "Daryl Yan",
+    firstname: "Yan",
+    lastname: "Daryl",
     sourceType: "manga",
     title: "",
     dateEnd: ""

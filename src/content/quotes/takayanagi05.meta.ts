@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/takayanagi_begin.jpg",
     source: "From Now On We Begin Ethics",
     page: "",
-    speaker: "Takayanagi",
+    firstname: "Takayanagi",
     sourceType: "manga",
     title: "",
     dateEnd: ""

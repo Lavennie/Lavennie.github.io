@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/twelve_knees.jpg",
     source: "Zankyou no Terror",
     page: "",
-    speaker: "Twelve",
+    firstname: "Twelve",
     sourceType: "anime",
     title: "",
     dateEnd: ""

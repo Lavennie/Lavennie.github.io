@@ -8,7 +8,7 @@ const meta: QuoteMeta = {
     image: "quote_images/yoo_joonghyuk_1863.jpg",
     source: "Omniscient Reader's Viewpoint",
     page: "",
-    speaker: "",
+    firstname: "",
     sourceType: "novel",
     title: "",
     dateEnd: ""

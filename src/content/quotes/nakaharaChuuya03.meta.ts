@@ -8,7 +8,8 @@ const meta: QuoteMeta = {
     image: "quote_images/nakahara_chuuya_iconic.jpg",
     source: "Bungou Stray Dogs",
     page: "",
-    speaker: "Nakahara Chuuya",
+    firstname: "Chuuya",
+    lastname: "Nakahara",
     sourceType: "manga",
     title: "",
     dateEnd: ""
