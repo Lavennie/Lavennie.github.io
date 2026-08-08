@@ -63,24 +63,30 @@ shiki
 zankyou no terror
 rurouni kenshin
 
+danganronpa
+brutal: satsujin
+jiraishin
+sanctuary
+Yoru ni Naru to Boku wa
+promised neverland
 star rail
 genshin
+funouhan
 persona
 fma
+uramichi oniisan
 reaincartanted as a slime
 86
 bleach
-enen
 fate
 k-on
 one punch man
 pet
 lain
-sao
 vinland saga
 violet evergarden
 my hero academia
-diamond no ace
+sao
 dororo
 gakuen babysitters
 haikyuu
@@ -91,7 +97,6 @@ jinrou
 kaguya
 kekkai sensen
 parasyte
-kuroko
 little witch academia
 log horizon
 love live
@@ -119,26 +124,21 @@ the god of highschool
 toaru majutsu no index
 tokyo godfathers
 tonaki no seki-kun
-uramichi oniisan
 toradora
 vampire knight
 wonder egg priority
 yugioh
-danganronpa
 acid town
-assassins pride
 black joke
 blame
 bloody cross
 blue hearts
 bouncer
-brutal: satsujin
 bukiyou na senpai
 chainsaw man
 chi no wadachi
 dead mount death play
 diner
-funouhan
 gangsta
 gokushufudou
 GTO
@@ -203,7 +203,6 @@ hinamatsuri
 holyland
 Ilegenes: Giyoku no Koukyoukyoku
 jackals
-jiraishin
 kimetsu no yaiba
 kimi no knife
 lawless kid
@@ -220,7 +219,6 @@ oyaji
 qp
 roppongi black cross
 route end
-sanctuary
 shibatora
 shikeishuu 042
 shinjuku dxd
@@ -236,9 +234,10 @@ tokyo girls destruction
 tong
 trigun
 tsumi to batsu
-promised neverland
-Yoru ni Naru to Boku wa
 young gun carnival
+enen
+diamond no ace
+kuroko
 
 
 existence

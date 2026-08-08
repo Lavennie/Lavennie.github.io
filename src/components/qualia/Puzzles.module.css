@@ -1,0 +1,59 @@
+.puzzlesScroll {
+    width: 90%;
+    margin-left: 5%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.puzzlesScroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+.card {
+    position: relative;
+    height: 300px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    font-weight: bold;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card:hover .overlay {
+    background-color: #000B;
+}
+
+.text {
+    margin: 1rem auto;
+    line-height: 1.5;
+    font-size: 3rem;
+    color: #c5e2ff;
+    font-style: italic;
+    -webkit-text-stroke: 5px #212125;
+    paint-order: stroke fill;
+    text-align: center;
+    opacity: 0%;
+    height: 4rem;
+}
+.card:hover .text {
+    opacity:  90%;
+}

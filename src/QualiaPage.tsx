@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar.tsx";
 import Footer from "./components/Footer.tsx";
 import Constellations from "./components/qualia/Constellations.tsx";
 import Quotes from "./components/qualia/Quotes.tsx";
+import Puzzles from "./components/qualia/Puzzles.tsx";
 
 export default function QualiaPage() {
     return(<>
@@ -19,6 +20,15 @@ export default function QualiaPage() {
                 <div>
                     <h1>&ldquo;As they say...&rdquo;</h1>
                     <Quotes/>
+                </div>
+            </div>
+
+            <div className={`site-container ${styles.puzzlesContainer}`}>
+                {/* the div below is for the bakcground image, it needs to be the first child of appBackground */}
+                <div></div>
+                <div>
+                    <h1>&ldquo;Piece by piece...&rdquo;</h1>
+                    <Puzzles/>
                 </div>
             </div>
         </div>

@@ -56,3 +56,9 @@ export interface QuoteMeta extends EntryMeta {
     sourceType: "novel" | "manga" | "anime"
     imageSource?: string;
 }
+
+export interface PuzzleMeta extends EntryMeta {
+    type: "puzzle"; // type discriminant
+    size: number;
+    orientation: "horizontal" | "vertical";
+}
