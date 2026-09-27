@@ -53,7 +53,7 @@ export interface QuoteMeta extends EntryMeta {
     middlename?: string;
     lastname?: string
     quotes: boolean;
-    sourceType: "novel" | "manga" | "anime"
+    sourceType: "novel" | "manga" | "anime" | "game"
     imageSource?: string;
 }
 

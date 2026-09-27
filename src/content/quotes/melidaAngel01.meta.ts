@@ -5,7 +5,7 @@ const meta: QuoteMeta = {
     id: "quote melida angle 1",
     description: "Do whatever is necessary to survive, even if it means tearing the world apart.",
     quotes: true,
-    image: "quote_images/melida_angel_serious.jpg.jpg",
+    image: "quote_images/melida_angel_serious.jpg",
     source: "Assassins Pride",
     page: "",
     firstname: "Melida",

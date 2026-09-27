@@ -62,19 +62,50 @@ reLife
 shiki
 zankyou no terror
 rurouni kenshin
-
 danganronpa
-brutal: satsujin
 jiraishin
+promised neverland
+full metal alchemist
+violet evergarden
+dororo
+Magi: the labyrinth of magic
+hibike! euphonium
+kekkai sensen
+spice and wolf
+a whisker away
+vinland saga
+soul eater
+log horizon
+parasyte
+shigatsu wa kimi no uso
+Shuumatsu Nani Shitemasu ka
+stein's gate
+toaru majutsu no index
+wonder egg priority
+vampire knight
+
+
+
+brutal: satsujin
 sanctuary
 Yoru ni Naru to Boku wa
-promised neverland
 star rail
 genshin
 funouhan
 persona
-fma
+little witch academia
+no guns life
 uramichi oniisan
+love live
+prince of stride
+re:creators
+gakuen babysitters
+id:invaded
+spirited away
+mob psycho 100
+tokyo godfathers
+tenki no ko
+
 reaincartanted as a slime
 86
 bleach
@@ -83,50 +114,22 @@ k-on
 one punch man
 pet
 lain
-vinland saga
-violet evergarden
 my hero academia
 sao
-dororo
-gakuen babysitters
 haikyuu
 hataraku maou-sama
-hibike
-id:invaded
 jinrou
 kaguya
-kekkai sensen
-parasyte
-little witch academia
-log horizon
-love live
-magi
 mo dao zu shi
-mob psycho 100
-a whisker away
-no guns life
-spice and wolf
-prince of stride
 king' avatar
-re:creators
 saiki
-spirited away
 senyuu
-shigatsu wa kimi no uso
 shiguang dailren
 attack on titan
-Shuumatsu Nani Shitemasu ka
-soul eater
-stein's gate
 tanaka kun
-tenki no ko
 the god of highschool
-toaru majutsu no index
-tokyo godfathers
 tonaki no seki-kun
 toradora
-vampire knight
-wonder egg priority
 yugioh
 acid town
 black joke

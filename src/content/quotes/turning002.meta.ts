@@ -5,7 +5,7 @@ const meta: QuoteMeta = {
     id: "turning 2",
     description: "He had regained an invaluable asset called time.",
     quotes: true,
-    image: "quote_images/_.jpg",
+    image: "quote_images/yudrein_aile_dejected.jpg",
     source: "Turning",
     page: "Novel ch2",
     firstname: "",
