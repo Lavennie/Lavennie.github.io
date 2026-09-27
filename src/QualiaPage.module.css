@@ -52,7 +52,7 @@
 }
 .puzzlesContainer > div:first-of-type {
     margin: auto;
-    background-image: url('puzzle_images/wallpaper_wardrobe.jpg');
+    background-image: url('/puzzle_images/wallpaper_wardrobe.jpg');
     background-size: cover;
     border-radius: 64px 24px 2px 2px;
     border: 2px solid #212125;
