@@ -3,7 +3,7 @@ import type { CreationMeta } from "../types";
 const meta: CreationMeta = {
     type: "sculpture",
     id: "rocket",
-    title: "Castle",
+    title: "Rocket",
     dateEnd: "2026/09/09",
     description: "",
     image: "",
